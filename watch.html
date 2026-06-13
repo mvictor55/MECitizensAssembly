@@ -136,7 +136,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .divider { border: none; border-top: 2px solid var(--ink); margin: 0; max-width: var(--max); }
 .divider.thin { border-top: 1px solid var(--line-2); }
 
-.lede { font-size: 1.22rem; line-height: 1.5; color: var(--ink-2); max-width: 60ch; }
+.lede { font-size: 1.22rem; line-height: 1.5; color: #c9c9dc; max-width: 60ch; }
 .prose { max-width: 64ch; }
 .prose p { font-size: 1.05rem; }
 
@@ -414,7 +414,7 @@ h1, h2, h3 { font-stretch: 95%; }
       <div class="signup" id="signup">
         <span class="kicker gold">Updates</span>
         <h2>Sign up for Assembly updates</h2>
-        <p class="lede">We'll send the livestream schedule once it's set, the delegates' recommendations when they're ready, and occasional news about what comes next.</p>
+        <p class="lede">We'll send the livestream schedule once it's set, reminders for when the stream is live, and updates as the project moves forward.</p>
         <form id="assembly-signup" method="POST" action="https://9f0d60b0.sibforms.com/serve/MUIFANfnPBCqymOT7CcnRQx8lMwRpMkIP2RydI51-m7zEsB4W3FNqBi8Ydgj7wSX-pa5aAe6D0NlZpt1A6GCxRx4-VUN66PRlcG-toCajfh6feR20Ph4AF0KaCBMD_VQV5jFzEuv4cYlgEvi15QI5XbkkKNeMTsg0eeff2OqGypPM7rAh98qsGL5bc4zClPS9fXH_1VmkpB6Zw7UvA==" data-type="subscription" novalidate>
           <label class="sr-only" for="EMAIL">Email address</label>
           <div class="signup-row">
@@ -423,7 +423,6 @@ h1, h2, h3 { font-stretch: 95%; }
           </div>
           <input type="text" name="email_address_check" value="" class="signup-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="locale" value="en">
-          <p class="signup-note">We'll only email you about the Assembly. Unsubscribe anytime.</p>
           <p class="signup-error" id="signup-error" hidden>Please enter a valid email address.</p>
         </form>
         <div class="signup-done" id="signup-done" hidden>
