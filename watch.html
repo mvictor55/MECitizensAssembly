@@ -343,6 +343,27 @@ h1, h2, h3 { font-stretch: 95%; }
 .factbar .n, .prow .pn, .pull p { font-weight: 800; font-stretch: condensed; letter-spacing: -0.02em; }
 .kicker, .btn, .prow h3, .tl .d, .sess .d, .faq summary, footer.site h4, .brand .mast-txt, .hero-side .q-label { font-stretch: condensed; }
 
+
+/* ============ NEWSLETTER SIGNUP (Brevo, restyled to match) ============ */
+.signup { margin-top: 1.8rem; max-width: 560px; }
+.signup h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0.2rem 0 0.5rem; }
+.signup .lede { max-width: 54ch; margin: 0 0 1rem; color: var(--ink-2); font-size: 1rem; }
+.signup-row { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: stretch; }
+.signup-row input[type="email"] {
+  flex: 1 1 260px; min-width: 0;
+  font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; color: var(--ink);
+  background: var(--card); border: 2px solid var(--ink); border-radius: 2px;
+  padding: 0.68rem 0.9rem;
+}
+.signup-row input[type="email"]::placeholder { color: #9aa0b4; }
+.signup-row input[type="email"]:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(84,171,224,0.25); }
+.signup-row .btn { cursor: pointer; }
+.signup-note { font-size: 0.82rem; color: var(--ink-2); margin: 0.7rem 0 0; }
+.signup-error { color: var(--red); font-size: 0.9rem; margin: 0.55rem 0 0; font-family: Georgia, serif; }
+.signup-hp { position: absolute !important; left: -9999px !important; top: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+.signup .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.signup-done { margin-top: 0.4rem; padding: 0.9rem 1.1rem; background: #e7faf0; border: 2px solid #13ce66; border-radius: 2px; }
+.signup-done p { margin: 0; font-size: 0.98rem; color: #085229; }
 </style>
 </head>
 <body>
@@ -388,9 +409,27 @@ h1, h2, h3 { font-stretch: 95%; }
     <div class="watch">
       <span class="kicker gold">Live on YouTube</span>
       <h2>Join as an observer</h2>
-      <p style="max-width:60ch;">Members of the public, press, and partner organizations are welcome to observe the Assembly's learning and deliberation sessions.</p>
+      <p style="max-width:60ch;">Members of the public, press, and partner organizations are welcome to observe the Assembly's learning and deliberation sessions. Observers watch and listen; the deliberation and the decisions belong to the delegates.</p>
       <p style="max-width:60ch; margin-top:1rem;">We'll be livestreaming on YouTube. We're still confirming which sessions will be broadcast — check back soon for the livestream schedule.</p>
-      <p style="font-size:0.92rem;">To be notified, email <a href="mailto:usm.cepare@maine.edu" style="color:var(--gold);">usm.cepare@maine.edu</a>.</p>
+      <div class="signup" id="signup">
+        <span class="kicker gold">Updates</span>
+        <h2>Sign up for Assembly updates</h2>
+        <p class="lede">We'll send the livestream schedule once it's set, the delegates' recommendations when they're ready, and occasional news about what comes next.</p>
+        <form id="assembly-signup" method="POST" action="https://9f0d60b0.sibforms.com/serve/MUIFANfnPBCqymOT7CcnRQx8lMwRpMkIP2RydI51-m7zEsB4W3FNqBi8Ydgj7wSX-pa5aAe6D0NlZpt1A6GCxRx4-VUN66PRlcG-toCajfh6feR20Ph4AF0KaCBMD_VQV5jFzEuv4cYlgEvi15QI5XbkkKNeMTsg0eeff2OqGypPM7rAh98qsGL5bc4zClPS9fXH_1VmkpB6Zw7UvA==" data-type="subscription" novalidate>
+          <label class="sr-only" for="EMAIL">Email address</label>
+          <div class="signup-row">
+            <input type="email" id="EMAIL" name="EMAIL" placeholder="you@example.com" autocomplete="email" required>
+            <button type="submit" class="btn">Subscribe</button>
+          </div>
+          <input type="text" name="email_address_check" value="" class="signup-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="locale" value="en">
+          <p class="signup-note">We'll only email you about the Assembly. Unsubscribe anytime.</p>
+          <p class="signup-error" id="signup-error" hidden>Please enter a valid email address.</p>
+        </form>
+        <div class="signup-done" id="signup-done" hidden>
+          <p><strong>Almost there —</strong> check your inbox and click the confirmation link to finish signing up.</p>
+        </div>
+      </div>
     </div>
   </section>
   <hr class="divider">
@@ -448,6 +487,36 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+</script>
+<script>
+(function () {
+  var form = document.getElementById("assembly-signup");
+  if (!form) return;
+  var done = document.getElementById("signup-done");
+  var errEl = document.getElementById("signup-error");
+  var email = document.getElementById("EMAIL");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (errEl) errEl.hidden = true;
+    var hp = form.querySelector('input[name="email_address_check"]');
+    if (hp && hp.value) { return; }
+    var val = (email.value || "").trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val)) {
+      if (errEl) errEl.hidden = false; email.focus(); return;
+    }
+    var data = new URLSearchParams();
+    data.append("EMAIL", val);
+    data.append("email_address_check", "");
+    data.append("locale", "en");
+    fetch(form.action, {
+      method: "POST", mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: data.toString()
+    }).then(function () {
+      form.style.display = "none"; if (done) done.hidden = false;
+    }).catch(function () { form.submit(); });
+  });
+})();
 </script>
 </body>
 </html>
