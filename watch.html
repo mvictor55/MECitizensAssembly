@@ -409,8 +409,8 @@ h1, h2, h3 { font-stretch: 95%; }
       <span class="kicker gold">Live on YouTube</span>
       <h2>Join as an observer</h2>
       <p style="max-width:60ch;">Members of the public, press, and partner organizations are welcome to observe the Assembly's learning and deliberation sessions.</p>
-      <p style="max-width:60ch; margin-top:1rem;">We'll be livestreaming on YouTube. We're still confirming which sessions will be broadcast — check back soon for the livestream schedule.</p>
-      <div class="signup" id="signup">
+      <p style="max-width:60ch; margin-top:1rem;">We'll be livestreaming on YouTube. See the <a href="#day1-schedule" style="color:#E9BF46;">Day 1 schedule below</a> for which sessions will be broadcast.</p>
+       <div class="signup" id="signup">
         <span class="kicker gold">Updates</span>
         <h2>Sign up for Assembly updates</h2>
         <p class="lede">We'll send the livestream schedule once it's set, reminders for when the stream is live, and updates and opportunties for engagement as the project moves forward.</p>
@@ -434,11 +434,17 @@ h1, h2, h3 { font-stretch: 95%; }
   .mca-schedule{
     background:#191A48; color:#faf7f0;
     font-family:Georgia,'Times New Roman',serif;
-    padding:2.4rem 2.2rem; max-width:920px; margin:0 auto;
+    padding:0 2.4rem 2.6rem; margin:0;
     box-sizing:border-box;
   }
   .mca-sched-head{
-    border-bottom:2px solid #E9BF46; padding-bottom:0.8rem; margin-bottom:0.9rem;
+    border-top:1px solid #2c2f63; padding-top:2.2rem;
+    margin-bottom:0.9rem;
+  }
+  .mca-sched-title{ position:relative; padding-bottom:0.8rem; }
+  .mca-sched-title::after{
+    content:""; position:absolute; left:0; bottom:0;
+    width:64px; height:3px; background:#E9BF46;
   }
   .mca-sched-title{
     font-family:'Helvetica Neue','Arial Narrow','Helvetica',sans-serif;
@@ -517,7 +523,7 @@ h1, h2, h3 { font-stretch: 95%; }
   }
 </style>
 
-<section class="mca-schedule" aria-label="Day One schedule">
+<section class="mca-schedule" id="day1-schedule" aria-label="Day One schedule">
   <div class="mca-sched-head">
     <h2 class="mca-sched-title">Day One — Learning Events</h2>
     <div class="mca-sched-meta">Wednesday, June 17 · United Technologies Center, Bangor</div>
@@ -633,6 +639,7 @@ h1, h2, h3 { font-stretch: 95%; }
     </div>
   </div>
 
+</section>
 </section>
   </section>
   <hr class="divider">
