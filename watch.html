@@ -429,6 +429,211 @@ h1, h2, h3 { font-stretch: 95%; }
         </div>
       </div>
     </div>
+     <!-- Day 1 schedule -->
+<style>
+  .mca-schedule{
+    background:#191A48; color:#faf7f0;
+    font-family:Georgia,'Times New Roman',serif;
+    padding:2.4rem 2.2rem; max-width:920px; margin:0 auto;
+    box-sizing:border-box;
+  }
+  .mca-sched-head{
+    border-bottom:2px solid #E9BF46; padding-bottom:0.8rem; margin-bottom:0.9rem;
+  }
+  .mca-sched-title{
+    font-family:'Helvetica Neue','Arial Narrow','Helvetica',sans-serif;
+    font-weight:700; text-transform:uppercase; letter-spacing:0.03em;
+    font-size:1.6rem; color:#ffffff; margin:0;
+  }
+  .mca-sched-meta{
+    font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.86rem;
+    color:#9a9bc0; letter-spacing:0.02em; margin-top:0.3rem;
+  }
+  .mca-sched-note{
+    font-size:0.92rem; color:#b9bad6; line-height:1.55; margin:0 0 1.3rem;
+    max-width:66ch;
+  }
+  .mca-sched-note b{ color:#54ABE0; font-weight:400; }
+
+  .mca-row{
+    display:grid; grid-template-columns:118px 1fr; gap:1.1rem;
+    padding:0.9rem 0; border-bottom:1px solid #2c2f63;
+  }
+  .mca-time{
+    font-family:'Helvetica Neue',Arial,sans-serif; font-weight:700;
+    color:#E9BF46; font-size:0.95rem; letter-spacing:0.01em; padding-top:0.1rem;
+  }
+  .mca-title{
+    font-family:'Helvetica Neue','Arial Narrow','Helvetica',sans-serif;
+    font-weight:700; text-transform:uppercase; letter-spacing:0.02em;
+    font-size:1.12rem; color:#ffffff; margin:0 0 0.2rem;
+  }
+  .mca-presenters{
+    font-size:0.92rem; color:#b9bad6; font-style:italic; line-height:1.5; margin:0;
+  }
+  .mca-sub{
+    font-size:0.92rem; color:#b9bad6; line-height:1.55; margin:0.25rem 0 0;
+  }
+
+  /* break / non-session rows */
+  .mca-break{
+    display:grid; grid-template-columns:118px 1fr; gap:1.1rem; align-items:center;
+    padding:0.6rem 0; border-bottom:1px solid #2c2f63; opacity:0.6;
+  }
+  .mca-break .mca-time{ font-weight:400; color:#9a9bc0; font-size:0.85rem; }
+  .mca-break-label{
+    font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.8rem;
+    letter-spacing:0.14em; text-transform:uppercase; color:#9a9bc0;
+  }
+
+  /* "not livestreamed" pill */
+  .mca-tag{
+    display:inline-block; font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.64rem; letter-spacing:0.09em; text-transform:uppercase;
+    color:#191A48; background:#54ABE0; padding:0.18rem 0.5rem;
+    border-radius:3px; margin-left:0.55rem; vertical-align:0.12em; white-space:nowrap;
+  }
+
+  /* grouped breakout block */
+  .mca-breakout{
+    border:1px solid #54ABE0; padding:1.1rem 1.2rem; margin:1.1rem 0;
+  }
+  .mca-breakout-head{
+    display:flex; flex-wrap:wrap; align-items:center; gap:0.6rem; margin-bottom:0.5rem;
+  }
+  .mca-breakout-head .mca-time{ padding-top:0; color:#54ABE0; }
+  .mca-breakout-head .mca-title{ margin:0; }
+  .mca-breakout-note{ font-size:0.92rem; color:#b9bad6; line-height:1.55; margin:0 0 0.7rem; }
+  .mca-round{ font-size:0.9rem; color:#b9bad6; line-height:1.5; margin:0.35rem 0; }
+  .mca-round b{
+    font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.02em; color:#E9BF46;
+    font-size:0.82rem; margin-right:0.4rem;
+  }
+
+  @media (max-width:560px){
+    .mca-row,.mca-break{ grid-template-columns:1fr; gap:0.25rem; }
+    .mca-schedule{ padding:1.8rem 1.3rem; }
+  }
+</style>
+
+<section class="mca-schedule" aria-label="Day One schedule">
+  <div class="mca-sched-head">
+    <h2 class="mca-sched-title">Day One — Learning Events</h2>
+    <div class="mca-sched-meta">Wednesday, June 17 · United Technologies Center, Bangor</div>
+  </div>
+
+  <p class="mca-sched-note">Plenary sessions are livestreamed. Sessions marked <b>Not livestreamed</b> — the afternoon breakout tracks and delegate-only events — won't appear on the video; you'll see a break card during those times.</p>
+
+  <div class="mca-row">
+    <div class="mca-time">8:00</div>
+    <div>
+      <p class="mca-title">Welcome</p>
+      <p class="mca-presenters">Opening words: Jacqueline Edmondson, President, USM · Introduction to the Legislators Education Strategy Team: Reps. Holly Sargent, Kim Haggan, Sheila Lyman, Dan Sayre · Framing of the Day: Jennifer Chace, CEPARE/MEPRI, USM</p>
+      <p class="mca-sub">Followed by delegate team-building activities. <span class="mca-tag">Not livestreamed</span></p>
+    </div>
+  </div>
+
+  <div class="mca-row">
+    <div class="mca-time">9:30–9:50</div>
+    <div>
+      <p class="mca-title">Contours of Maine Education</p>
+      <p class="mca-presenters">Amy Johnson, MEPRI; Denham Ward, Maine State Board of Education; Rep. Holly Sargent; Rep. Sheila Lyman; Jennifer Chace</p>
+    </div>
+  </div>
+
+  <div class="mca-break">
+    <div class="mca-time">9:50–10:00</div>
+    <div class="mca-break-label">— Break —</div>
+  </div>
+
+  <div class="mca-row">
+    <div class="mca-time">10:00–11:00</div>
+    <div>
+      <p class="mca-title">Governance in Maine's Education System</p>
+      <p class="mca-presenters">Host: Jacqueline Edmondson · Panelists: Steve Bowen, Denham Ward, Eric Waddell, Ben Sirois, Allen Sarvinas, Emma Dorian, Moon Tussing</p>
+    </div>
+  </div>
+
+  <div class="mca-break">
+    <div class="mca-time">11:00–11:15</div>
+    <div class="mca-break-label">— Break · coffee &amp; tea —</div>
+  </div>
+
+  <div class="mca-row">
+    <div class="mca-time">11:15–12:00</div>
+    <div>
+      <p class="mca-title">Curriculum in Maine Schools</p>
+      <p class="mca-presenters">Host: Cathie Fallona, University of Southern Maine · Panelists: Jon Doty, Jesse Hargrove, Leslie Smith</p>
+    </div>
+  </div>
+
+  <div class="mca-break">
+    <div class="mca-time">12:00–12:45</div>
+    <div class="mca-break-label">— Lunch, catered by UTC Culinary —</div>
+  </div>
+
+  <div class="mca-row">
+    <div class="mca-time">12:45–1:30</div>
+    <div>
+      <p class="mca-title">Student Engagement and Personalized Pathways</p>
+      <p class="mca-presenters">Host: Holly Blair, Maine Principals Association · Panelists: Heather Anderson, Rene Neuner, Christopher Betts, John Hawley, Huey Sheffler, Jacob Klein</p>
+    </div>
+  </div>
+
+  <div class="mca-break">
+    <div class="mca-time">1:30–1:45</div>
+    <div class="mca-break-label">— Break —</div>
+  </div>
+
+  <div class="mca-row">
+    <div class="mca-time">1:45–2:45</div>
+    <div>
+      <p class="mca-title">Funding Maine's Schools</p>
+      <p class="mca-presenters">Host: Robbie Feinberg · Panelists: Amy Johnson, Maura Pillsbury, Jeremy Ray, Eric Waddell, Cat Biddle, Rebecca Millett</p>
+    </div>
+  </div>
+
+  <div class="mca-break">
+    <div class="mca-time">2:45–3:00</div>
+    <div class="mca-break-label">— Break · coffee, tea &amp; cookies —</div>
+  </div>
+
+  <div class="mca-breakout">
+    <div class="mca-breakout-head">
+      <span class="mca-time">3:00–5:00</span>
+      <span class="mca-title">Breakout Track Sessions</span>
+      <span class="mca-tag">Not livestreamed</span>
+    </div>
+    <p class="mca-breakout-note">Delegates split across three rooms in three rounds (with a short break at 4:05). The livestream shows a break card during this window.</p>
+    <p class="mca-round"><b>Round A · 3:00</b> Reading (Peter Lancia, Cathie Fallona) · Special Education (Sarah Wilkinson, Rebecca Millett) · Technology Use in Teaching and Learning (Matt Pines, Ruth Kermish)</p>
+    <p class="mca-round"><b>Round B · 3:35</b> Civics Education (Emilia Toth, Sen. David Haggan) · The Opioid Epidemic and Student Outcomes (Jessica Drescher, Leslie Smith) · Rural Schools (Val Peacock)</p>
+    <p class="mca-round"><b>Round C · 4:15</b> Career and Technical Education (Amanda Peterson) · Pre-K Education (Erica Palmer, Rhonda Kaiser) · Maine's Teacher Workforce (Jason Judd, Cathie Fallona)</p>
+  </div>
+
+  <div class="mca-row">
+    <div class="mca-time">5:00–5:30</div>
+    <div>
+      <p class="mca-title">Delegate Debrief <span class="mca-tag">Not livestreamed</span></p>
+    </div>
+  </div>
+
+  <div class="mca-row">
+    <div class="mca-time">5:30–6:30</div>
+    <div>
+      <p class="mca-title">Meet &amp; Greet <span class="mca-tag">Not livestreamed</span></p>
+      <p class="mca-presenters">Delegates, legislators, stakeholder organizations, and presenters. Informal discussion and follow-up Q&amp;A with light refreshments.</p>
+    </div>
+  </div>
+
+  <div class="mca-row" style="border-bottom:none;">
+    <div class="mca-time">6:30–7:30</div>
+    <div>
+      <p class="mca-title">Delegates' Dinner <span class="mca-tag">Not livestreamed</span></p>
+    </div>
+  </div>
+
+</section>
   </section>
   <hr class="divider">
   <section class="section">
