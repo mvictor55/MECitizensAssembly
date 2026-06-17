@@ -279,6 +279,29 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .watch { background: var(--navy); color: var(--paper); padding: 2.4rem; border-top: 5px solid var(--red); }
 .watch h2 { color: #fff; }
 .watch p { color: #d9d9e6; }
+
+/* ===== Two-column watch layout (embed left, condensed schedule right) ===== */
+.watch-grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 2rem; align-items: start; margin-top: 1.4rem; }
+.watch-main { min-width: 0; }
+.embed-frame { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 2px solid var(--gold); }
+.embed-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.embed-note { font-size: 0.86rem; color: #b9bad6; margin: 0.6rem 0 0; }
+
+/* condensed schedule card in right column */
+.sched-card { border: 1px solid var(--blue); background: var(--navy-2); padding: 1.3rem 1.4rem; }
+.sched-card .sc-head { font-family: 'Helvetica Neue', 'Arial Narrow', 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; font-size: 1.15rem; color: #fff; margin: 0 0 0.2rem; }
+.sched-card .sc-meta { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.78rem; color: var(--blue); letter-spacing: 0.02em; margin: 0 0 1rem; }
+.sched-card .sc-row { display: grid; grid-template-columns: 64px 1fr; gap: 0.7rem; padding: 0.55rem 0; border-bottom: 1px solid #2c2f63; }
+.sched-card .sc-row:last-of-type { border-bottom: none; }
+.sched-card .sc-time { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: var(--gold); font-size: 0.82rem; }
+.sched-card .sc-title { font-size: 0.92rem; line-height: 1.3; color: #e7e7f0; }
+.sched-card .sc-foot { margin: 1rem 0 0; padding-top: 0.9rem; border-top: 1px solid #2c2f63; font-size: 0.82rem; color: #b9bad6; }
+.sched-card .sc-jump { display: inline-block; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 0.86rem; color: var(--gold); text-decoration: none; margin-top: 0.2rem; }
+.sched-card .sc-jump:hover { color: #fff; }
+
+@media (max-width: 900px) {
+  .watch-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
 .sessions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--navy-2); margin: 1.5rem 0; }
 .sess { padding: 1.2rem; border-right: 1px solid var(--navy-2); }
 .sess:last-child { border-right: none; }
@@ -363,6 +386,14 @@ h1, h2, h3 { font-stretch: 95%; }
 .signup .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .signup-done { margin-top: 0.4rem; padding: 0.9rem 1.1rem; background: #e7faf0; border: 2px solid #13ce66; border-radius: 2px; }
 .signup-done p { margin: 0; font-size: 0.98rem; color: #085229; }
+
+/* ===== Masthead Subscribe button (added) ===== */
+nav.menu .nav-subscribe { margin-left: 0.5rem; }
+nav.menu .nav-sub-btn { padding: 0.5rem 1.1rem; font-size: 0.95rem; border-width: 2px; }
+@media (max-width: 900px) {
+  nav.menu .nav-subscribe { margin-left: 0; padding: 0.7rem 0; border-bottom: 1px solid var(--navy-2); }
+  nav.menu .nav-sub-btn { display: inline-block; }
+}
 </style>
 </head>
 <body>
@@ -392,6 +423,7 @@ h1, h2, h3 { font-stretch: 95%; }
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="partners.html">Partners</a></li>
         <li><a href="watch.html" aria-current="page">Watch</a></li>
+        <li class="nav-subscribe"><a href="https://9f0d60b0.sibforms.com/serve/MUIFANfnPBCqymOT7CcnRQx8lMwRpMkIP2RydI51-m7zEsB4W3FNqBi8Ydgj7wSX-pa5aAe6D0NlZpt1A6GCxRx4-VUN66PRlcG-toCajfh6feR20Ph4AF0KaCBMD_VQV5jFzEuv4cYlgEvi15QI5XbkkKNeMTsg0eeff2OqGypPM7rAh98qsGL5bc4zClPS9fXH_1VmkpB6Zw7UvA==" target="_blank" rel="noopener" class="btn on-navy nav-sub-btn">Subscribe</a></li>
       </ul>
     </nav>
   </div>
@@ -408,25 +440,47 @@ h1, h2, h3 { font-stretch: 95%; }
     <div class="watch">
       <span class="kicker gold">Live on YouTube</span>
       <h2>Join as an observer</h2>
-      <p style="max-width:60ch;">Members of the public, press, and partner organizations are welcome to observe the Assembly's learning and deliberation sessions.</p>
-      <p style="max-width:60ch; margin-top:1rem;">We'll be livestreaming on YouTube. See the <a href="#day1-schedule" style="color:#E9BF46;">Day 1 schedule below</a> for which sessions will be broadcast.</p>
-            <div class="signup" id="signup">
-        <span class="kicker gold">Updates</span>
-        <h2>Sign up for Assembly updates</h2>
-        <p class="lede">We'll send the livestream schedule once it's set, reminders for when the stream is live, and updates and opportunties for engagement as the project moves forward.</p>
-        <form id="assembly-signup" method="POST" action="https://9f0d60b0.sibforms.com/serve/MUIFANfnPBCqymOT7CcnRQx8lMwRpMkIP2RydI51-m7zEsB4W3FNqBi8Ydgj7wSX-pa5aAe6D0NlZpt1A6GCxRx4-VUN66PRlcG-toCajfh6feR20Ph4AF0KaCBMD_VQV5jFzEuv4cYlgEvi15QI5XbkkKNeMTsg0eeff2OqGypPM7rAh98qsGL5bc4zClPS9fXH_1VmkpB6Zw7UvA==" data-type="subscription" novalidate>
-          <label class="sr-only" for="EMAIL">Email address</label>
-          <div class="signup-row">
-            <input type="email" id="EMAIL" name="EMAIL" placeholder="you@example.com" autocomplete="email" required>
-            <button type="submit" class="btn">Subscribe</button>
+      <p style="max-width:60ch;">Members of the public, press, and partner organizations are welcome to observe the Assembly's learning and deliberation sessions. The stream begins Wednesday, June 17 at 8:00am.</p>
+
+      <div class="watch-grid">
+        <div class="watch-main">
+          <div class="embed-frame">
+            <iframe src="https://www.youtube.com/embed/vPXPpCkDKgg" title="Maine Citizens' Assembly livestream" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-          <input type="text" name="email_address_check" value="" class="signup-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="locale" value="en">
-          <p class="signup-error" id="signup-error" hidden>Please enter a valid email address.</p>
-        </form>
-        <div class="signup-done" id="signup-done" hidden>
-          <p><strong>Almost there —</strong> check your inbox and click the confirmation link to finish signing up.</p>
+          <p class="embed-note">If the player shows a countdown, the stream hasn't started yet — it will begin automatically at 8:00am on June 17.</p>
+
+          <div class="signup" id="signup">
+            <span class="kicker gold">Updates</span>
+            <h2>Sign up for Assembly updates</h2>
+            <p class="lede">We'll send the livestream schedule once it's set, reminders for when the stream is live, and updates and opportunties for engagement as the project moves forward.</p>
+            <form id="assembly-signup" method="POST" action="https://9f0d60b0.sibforms.com/serve/MUIFANfnPBCqymOT7CcnRQx8lMwRpMkIP2RydI51-m7zEsB4W3FNqBi8Ydgj7wSX-pa5aAe6D0NlZpt1A6GCxRx4-VUN66PRlcG-toCajfh6feR20Ph4AF0KaCBMD_VQV5jFzEuv4cYlgEvi15QI5XbkkKNeMTsg0eeff2OqGypPM7rAh98qsGL5bc4zClPS9fXH_1VmkpB6Zw7UvA==" data-type="subscription" novalidate>
+              <label class="sr-only" for="EMAIL">Email address</label>
+              <div class="signup-row">
+                <input type="email" id="EMAIL" name="EMAIL" placeholder="you@example.com" autocomplete="email" required>
+                <button type="submit" class="btn">Subscribe</button>
+              </div>
+              <input type="text" name="email_address_check" value="" class="signup-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <input type="hidden" name="locale" value="en">
+              <p class="signup-error" id="signup-error" hidden>Please enter a valid email address.</p>
+            </form>
+            <div class="signup-done" id="signup-done" hidden>
+              <p><strong>Almost there —</strong> check your inbox and click the confirmation link to finish signing up.</p>
+            </div>
+          </div>
         </div>
+
+        <aside class="sched-card" aria-label="Livestreamed sessions at a glance">
+          <p class="sc-head">Day One at a glance</p>
+          <p class="sc-meta">Wed, June 17 · Livestreamed plenary sessions</p>
+          <div class="sc-row"><span class="sc-time">8:00</span><span class="sc-title">Welcome &amp; framing of the day</span></div>
+          <div class="sc-row"><span class="sc-time">9:30</span><span class="sc-title">Contours of Maine Education</span></div>
+          <div class="sc-row"><span class="sc-time">10:00</span><span class="sc-title">Governance in Maine's Education System</span></div>
+          <div class="sc-row"><span class="sc-time">11:15</span><span class="sc-title">Curriculum in Maine Schools</span></div>
+          <div class="sc-row"><span class="sc-time">12:45</span><span class="sc-title">Student Engagement &amp; Personalized Pathways</span></div>
+          <div class="sc-row"><span class="sc-time">1:45</span><span class="sc-title">Funding Maine's Schools</span></div>
+          <p class="sc-foot">Afternoon breakout tracks and delegate-only events are not livestreamed.</p>
+          <a class="sc-jump" href="#day1-schedule">View the full schedule &darr;</a>
+        </aside>
       </div>
     </div>
   <!-- Day 1 schedule -->
@@ -638,8 +692,7 @@ h1, h2, h3 { font-stretch: 95%; }
     </div>
   </div>
 
-</section>   
-  </section>
+</section>
   </section>
   <hr class="divider">
   <section class="section">
