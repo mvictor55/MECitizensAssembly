@@ -350,9 +350,9 @@ h1, h2, h3 { font-stretch: 95%; }
 <div class="ticker">
   <div class="wrap">
     <span class="dot"></span>
-    <span>Assembly convenes in Bangor — June 17–18, 2026</span>
-    <a href="https://9f0d60b0.sibforms.com/serve/MUIFANfnPBCqymOT7CcnRQx8lMwRpMkIP2RydI51-m7zEsB4W3FNqBi8Ydgj7wSX-pa5aAe6D0NlZpt1A6GCxRx4-VUN66PRlcG-toCajfh6feR20Ph4AF0KaCBMD_VQV5jFzEuv4cYlgEvi15QI5XbkkKNeMTsg0eeff2OqGypPM7rAh98qsGL5bc4zClPS9fXH_1VmkpB6Zw7UvA==" target="_blank" rel="noopener">Sign up for updates &rarr;</a>
-    <a class="right" href="watch.html">Watch the sessions &rarr;</a>
+    <span>The Assembly convened in Bangor — June 17–18, 2026.</span>
+    <a href="results.html">View the outcomes &rarr;</a>
+    <a class="right" href="results.html">See the results &rarr;</a>
   </div>
 </div>
 
@@ -373,7 +373,7 @@ h1, h2, h3 { font-stretch: 95%; }
         <li><a href="schedule.html" aria-current="page">Schedule</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="partners.html">Partners</a></li>
-        <li><a href="watch.html">Watch</a></li>
+        <li><a href="results.html">Results</a></li>
       </ul>
     </nav>
   </div>
@@ -382,25 +382,378 @@ h1, h2, h3 { font-stretch: 95%; }
   <div class="wrap">
     <span class="kicker red">For delegates</span>
     <h1>Schedule</h1>
-    <p>The Assembly is held in person in Bangor, Maine and virtually over Zoom.</p>
+    <p>The Assembly was held in person in Bangor, Maine, on June 17–18, 2026, with virtual sessions before and after over Zoom.</p>
   </div>
 </section>
+<style>
+  /* ===== Schedule page: horizontal timeline + day accordions ===== */
+
+  /* Horizontal milestone band — a continuous rail with evenly spaced nodes */
+  .track-wrap{ margin:1.4rem 0 0; overflow-x:auto; }
+  .track{
+    display:grid; grid-auto-flow:column; grid-auto-columns:1fr;
+    position:relative; min-width:760px;
+  }
+  /* the continuous rail behind the nodes (aligned to first/last node centers) */
+  .track::before{
+    content:""; position:absolute; left:calc(1rem + 9px);
+    right:calc((100% / 6) - 1rem - 9px); top:8px; height:2px;
+    background:var(--line-2); z-index:0;
+  }
+  .track .stop{
+    position:relative; z-index:1; padding:0 1rem; text-align:left;
+    display:flex; flex-direction:column; align-items:flex-start;
+  }
+  .track .stop .node{
+    width:18px; height:18px; border-radius:50%;
+    background:var(--card); border:2px solid var(--line-2);
+    position:relative; z-index:1; margin-bottom:0.8rem;
+  }
+  /* past = filled navy; the two Bangor days = gold ring; upcoming = hollow red */
+  .track .stop.is-past .node{ background:var(--navy); border-color:var(--navy); }
+  .track .stop.has-detail .node{ background:var(--gold); border-color:var(--gold); box-shadow:0 0 0 4px var(--paper), 0 0 0 6px var(--gold); }
+  .track .stop.is-upcoming .node{ background:var(--card); border-color:var(--red); border-width:3px; }
+  .track .stop .label{
+    font-family:'Helvetica Neue','Arial Narrow','Segoe UI',system-ui,sans-serif;
+    font-weight:700; font-stretch:condensed; text-transform:uppercase;
+    letter-spacing:0.02em; font-size:0.92rem; color:var(--navy); line-height:1.1;
+  }
+  .track .stop .date{
+    font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700;
+    font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--red); margin-top:0.35rem;
+  }
+  .track .stop .loc{ font-size:0.82rem; color:var(--ink-2); margin-top:0.3rem; line-height:1.4; }
+  /* the two detailed days get a small agenda pill instead of a panel */
+  .track .stop.has-detail .jump{
+    display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.6rem;
+    font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700;
+    font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--navy); text-decoration:none; background:var(--gold);
+    padding:0.32rem 0.6rem; border-radius:3px;
+  }
+  .track .stop.has-detail .jump:hover{ background:var(--navy); color:#fff; }
+
+  @media (max-width:820px){
+    /* vertical rail on the left for small screens */
+    .track-wrap{ overflow-x:visible; }
+    .track{ grid-auto-flow:row; grid-auto-columns:auto; min-width:0; }
+    .track::before{ left:8px; right:auto; top:4px; bottom:4px; width:2px; height:auto; }
+    .track .stop{
+      display:grid; grid-template-columns:34px 1fr; grid-template-rows:auto auto auto;
+      gap:0.1rem 0.9rem; padding:0.7rem 0; align-items:start;
+    }
+    .track .stop .node{ grid-row:1; grid-column:1; margin:0.1rem 0 0; }
+    .track .stop .label{ grid-row:1; grid-column:2; }
+    .track .stop .date{ grid-row:2; grid-column:2; margin-top:0.15rem; }
+    .track .stop .loc{ grid-row:3; grid-column:2; }
+    .track .stop.has-detail .node{ box-shadow:0 0 0 3px var(--paper), 0 0 0 5px var(--gold); }
+    .track .stop.has-detail .jump{ grid-column:2; justify-self:start; margin-top:0.5rem; }
+  }
+
+  /* Day accordions */
+  .days{ margin-top:1.8rem; display:grid; gap:1.1rem; }
+  .day-card{
+    border:2px solid var(--ink); border-radius:3px; overflow:hidden; background:var(--card);
+  }
+  .day-card > summary{
+    list-style:none; cursor:pointer; padding:1.3rem 1.5rem;
+    display:grid; grid-template-columns:1fr auto; align-items:center; gap:1rem;
+    background:var(--navy); color:var(--paper);
+  }
+  .day-card > summary::-webkit-details-marker{ display:none; }
+  .day-card > summary:hover{ background:var(--navy-2); }
+  .day-card .dc-eyebrow{
+    font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700;
+    font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold);
+  }
+  .day-card .dc-title{
+    font-family:'Helvetica Neue','Arial Narrow','Helvetica',sans-serif;
+    font-weight:800; font-stretch:condensed; text-transform:uppercase; letter-spacing:0.01em;
+    font-size:clamp(1.3rem,2.6vw,1.8rem); color:#fff; margin:0.2rem 0 0; line-height:1;
+  }
+  .day-card .dc-meta{ font-size:0.9rem; color:#b9bad6; margin-top:0.35rem; }
+  .day-card .dc-toggle{
+    font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700;
+    font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--paper);
+    display:flex; align-items:center; gap:0.5rem; white-space:nowrap;
+  }
+  .day-card .dc-toggle::after{
+    content:"+"; font-size:1.5rem; line-height:1; color:var(--gold); font-weight:400;
+  }
+  .day-card[open] > summary .dc-toggle::after{ content:"\2013"; }
+  .day-card[open] .dc-toggle .show{ display:none; }
+  .day-card:not([open]) .dc-toggle .hide{ display:none; }
+
+  .day-body{ background:#191A48; color:#faf7f0; padding:1.8rem 2.2rem 2.2rem; font-family:Georgia,'Times New Roman',serif; }
+  .day-body .mca-sched-note{ max-width:66ch; margin-top:0; }
+
+  /* agenda rows (kept from prior design, now scoped inside .day-body) */
+  .day-body .mca-row{ display:grid; grid-template-columns:118px 1fr; gap:1.1rem; padding:0.9rem 0; border-bottom:1px solid #2c2f63; }
+  .day-body .mca-time{ font-family:'Helvetica Neue',Arial,sans-serif; font-weight:700; color:#E9BF46; font-size:0.95rem; letter-spacing:0.01em; padding-top:0.1rem; }
+  .day-body .mca-title{ font-family:'Helvetica Neue','Arial Narrow','Helvetica',sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; font-size:1.12rem; color:#fff; margin:0 0 0.2rem; }
+  .day-body .mca-presenters{ font-size:0.92rem; color:#b9bad6; font-style:italic; line-height:1.5; margin:0; }
+  .day-body .mca-sub{ font-size:0.92rem; color:#b9bad6; line-height:1.55; margin:0.25rem 0 0; }
+  .day-body .mca-break{ display:grid; grid-template-columns:118px 1fr; gap:1.1rem; align-items:center; padding:0.6rem 0; border-bottom:1px solid #2c2f63; opacity:0.6; }
+  .day-body .mca-break .mca-time{ font-weight:400; color:#9a9bc0; font-size:0.85rem; }
+  .day-body .mca-break-label{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase; color:#9a9bc0; }
+  .day-body .mca-tag{ display:inline-block; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.64rem; letter-spacing:0.09em; text-transform:uppercase; color:#191A48; background:#54ABE0; padding:0.18rem 0.5rem; border-radius:3px; margin-left:0.55rem; vertical-align:0.12em; white-space:nowrap; }
+  .day-body .mca-breakout{ border:1px solid #54ABE0; padding:1.1rem 1.2rem; margin:1.1rem 0; }
+  .day-body .mca-breakout-head{ display:flex; flex-wrap:wrap; align-items:center; gap:0.6rem; margin-bottom:0.5rem; }
+  .day-body .mca-breakout-head .mca-time{ padding-top:0; color:#54ABE0; }
+  .day-body .mca-breakout-head .mca-title{ margin:0; }
+  .day-body .mca-breakout-note{ font-size:0.92rem; color:#b9bad6; line-height:1.55; margin:0 0 0.7rem; }
+  .day-body .mca-round{ font-size:0.9rem; color:#b9bad6; line-height:1.5; margin:0.35rem 0; }
+  .day-body .mca-round b{ font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; color:#E9BF46; font-size:0.82rem; margin-right:0.4rem; }
+
+  @media (max-width:560px){
+    .day-body{ padding:1.4rem 1.3rem 1.7rem; }
+    .day-body .mca-row,.day-body .mca-break{ grid-template-columns:1fr; gap:0.25rem; }
+  }
+</style>
 <main>
   <section class="section">
-    <div class="feature wide-right">
-      <div class="prose">
-        <p>Here is what selected delegates can expect across the Assembly — two intensive days together in Bangor.</p>
-        <p style="font-size:0.96rem; color:var(--ink-2);">Times are subject to small adjustments; delegates receive a detailed agenda before each session.</p>
-      </div>
-      <div class="timeline">
-        <div class="tl"><div class="d">Orientation</div><div class="m">May 18 &amp; June 3 · Virtual</div><ul><li>7:00–8:00pm — introductory sessions</li></ul></div>
-        <div class="tl"><div class="d">Day 0 — Preparation</div><div class="m">June 16 · Bangor</div><ul><li>Moderators-only training</li><li>7:00pm — Delegate Welcome Event</li></ul></div>
-        <div class="tl"><div class="d">Day 1 — Learning</div><div class="m">June 17 · Bangor</div><ul><li>8:00am – 5:00pm</li><li>5:30pm — Meet &amp; Greet with legislators & community organizations</li><li>7:00pm — Delegates Dinner</li></ul></div>
-        <div class="tl"><div class="d">Day 2 — Deliberation</div><div class="m">June 18 · Bangor</div><ul><li>8:00am – 3:30pm</li></ul></div>
-        <div class="tl"><div class="d">Check-In — Welcome Back</div><div class="m">Virtual</div><ul><li>7:00–8:00pm</li></ul></div>
-        <div class="tl"><div class="d">Day 3 — Recommendations</div><div class="m">August 28 · Virtual</div><ul><li>8:00am – 1:00pm (with breaks)</li></ul></div>
+    <div class="prose" style="max-width:75ch;">
+      <p>The Maine Citizens' Assembly on Education Priorities brought delegates together for two intensive days in Bangor — a day of learning followed by a day of deliberation — bookended by virtual sessions before and after.</p>
+    </div>
+
+    <span class="kicker" style="margin-top:1.6rem;">The arc of the Assembly</span>
+    <div class="track-wrap">
+      <div class="track">
+        <div class="stop is-past">
+          <div class="node"></div>
+          <div class="label">Orientation</div>
+          <div class="date">May 18 &amp; Jun 3</div>
+          <div class="loc">Virtual · introductory sessions</div>
+        </div>
+        <div class="stop is-past">
+          <div class="node"></div>
+          <div class="label">Day 0 · Prep</div>
+          <div class="date">Jun 16</div>
+          <div class="loc">Bangor · moderator training &amp; delegate welcome</div>
+        </div>
+        <div class="stop is-past has-detail">
+          <div class="node"></div>
+          <div class="label">Day 1 · Learning</div>
+          <div class="date">Jun 17</div>
+          <div class="loc">Bangor · expert panels &amp; breakouts</div>
+          <a class="jump" href="#day1-schedule">Full agenda &darr;</a>
+        </div>
+        <div class="stop is-past has-detail">
+          <div class="node"></div>
+          <div class="label">Day 2 · Deliberation</div>
+          <div class="date">Jun 18</div>
+          <div class="loc">Bangor · proposals &amp; voting</div>
+          <a class="jump" href="#day2-schedule">Full agenda &darr;</a>
+        </div>
+        <div class="stop is-past">
+          <div class="node"></div>
+          <div class="label">Check-In</div>
+          <div class="date">Virtual</div>
+          <div class="loc">Welcome back · 7:00–8:00pm</div>
+        </div>
+        <div class="stop is-upcoming">
+          <div class="node"></div>
+          <div class="label">Day 3 · Recommendations</div>
+          <div class="date">Aug 28</div>
+          <div class="loc">Virtual · 8:00am–1:00pm</div>
+        </div>
       </div>
     </div>
+
+    <p style="font-size:0.96rem; color:var(--ink-2); margin-top:1rem;">The two days in Bangor each followed a full agenda. Expand a day below to see the detailed schedule.</p>
+
+    <div class="days">
+      <details class="day-card" id="day1-schedule">
+        <summary>
+          <div>
+            <div class="dc-eyebrow">Day One · Wednesday, June 17</div>
+            <h2 class="dc-title">Learning Events</h2>
+            <div class="dc-meta">United Technologies Center, Bangor · 8:00am – 7:30pm</div>
+          </div>
+          <span class="dc-toggle"><span class="show">Agenda</span><span class="hide">Collapse</span></span>
+        </summary>
+        <div class="day-body">
+          <p class="mca-sched-note">Day One's plenary sessions were open to observers. The afternoon breakout tracks and delegate-only events were held privately.</p>
+          <div class="mca-row">
+              <div class="mca-time">8:00</div>
+              <div>
+                <p class="mca-title">Welcome</p>
+                <p class="mca-presenters">Opening words: Jacqueline Edmondson, President, USM · Introduction to the Legislators Education Strategy Team: Reps. Holly Sargent, Kim Haggan, Sheila Lyman, Dan Sayre · Framing of the Day: Jennifer Chace, CEPARE/MEPRI, USM</p>
+                <p class="mca-sub">Followed by delegate team-building activities.</p>
+              </div>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">9:30–9:50</div>
+              <div>
+                <p class="mca-title">Contours of Maine Education</p>
+                <p class="mca-presenters">Amy Johnson, MEPRI; Denham Ward, Maine State Board of Education; Rep. Holly Sargent; Rep. Sheila Lyman; Jennifer Chace</p>
+              </div>
+            </div>
+
+            <div class="mca-break">
+              <div class="mca-time">9:50–10:00</div>
+              <div class="mca-break-label">— Break —</div>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">10:00–11:00</div>
+              <div>
+                <p class="mca-title">Governance in Maine's Education System</p>
+                <p class="mca-presenters">Host: Jacqueline Edmondson · Panelists: Steve Bowen, Denham Ward, Eric Waddell, Ben Sirois, Allen Sarvinas, Emma Dorian, Moon Tussing</p>
+              </div>
+            </div>
+
+            <div class="mca-break">
+              <div class="mca-time">11:00–11:15</div>
+              <div class="mca-break-label">— Break · coffee &amp; tea —</div>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">11:15–12:00</div>
+              <div>
+                <p class="mca-title">Curriculum in Maine Schools</p>
+                <p class="mca-presenters">Host: Cathie Fallona, University of Southern Maine · Panelists: Jon Doty, Jesse Hargrove, Leslie Smith</p>
+              </div>
+            </div>
+
+            <div class="mca-break">
+              <div class="mca-time">12:00–12:45</div>
+              <div class="mca-break-label">— Lunch, catered by UTC Culinary —</div>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">12:45–1:30</div>
+              <div>
+                <p class="mca-title">Student Engagement and Personalized Pathways</p>
+                <p class="mca-presenters">Host: Holly Blair, Maine Principals Association · Panelists: Heather Anderson, Rene Neuner, Christopher Betts, John Hawley, Huey Sheffler, Jacob Klein</p>
+              </div>
+            </div>
+
+            <div class="mca-break">
+              <div class="mca-time">1:30–1:45</div>
+              <div class="mca-break-label">— Break —</div>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">1:45–2:45</div>
+              <div>
+                <p class="mca-title">Funding Maine's Schools</p>
+                <p class="mca-presenters">Host: Robbie Feinberg · Panelists: Amy Johnson, Maura Pillsbury, Jeremy Ray, Eric Waddell, Cat Biddle, Rebecca Millett</p>
+              </div>
+            </div>
+
+            <div class="mca-break">
+              <div class="mca-time">2:45–3:00</div>
+              <div class="mca-break-label">— Break · coffee, tea &amp; cookies —</div>
+            </div>
+
+            <div class="mca-breakout">
+              <div class="mca-breakout-head">
+                <span class="mca-time">3:00–5:00</span>
+                <span class="mca-title">Breakout Track Sessions</span>
+              </div>
+              <p class="mca-breakout-note">Delegates split across three rooms in three rounds (with a short break at 4:05). The livestream shows a break card during this window.</p>
+              <p class="mca-round"><b>Round A · 3:00</b> Reading (Peter Lancia, Cathie Fallona) · Special Education (Sarah Wilkinson, Rebecca Millett) · Technology Use in Teaching and Learning (Matt Pines, Ruth Kermish)</p>
+              <p class="mca-round"><b>Round B · 3:35</b> Civics Education (Emilia Toth, Sen. David Haggan) · The Opioid Epidemic and Student Outcomes (Jessica Drescher, Leslie Smith) · Rural Schools (Val Peacock)</p>
+              <p class="mca-round"><b>Round C · 4:15</b> Career and Technical Education (Amanda Peterson) · Pre-K Education (Erica Palmer, Rhonda Kaiser) · Maine's Teacher Workforce (Jason Judd, Cathie Fallona)</p>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">5:00–5:30</div>
+              <div>
+                <p class="mca-title">Delegate Debrief</p>
+              </div>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">5:30–6:30</div>
+              <div>
+                <p class="mca-title">Meet &amp; Greet</p>
+                <p class="mca-presenters">Delegates, legislators, stakeholder organizations, and presenters. Informal discussion and follow-up Q&amp;A with light refreshments.</p>
+              </div>
+            </div>
+
+            <div class="mca-row" style="border-bottom:none;">
+              <div class="mca-time">6:30–7:30</div>
+              <div>
+                <p class="mca-title">Delegates' Dinner</p>
+              </div>
+            </div>
+        </div>
+      </details>
+
+      <details class="day-card" id="day2-schedule">
+        <summary>
+          <div>
+            <div class="dc-eyebrow">Day Two · Thursday, June 18</div>
+            <h2 class="dc-title">Deliberation</h2>
+            <div class="dc-meta">United Technologies Center, Bangor · 8:00am – 3:30pm</div>
+          </div>
+          <span class="dc-toggle"><span class="show">Agenda</span><span class="hide">Collapse</span></span>
+        </summary>
+        <div class="day-body">
+          <p class="mca-sched-note">The morning small-group deliberation was held privately. The afternoon plenary brought all delegates together for pitches, final revisions, and voting.</p>
+          <div class="mca-row">
+              <div class="mca-time">8:00–12:00</div>
+              <div>
+                <p class="mca-title">Small-Group Deliberation <span class="mca-tag">Not livestreamed</span></p>
+                <p class="mca-presenters">Delegates work in facilitated small groups to draft, test, and refine the proposals they will bring to the full Assembly.</p>
+              </div>
+            </div>
+
+            <div class="mca-break">
+              <div class="mca-time">12:00–12:45</div>
+              <div class="mca-break-label">— Lunch —</div>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">12:45–1:30</div>
+              <div>
+                <p class="mca-title">Pitches</p>
+                <p class="mca-presenters">Groups present their proposals to the full Assembly.</p>
+              </div>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">1:30–2:00</div>
+              <div>
+                <p class="mca-title">Final Revisions</p>
+              </div>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">2:00–2:20</div>
+              <div>
+                <p class="mca-title">Preliminary Voting</p>
+              </div>
+            </div>
+
+            <div class="mca-break">
+              <div class="mca-time">2:20–2:30</div>
+              <div class="mca-break-label">— Break —</div>
+            </div>
+
+            <div class="mca-row">
+              <div class="mca-time">2:30–3:00</div>
+              <div>
+                <p class="mca-title">Decision Process</p>
+                <p class="mca-presenters">Delegates voted to advance two priorities, each carried with 84% support.</p>
+              </div>
+            </div>
+
+            <div class="mca-row" style="border-bottom:none;">
+              <div class="mca-time">3:00–3:30</div>
+              <div>
+                <p class="mca-title">Closing</p>
+              </div>
+            </div>
+        </div>
+      </details>
+    </div>
+
+    <p style="font-size:0.92rem; color:var(--ink-2); margin-top:1.6rem;">Times reflect the agendas as run; some sessions adjusted slightly on the day.</p>
   </section>
 </main>
 
@@ -418,7 +771,7 @@ h1, h2, h3 { font-stretch: 95%; }
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="partners.html">Project partners</a></li>
-        <li><a href="watch.html">Watch the Assembly</a></li>
+        <li><a href="results.html">Results &amp; outcomes</a></li>
       </ul>
     </div>
     <div>
@@ -446,6 +799,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// Open a collapsed day accordion when linked to via #anchor
+function openTargetDetails() {
+  var id = location.hash.slice(1);
+  if (!id) return;
+  var el = document.getElementById(id);
+  if (el && el.tagName.toLowerCase() === 'details') {
+    el.open = true;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+window.addEventListener('DOMContentLoaded', openTargetDetails);
+window.addEventListener('hashchange', openTargetDetails);
 
 </script>
 </body>

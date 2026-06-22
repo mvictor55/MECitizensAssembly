@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="favicon.png">
-<title>FAQ — Maine Citizens' Assembly 2026</title>
-<meta name="description" content="Frequently asked questions: delegates, selection, the role of elected leaders, and how balance is protected.">
+<title>Results — Maine Citizens' Assembly on Education Priorities 2026</title>
+<meta name="description" content="The outcomes of the Maine Citizens' Assembly on Education Priorities: the delegates' proposals and the two priorities they voted to advance, each with 84% support.">
 <style>
 /* =========================================================
    Maine Citizens' Assembly on Education Priorities 2026
@@ -138,7 +138,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 
 .lede { font-size: 1.22rem; line-height: 1.5; color: var(--ink-2); max-width: 60ch; }
 .prose { max-width: 64ch; }
-.prose p { font-size: 1.05rem; }
+.prose p { font-size: 1rem; line-height: 1.6; }
 
 /* ============ HERO (asymmetric, broadsheet front page) ============ */
 .hero { background: var(--paper); border-bottom: 2px solid var(--ink); }
@@ -166,8 +166,11 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 }
 .hero-side .q-label { font-family: 'Helvetica Neue', 'Arial Narrow', 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 0.7rem; }
 .hero-side blockquote { margin: 1.4rem 0 0; padding-top: 1.4rem; border-top: 1px solid var(--line-2); font-style: italic; font-size: 1.02rem; line-height: 1.45; color: var(--navy); }
-.hero-side cite { display: block; font-style: normal; font-family: 'Helvetica Neue', 'Arial Narrow', 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif; font-size: 0.82rem; color: var(--ink-2); margin-top: 0.6rem; }
+.hero-side cite { display: block; font-style: normal; font-family: 'Helvetica Neue', 'Arial Narrow', 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif; font-size: 1.03rem; color: var(--ink-2); margin-top: 0.6rem; }
 .hero-side cite b { color: var(--navy); }
+.cite-with-photo { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.8rem; }
+.cite-photo { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold); }
+.cite-with-photo cite { margin-top: 0; }
 /* vertical press list inside the hero sidebar */
 .press-vert { display: flex; flex-direction: column; border: 2px solid var(--ink); }
 .press-vert a {
@@ -195,7 +198,8 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .feature.wide-left { grid-template-columns: 1.5fr 1fr; }
 .feature.wide-right { grid-template-columns: 1fr 1.5fr; }
 .feature h2 { font-size: clamp(1.8rem, 3.5vw, 2.7rem); }
-.section-head h2 { font-size: clamp(1.9rem, 4vw, 3rem); max-width: 18ch; }
+.section-head h2 { font-size: clamp(1.9rem, 4vw, 3rem); max-width: none; }
+.section-head { margin-bottom: 0.4rem; }
 
 /* drop cap for lead editorial paragraphs */
 .dropcap::first-letter {
@@ -207,6 +211,13 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .pull { border-top: 3px solid var(--navy); border-bottom: 3px solid var(--navy); padding: 1.4rem 0; margin: 0; }
 .pull p { font-family: 'Helvetica Neue', 'Arial Narrow', 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif; font-weight: 600; font-size: 1.5rem; line-height: 1.2; color: var(--navy); margin: 0; }
 .pull cite { display: block; font-style: normal; font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif; font-size: 0.95rem; color: var(--ink-2); margin-top: 0.8rem; }
+.lst-quote { margin: 0; padding-left: 1.2rem; border-left: 4px solid var(--gold); }
+.lst-quote p { font-size: 1.12rem; line-height: 1.5; color: var(--navy); margin: 0 0 0.8rem; font-style: italic; }
+.lst-quote p:last-child { margin-bottom: 0; }
+.lst-figure { margin: 0; }
+.lst-figure img { width: 100%; height: auto; display: block; border: 2px solid var(--ink); border-radius: 3px; }
+.lst-figure figcaption { font-size: 1.1rem; color: var(--ink-2); margin-top: 0.8rem; line-height: 1.5; }
+.lst-figure figcaption b { color: var(--navy); font-family: 'Helvetica Neue','Arial Narrow','Segoe UI',system-ui,sans-serif; font-stretch: condensed; }
 
 /* ============ PROCESS (numbered, ruled rows, color-keyed) ============ */
 .process { border-top: 2px solid var(--ink); }
@@ -350,8 +361,7 @@ h1, h2, h3 { font-stretch: 95%; }
 <div class="ticker">
   <div class="wrap">
     <span class="dot"></span>
-    <span>The Assembly convened in Bangor — June 17–18, 2026.</span>
-    <a href="results.html">View the outcomes &rarr;</a>
+    <span>Results are in — the Assembly met June 17–18, 2026 in Bangor.</span>
     <a class="right" href="results.html">See the results &rarr;</a>
   </div>
 </div>
@@ -371,37 +381,207 @@ h1, h2, h3 { font-stretch: 95%; }
         <li><a href="why.html">The delegates</a></li>
         <li><a href="what-is-a-citizens-assembly.html">The model</a></li>
         <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="faq.html" aria-current="page">FAQ</a></li>
+        <li><a href="faq.html">FAQ</a></li>
         <li><a href="partners.html">Partners</a></li>
-        <li><a href="results.html">Results</a></li>
+        <li><a href="results.html" aria-current="page">Results</a></li>
       </ul>
     </nav>
   </div>
 </header>
+
+<style>
+/* ===== Results page additions ===== */
+.tier-bar { display:grid; grid-template-columns:repeat(3,1fr); border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); margin:1.8rem 0 0; }
+.tier-bar .t { padding:1.3rem 1.3rem; border-right:1px solid var(--line-2); }
+.tier-bar .t:last-child { border-right:none; }
+.tier-bar .t .n { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-stretch:condensed; font-size:2.6rem; line-height:1; color:var(--navy); }
+.tier-bar .t:nth-child(1) .n { color:var(--navy); }
+.tier-bar .t:nth-child(2) .n { color:var(--blue); }
+.tier-bar .t:nth-child(3) .n { color:var(--red); }
+.tier-bar .t .l { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:600; font-size:0.92rem; color:var(--ink-2); margin-top:0.4rem; max-width:34ch; }
+
+.badge { display:inline-block; font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-stretch:condensed; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.22rem 0.6rem; vertical-align:middle; }
+.badge.chosen { background:var(--red); color:#fff; }
+.badge.advanced { background:var(--blue); color:var(--navy); }
+.badge.considered { background:var(--paper-2); color:var(--ink-2); border:1px solid var(--line-2); }
+
+/* detailed proposal card */
+.proposal { border:2px solid var(--ink); border-radius:3px; padding:1.8rem 1.7rem; margin-top:1.8rem; background:var(--card); }
+.proposal .ptop { display:flex; align-items:baseline; gap:0.9rem; flex-wrap:wrap; margin-bottom:0.2rem; }
+.proposal .pnum { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-stretch:condensed; font-size:2.2rem; line-height:0.9; color:var(--gold); }
+.proposal h3 { font-size:clamp(1.5rem,3vw,2rem); text-transform:uppercase; letter-spacing:-0.01em; margin:0; }
+.proposal .summary { font-size:1.1rem; line-height:1.5; color:var(--ink); margin:0.9rem 0 1.3rem; max-width:72ch; }
+.proposal .grid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem 2rem; }
+.proposal .item h4 { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-stretch:condensed; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--red); margin:0 0 0.25rem; }
+.proposal .item p { font-size:0.98rem; line-height:1.55; color:var(--ink-2); margin:0; }
+.proposal .item.full { grid-column:1 / -1; }
+.proposal .succeed { border-top:2px solid var(--line-2); margin-top:1.3rem; padding-top:1.1rem; }
+.proposal .succeed h4 { color:var(--navy); }
+.proposal .succeed p { color:var(--ink); font-style:italic; font-size:1.05rem; }
+
+/* compact list rows for the remaining proposals */
+.plist { border-top:2px solid var(--ink); margin-top:1.6rem; }
+.prow2 { display:grid; grid-template-columns:auto 1fr auto; gap:1.2rem; align-items:baseline; padding:1.2rem 0; border-bottom:1px solid var(--line-2); }
+.prow2 .pn2 { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-stretch:condensed; font-size:1.8rem; line-height:0.9; color:var(--line-2); }
+.prow2 h3 { font-size:1.25rem; margin:0 0 0.2rem; text-transform:uppercase; }
+.prow2 p { margin:0; color:var(--ink-2); font-size:0.98rem; max-width:64ch; }
+.prow2 .badge { align-self:center; }
+
+@media (max-width:900px){
+  .tier-bar { grid-template-columns:1fr; }
+  .tier-bar .t { border-right:none; border-bottom:1px solid var(--line-2); }
+  .tier-bar .t:last-child { border-bottom:none; }
+  .proposal .grid { grid-template-columns:1fr; }
+  .prow2 { grid-template-columns:auto 1fr; }
+  .prow2 .badge { grid-column:2; justify-self:start; }
+}
+</style>
+
 <section class="pagehead">
   <div class="wrap">
-    <span class="kicker gold">Questions</span>
-    <h1>Frequently asked questions</h1>
-    <p>How the Assembly works, who takes part, and how balance is protected.</p>
+    <span class="kicker gold">Outcomes · June 17–18, 2026</span>
+    <h1>The Results</h1>
+    <p>Over two days in Bangor, 64 delegates developed their own proposals for improving PK-12 education in Maine, then voted on which to advance. Two priorities emerged — each carried with 84% support.</p>
   </div>
 </section>
+
 <main>
   <section class="section">
-    <div class="faq" style="max-width:74ch;">
-      <details open><summary>What is the Maine Citizens' Assembly on Education Priorities?</summary>
-        <p>It is a structured public deliberation that brings together a broadly representative group of Maine residents from all 16 counties to learn about the state's education landscape, deliberate across differences, and identify shared education priorities. It is designed to generate informed, policy-relevant public judgment for legislative, executive, and local decision-makers. USM's <a href="https://usm.maine.edu/cepare/" target="_blank" rel="noopener">CEPARE</a> is organizing it in partnership with USM's <a href="https://mepri.maine.edu/" target="_blank" rel="noopener">MEPRI</a>.</p></details>
-      <details><summary>Who are the delegates and how were they chosen?</summary>
-        <p>64 Maine residents aged 16 and older, selected to reflect the state's diversity. They were chosen from a volunteer pool using stratified random selection for balance across counties, age, educational attainment, gender, race and ethnicity, and political leaning. Where needed, CEPARE reached out to community organizations to support targeted recruitment.</p></details>
-      <details><summary>What role do elected leaders play?</summary>
-        <p>A bipartisan Legislative Strategy Team led by Rep. Holly Sargent with Reps. Kim Haggan, Sheila Lyman, and Dan Sayre connects the Assembly's recommendations to the appropriate legislative committees and connects political and content experts to the process. They've committed to take the priorities into focused strategy work this fall with MEPRI's support. Gubernatorial candidates will be invited to respond in September 2026.</p></details>
-      <details><summary>What role do stakeholder and community organizations play?</summary>
-        <p>Invited organizations comprise USM's MEPRI Steering Committee plus several statewide education-focused groups. They contribute educational materials and take part in presenstations and dialogue that informs delegates, but not in the delegates' deliberations or decisions. These organizations will also be invited to give structured feedback on the draft policy proposals created by MEPRI for the delegates over the summer. Their feedback will inform delegates as they make final priority choices in late August.</p></details>
-      <details><summary>How is balance across perspectives supported?</summary>
-        <p>Through curated panels with moderation guidelines and learning materials vetted for accessibility and for educational rather than advocacy intent. The goal is to expose delegates to a genuine range of concerns and perspectives on Maine education.</p></details>
-      <details><summary>How is deliberative technology used?</summary>
-        <p>The platform, Comhairle, supports structured engagement, documentation, organized feedback, and synthesis at defined points. It is not used for open-ended advocacy or real-time debate, and does not let outside organizations into delegate deliberations or decision-making.</p></details>
-      <details><summary>Who do we contact with questions?</summary>
-        <p>Email <a href="mailto:usm.cepare@maine.edu">usm.cepare@maine.edu</a>.</p></details>
+    <span class="kicker">At a glance</span>
+    <div class="section-head"><h2>Two priorities, advanced with 84% support</h2></div>
+    <div class="tier-bar">
+      <div class="t"><div class="n">2</div><div class="l">Priorities the delegates voted to advance</div></div>
+      <div class="t"><div class="n">84%</div><div class="l">Delegate support each priority received</div></div>
+      <div class="t"><div class="n">64</div><div class="l">Delegates, from all 16 Maine counties</div></div>
+    </div>
+    <div class="prose" style="margin-top:1.6rem; max-width:75ch;">
+      <p>After two days of learning and deliberation, the delegates developed their own proposals and voted on which to carry forward. They chose to advance two priorities, both centered on hands-on, real-world learning. Each was advanced with the support of 84% of delegates.</p>
+      <p>These priorities now move into the stakeholder feedback phase. MEPRI Steering Committee organizations, statewide partners, and volunteers who were not selected as delegates review the proposals and offer comment. Delegates then reconvene virtually for a final, supermajority vote, with any minority positions documented.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section">
+    <span class="kicker red">The priorities the delegates advanced</span>
+    <div class="section-head"><h2>The two proposals carried forward</h2></div>
+
+    <article class="proposal">
+      <div class="ptop">
+        <span class="pnum">01</span>
+        <span class="badge chosen">Advanced · 84% support</span>
+      </div>
+      <h3>Expand Experiential Learning</h3>
+      <p class="summary">Expand experiential, real-world learning that builds life skills and future readiness for all students, K-12. Make it happen through three levers: professional development for educators, curriculum development, and community partnerships, with developmentally appropriate experiences at every grade level.</p>
+      <div class="grid">
+        <div class="item">
+          <h4>The problem</h4>
+          <p>Students often lack relevant hands-on learning, are disengaged in class, and find themselves unprepared for the future.</p>
+        </div>
+        <div class="item">
+          <h4>Why it's urgent</h4>
+          <p>Very urgent. It affects workforce readiness, population retention (kids leaving the state), community health and economy, academic performance, student mental health and well-being, and Maine's innovation economy — in both the near and long term.</p>
+        </div>
+        <div class="item">
+          <h4>Root cause</h4>
+          <p>A disconnect between schools and communities, combined with the fact that not all families can provide these experiences and that schools often lack the training and resources to do this well and consistently.</p>
+        </div>
+        <div class="item">
+          <h4>How to get there</h4>
+          <p>A repository of best practices; funding for professional development and curriculum; incentives for small businesses and community partners; and revisiting the Maine Learning Standards (whether to add, emphasize, or clarify), paired with accountability and incentives to do it well.</p>
+        </div>
+        <div class="item full">
+          <h4>Risks to watch</h4>
+          <p>Not every student thrives with this approach, and there's a risk of deemphasizing traditional learning or narrowing too far toward CTE/job training at the expense of broader skills. Worth noting: this supplements rather than replaces traditional learning, and experiential learning supports academic achievement.</p>
+        </div>
+      </div>
+      <div class="succeed">
+        <h4>If we succeed</h4>
+        <p>Students are well-rounded and well-prepared for the future, in thriving local economies and communities.</p>
+      </div>
+    </article>
+
+    <article class="proposal">
+      <div class="ptop">
+        <span class="pnum">02</span>
+        <span class="badge chosen">Advanced · 84% support</span>
+      </div>
+      <h3>Multiple Pathways, Pre-K Through 12</h3>
+      <p class="summary">Make multiple pathways available for students from Pre-K through 12th grade — exposing them to a range of career options and giving them hands-on experience and the life skills they need.</p>
+      <div class="grid">
+        <div class="item">
+          <h4>The problem</h4>
+          <p>Students are leaving school unprepared to live a meaningful life with direction and practical life skills.</p>
+        </div>
+        <div class="item">
+          <h4>Why it's urgent</h4>
+          <p>The world is changing, and our education system and our youth need to change along with it.</p>
+        </div>
+        <div class="item">
+          <h4>Root cause</h4>
+          <p>A lack of curriculum and standards, undertrained teachers, and too little time to fit this in alongside the existing school day.</p>
+        </div>
+        <div class="item">
+          <h4>Risks to watch</h4>
+          <p>Possibly sacrificing fundamental learning, oversaturating certain industries, and funding challenges.</p>
+        </div>
+      </div>
+      <div class="succeed">
+        <h4>If we succeed</h4>
+        <p>Students feel prepared for the world, and Maine retains more of its workers.</p>
+      </div>
+    </article>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section">
+    <span class="kicker blue">The two priorities</span>
+    <div class="section-head"><h2>What the delegates advanced</h2></div>
+    <p class="lede" style="margin-top:0.8rem;">Both priorities the delegates voted to advance are summarized below. Each was advanced with 84% support.</p>
+    <div class="plist">
+      <div class="prow2">
+        <span class="pn2">01</span>
+        <div><h3>Expand Experiential Learning</h3><p>Expand experiential, real-world learning that builds life skills and future readiness for all students, K-12. <a href="#" onclick="document.querySelectorAll('.proposal')[0].scrollIntoView({behavior:'smooth'});return false;">Read the full proposal &uarr;</a></p></div>
+        <span class="badge chosen">84% support</span>
+      </div>
+      <div class="prow2">
+        <span class="pn2">02</span>
+        <div><h3>Multiple Pathways, Pre-K Through 12</h3><p>Make multiple pathways available from Pre-K through 12th grade, exposing students to career options and hands-on experience. <a href="#" onclick="document.querySelectorAll('.proposal')[1].scrollIntoView({behavior:'smooth'});return false;">Read the full proposal &uarr;</a></p></div>
+        <span class="badge chosen">84% support</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section">
+    <span class="kicker">What happens next</span>
+    <div class="section-head"><h2>From draft priorities to legislative strategy</h2></div>
+    <div class="feature" style="margin-top:1.2rem;">
+      <div class="prose">
+        <p>The priorities on this page are not yet final. During the stakeholder feedback phase, MEPRI Steering Committee organizations, statewide partners, and volunteers who were not selected as delegates review the draft proposals and offer comment.</p>
+        <p>Delegates then reconvene virtually to cast a final vote. A supermajority approves the final slate of priorities, and any minority positions are documented alongside it.</p>
+      </div>
+      <div class="prose">
+        <p>After the final vote, the bipartisan Legislative Strategy Team — Reps. Holly Sargent, Kim Haggan, Sheila Lyman, and Dan Sayre — carries the approved priorities into strategy work with MEPRI this fall, alongside additional senators, representatives, and experts, ahead of the 133rd Regular Session.</p>
+        <p style="margin-top:0.4rem;">
+          <a class="btn ghost" href="what-is-a-citizens-assembly.html">How the Assembly works &rarr;</a>
+          <a class="btn ghost" href="schedule.html" style="margin-left:0.5rem;">See the schedule &rarr;</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section">
+    <span class="kicker red">In the news</span>
+    <div class="section-head"><h2>Coverage of the Assembly</h2></div>
+    <div class="press" style="margin-top:1.2rem;">
+      <a href="https://www.wabi.tv/2026/06/18/maine-citizens-assembly-education-polices-bangor-presents-k-12-proposals-lawmakers/" target="_blank" rel="noopener">WABI TV5 — Assembly presents K-12 proposals to lawmakers</a>
+      <a href="https://www.foxbangor.com/news/first-citizens-assembly-brings-attention-to-public-education-in-maine/article_a3e9e246-5839-4955-84b2-7ce8bdc88e6c.html" target="_blank" rel="noopener">Fox Bangor — First Citizens' Assembly brings attention to public education</a>
+      <a href="https://www.wabi.tv/2026/06/17/maine-educators-policymakers-gather-citizens-assembly-shape-education-policies/" target="_blank" rel="noopener">WABI TV5 — Educators and policymakers gather to shape policy</a>
     </div>
   </section>
 </main>
