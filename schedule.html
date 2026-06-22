@@ -413,6 +413,15 @@ h1, h2, h3 { font-stretch: 95%; }
   .track .stop.is-past .node{ background:var(--navy); border-color:var(--navy); }
   .track .stop.has-detail .node{ background:var(--gold); border-color:var(--gold); box-shadow:0 0 0 4px var(--paper), 0 0 0 6px var(--gold); }
   .track .stop.is-upcoming .node{ background:var(--card); border-color:var(--red); border-width:3px; }
+  /* the current stage — solid red with a halo, plus a NOW tag on the label */
+  .track .stop.is-now .node{ background:var(--red); border-color:var(--red); box-shadow:0 0 0 4px var(--paper), 0 0 0 6px var(--red); }
+  .track .stop.is-now .label{ color:var(--red); }
+  .track .stop .now-tag{
+    display:inline-block; font-family:'Helvetica Neue','Arial Narrow',sans-serif;
+    font-weight:700; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase;
+    background:var(--red); color:#fff; padding:0.1rem 0.4rem; border-radius:2px;
+    margin-left:0.4rem; vertical-align:middle;
+  }
   .track .stop .label{
     font-family:'Helvetica Neue','Arial Narrow','Segoe UI',system-ui,sans-serif;
     font-weight:700; font-stretch:condensed; text-transform:uppercase;
@@ -522,41 +531,47 @@ h1, h2, h3 { font-stretch: 95%; }
       <div class="track">
         <div class="stop is-past">
           <div class="node"></div>
-          <div class="label">Orientation</div>
-          <div class="date">May 18 &amp; Jun 3</div>
-          <div class="loc">Virtual · introductory sessions</div>
+          <div class="label">Register</div>
+          <div class="date">Closed</div>
+          <div class="loc">Mainers 16+ volunteered for the lottery</div>
         </div>
         <div class="stop is-past">
           <div class="node"></div>
-          <div class="label">Day 0 · Prep</div>
-          <div class="date">Jun 16</div>
-          <div class="loc">Bangor · moderator training &amp; delegate welcome</div>
+          <div class="label">Select</div>
+          <div class="date">Spring 2026</div>
+          <div class="loc">64 delegates chosen by lottery, four per county</div>
         </div>
         <div class="stop is-past has-detail">
           <div class="node"></div>
-          <div class="label">Day 1 · Learning</div>
+          <div class="label">Learn</div>
           <div class="date">Jun 17</div>
           <div class="loc">Bangor · expert panels &amp; breakouts</div>
-          <a class="jump" href="#day1-schedule">Full agenda &darr;</a>
+          <a class="jump" href="#day1-schedule">Day 1 agenda &darr;</a>
         </div>
         <div class="stop is-past has-detail">
           <div class="node"></div>
-          <div class="label">Day 2 · Deliberation</div>
+          <div class="label">Deliberate</div>
           <div class="date">Jun 18</div>
-          <div class="loc">Bangor · proposals &amp; voting</div>
-          <a class="jump" href="#day2-schedule">Full agenda &darr;</a>
+          <div class="loc">Bangor · proposals &amp; voting to advance two priorities</div>
+          <a class="jump" href="#day2-schedule">Day 2 agenda &darr;</a>
         </div>
-        <div class="stop is-past">
+        <div class="stop is-now">
           <div class="node"></div>
-          <div class="label">Check-In</div>
-          <div class="date">Virtual</div>
-          <div class="loc">Welcome back · 7:00–8:00pm</div>
+          <div class="label">Feedback <span class="now-tag">Now</span></div>
+          <div class="date">Summer 2026</div>
+          <div class="loc">Stakeholder organizations &amp; volunteers weigh in on the draft priorities</div>
         </div>
         <div class="stop is-upcoming">
           <div class="node"></div>
-          <div class="label">Day 3 · Recommendations</div>
+          <div class="label">Approve</div>
           <div class="date">Aug 28</div>
-          <div class="loc">Virtual · 8:00am–1:00pm</div>
+          <div class="loc">Virtual · delegates cast their final vote · 8:00am–1:00pm</div>
+        </div>
+        <div class="stop is-upcoming">
+          <div class="node"></div>
+          <div class="label">Impact</div>
+          <div class="date">Fall 2026</div>
+          <div class="loc">Priorities carried into the 133rd Legislature</div>
         </div>
       </div>
     </div>
