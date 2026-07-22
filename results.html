@@ -355,6 +355,56 @@ h1, h2, h3 { font-stretch: 95%; }
 .kicker, .btn, .prow h3, .tl .d, .sess .d, .faq summary, footer.site h4, .brand .mast-txt, .hero-side .q-label { font-stretch: condensed; }
 
 
+
+/* nine-proposal detail cards: reuse .proposal, add status + voting */
+.proposal[id] { scroll-margin-top: 1.2rem; }
+.badge.round2 { background:var(--gold); color:var(--navy); }
+.badge.firstround { background:var(--paper-2); color:var(--ink-2); border:1px solid var(--line-2); }
+
+.howvote { border:2px solid var(--ink); background:var(--card); padding:1.2rem 1.4rem; margin-top:1.5rem; }
+.howvote h4 { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-stretch:condensed; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--red); margin:0 0 0.5rem; }
+.howvote p { font-size:0.96rem; color:var(--ink-2); margin:0; max-width:80ch; }
+
+.vote { border-top:1px solid var(--line-2); margin-top:1.3rem; padding-top:1.1rem; }
+.vote .vlabel { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-stretch:condensed; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-2); margin:0 0 0.7rem; }
+/* first-round tallies: numbers + inline labels, all on one baseline */
+.tallies { display:flex; align-items:baseline; gap:0.6rem 2.4rem; flex-wrap:wrap; }
+.tstat { display:flex; align-items:baseline; gap:0.5rem; }
+.tstat .tn { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-stretch:condensed; font-size:2rem; line-height:0.85; color:var(--navy); }
+.tstat .tk { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:600; font-size:0.8rem; letter-spacing:0.03em; text-transform:uppercase; color:var(--ink-2); white-space:nowrap; }
+/* colored second-round support figure, pushed right, bottom-aligned with the numbers */
+.tstat.support { margin-left:auto; }
+.tstat.support .tn { padding:0.05rem 0.55rem; }
+.tstat.support.adv .tn { background:var(--red); color:#fff; }
+.tstat.support.r2 .tn { background:var(--gold); color:var(--navy); }
+.tstat.support .tk { color:var(--ink); font-weight:700; }
+
+/* outcome row: same layout for all nine — colored chip + text to its right */
+.outcome { display:flex; gap:0.9rem; align-items:baseline; margin-top:1.2rem; }
+.outcome .ochip { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-stretch:condensed; text-transform:uppercase; letter-spacing:0.06em; font-size:0.74rem; padding:0.3rem 0.72rem; flex:none; }
+.outcome .ochip.adv { background:var(--red); color:#fff; }
+.outcome .ochip.r2 { background:var(--gold); color:var(--navy); }
+.outcome .ochip.r1 { background:var(--paper-2); color:var(--ink-2); border:1px solid var(--line-2); }
+.outcome .otext { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:500; font-size:0.96rem; color:var(--ink); line-height:1.4; }
+
+/* how-the-voting-worked: staged explainer */
+.howvote .vsteps { display:grid; grid-template-columns:1fr 0.85fr 1fr; border:1px solid var(--line-2); margin-top:0.4rem; }
+.howvote .vstep { padding:1rem 1.2rem; border-right:1px solid var(--line-2); }
+.howvote .vstep:last-child { border-right:none; }
+.howvote .vstep--advance { background:var(--paper-2); }
+.vstep-h { display:flex; align-items:center; gap:0.6rem; margin-bottom:0.55rem; }
+.vstep-n { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-size:1.15rem; width:1.7rem; height:1.7rem; display:flex; align-items:center; justify-content:center; background:var(--navy); color:#fff; border-radius:50%; flex:none; }
+.vstep--advance .vstep-n { background:var(--gold); color:var(--navy); }
+.vstep-t { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-stretch:condensed; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.03em; color:var(--navy); }
+.howvote .vstep p { font-size:0.92rem; color:var(--ink-2); margin:0 0 0.5rem; }
+.vlist { margin:0; padding-left:1.05rem; }
+.vlist li { font-size:0.9rem; color:var(--ink-2); margin-bottom:0.3rem; }
+.howvote .vstep strong { color:var(--navy); }
+
+/* responsive video embed */
+.video-embed { position:relative; width:100%; aspect-ratio:16 / 9; background:var(--navy); border:2px solid var(--ink); overflow:hidden; }
+.video-embed iframe, .video-embed video { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.video-placeholder { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--paper); font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:0.04em; text-transform:uppercase; }
 </style>
 </head>
 <body>
@@ -401,7 +451,7 @@ h1, h2, h3 { font-stretch: 95%; }
 .tier-bar .t .l { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:600; font-size:0.92rem; color:var(--ink-2); margin-top:0.4rem; max-width:34ch; }
 
 .badge { display:inline-block; font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-stretch:condensed; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.22rem 0.6rem; vertical-align:middle; }
-.badge.chosen { background:var(--red); color:#fff; }
+.badge.chosen { background:var(--red); color:#fff; font-size:1.02rem; padding:0.33rem 0.9rem; letter-spacing:0.08em; }
 .badge.advanced { background:var(--blue); color:var(--navy); }
 .badge.considered { background:var(--paper-2); color:var(--ink-2); border:1px solid var(--line-2); }
 
@@ -416,8 +466,8 @@ h1, h2, h3 { font-stretch: 95%; }
 .proposal .item p { font-size:0.98rem; line-height:1.55; color:var(--ink-2); margin:0; }
 .proposal .item.full { grid-column:1 / -1; }
 .proposal .succeed { border-top:2px solid var(--line-2); margin-top:1.3rem; padding-top:1.1rem; }
-.proposal .succeed h4 { color:var(--navy); }
-.proposal .succeed p { color:var(--ink); font-style:italic; font-size:1.05rem; }
+.proposal .succeed h4 { color:var(--navy); font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-stretch:condensed; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; }
+.proposal .succeed p { color:var(--ink); font-size:1.05rem; }
 
 /* compact list rows for the remaining proposals */
 .plist { border-top:2px solid var(--ink); margin-top:1.6rem; }
@@ -429,6 +479,10 @@ h1, h2, h3 { font-stretch: 95%; }
 
 @media (max-width:900px){
   .tier-bar { grid-template-columns:1fr; }
+  .howvote .vsteps { grid-template-columns:1fr; }
+  .howvote .vstep { border-right:none; border-bottom:1px solid var(--line-2); }
+  .howvote .vstep:last-child { border-bottom:none; }
+  .tstat.support { margin-left:0; }
   .tier-bar .t { border-right:none; border-bottom:1px solid var(--line-2); }
   .tier-bar .t:last-child { border-bottom:none; }
   .proposal .grid { grid-template-columns:1fr; }
@@ -441,99 +495,11 @@ h1, h2, h3 { font-stretch: 95%; }
   <div class="wrap">
     <span class="kicker gold">Outcomes · June 17–18, 2026</span>
     <h1>The Results</h1>
-    <p>Over two days in Bangor, 64 delegates developed their own proposals for improving PK-12 education in Maine, then voted on which to advance. Two priorities emerged — each carried with 84% support.</p>
+    <p>After two days of learning and deliberation, the delegates developed their own proposals and voted on which to carry forward. They chose to advance two priorities, both centered on hands-on, real-world learning. Each was advanced with the support of 84% of delegates.</p>
   </div>
 </section>
 
 <main>
-  <section class="section">
-    <span class="kicker">At a glance</span>
-    <div class="section-head"><h2>Two priorities, advanced with 84% support</h2></div>
-    <div class="tier-bar">
-      <div class="t"><div class="n">2</div><div class="l">Priorities the delegates voted to advance</div></div>
-      <div class="t"><div class="n">84%</div><div class="l">Delegate support each priority received</div></div>
-      <div class="t"><div class="n">64</div><div class="l">Delegates, from all 16 Maine counties</div></div>
-    </div>
-    <div class="prose" style="margin-top:1.6rem; max-width:75ch;">
-      <p>After two days of learning and deliberation, the delegates developed their own proposals and voted on which to carry forward. They chose to advance two priorities, both centered on hands-on, real-world learning. Each was advanced with the support of 84% of delegates.</p>
-      <p>These priorities now move into the stakeholder feedback phase. MEPRI Steering Committee organizations, statewide partners, and volunteers who were not selected as delegates review the proposals and offer comment. Delegates then reconvene virtually for a final, supermajority vote, with any minority positions documented.</p>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="section">
-    <span class="kicker red">The priorities the delegates advanced</span>
-    <div class="section-head"><h2>The two proposals carried forward</h2></div>
-
-    <article class="proposal">
-      <div class="ptop">
-        <span class="pnum">01</span>
-        <span class="badge chosen">Advanced · 84% support</span>
-      </div>
-      <h3>Expand Experiential Learning</h3>
-      <p class="summary">Expand experiential, real-world learning that builds life skills and future readiness for all students, K-12. Make it happen through three levers: professional development for educators, curriculum development, and community partnerships, with developmentally appropriate experiences at every grade level.</p>
-      <div class="grid">
-        <div class="item">
-          <h4>The problem</h4>
-          <p>Students often lack relevant hands-on learning, are disengaged in class, and find themselves unprepared for the future.</p>
-        </div>
-        <div class="item">
-          <h4>Why it's urgent</h4>
-          <p>Very urgent. It affects workforce readiness, population retention (kids leaving the state), community health and economy, academic performance, student mental health and well-being, and Maine's innovation economy — in both the near and long term.</p>
-        </div>
-        <div class="item">
-          <h4>Root cause</h4>
-          <p>A disconnect between schools and communities, combined with the fact that not all families can provide these experiences and that schools often lack the training and resources to do this well and consistently.</p>
-        </div>
-        <div class="item">
-          <h4>How to get there</h4>
-          <p>A repository of best practices; funding for professional development and curriculum; incentives for small businesses and community partners; and revisiting the Maine Learning Standards (whether to add, emphasize, or clarify), paired with accountability and incentives to do it well.</p>
-        </div>
-        <div class="item full">
-          <h4>Risks to watch</h4>
-          <p>Not every student thrives with this approach, and there's a risk of deemphasizing traditional learning or narrowing too far toward CTE/job training at the expense of broader skills. Worth noting: this supplements rather than replaces traditional learning, and experiential learning supports academic achievement.</p>
-        </div>
-      </div>
-      <div class="succeed">
-        <h4>If we succeed</h4>
-        <p>Students are well-rounded and well-prepared for the future, in thriving local economies and communities.</p>
-      </div>
-    </article>
-
-    <article class="proposal">
-      <div class="ptop">
-        <span class="pnum">02</span>
-        <span class="badge chosen">Advanced · 84% support</span>
-      </div>
-      <h3>Multiple Pathways, Pre-K Through 12</h3>
-      <p class="summary">Make multiple pathways available for students from Pre-K through 12th grade — exposing them to a range of career options and giving them hands-on experience and the life skills they need.</p>
-      <div class="grid">
-        <div class="item">
-          <h4>The problem</h4>
-          <p>Students are leaving school unprepared to live a meaningful life with direction and practical life skills.</p>
-        </div>
-        <div class="item">
-          <h4>Why it's urgent</h4>
-          <p>The world is changing, and our education system and our youth need to change along with it.</p>
-        </div>
-        <div class="item">
-          <h4>Root cause</h4>
-          <p>A lack of curriculum and standards, undertrained teachers, and too little time to fit this in alongside the existing school day.</p>
-        </div>
-        <div class="item">
-          <h4>Risks to watch</h4>
-          <p>Possibly sacrificing fundamental learning, oversaturating certain industries, and funding challenges.</p>
-        </div>
-      </div>
-      <div class="succeed">
-        <h4>If we succeed</h4>
-        <p>Students feel prepared for the world, and Maine retains more of its workers.</p>
-      </div>
-    </article>
-  </section>
-
-  <hr class="divider">
 
   <section class="section">
     <span class="kicker blue">The two priorities</span>
@@ -542,15 +508,282 @@ h1, h2, h3 { font-stretch: 95%; }
     <div class="plist">
       <div class="prow2">
         <span class="pn2">01</span>
-        <div><h3>Expand Experiential Learning</h3><p>Expand experiential, real-world learning that builds life skills and future readiness for all students, K-12. <a href="#" onclick="document.querySelectorAll('.proposal')[0].scrollIntoView({behavior:'smooth'});return false;">Read the full proposal &uarr;</a></p></div>
+        <div><h3>Expand Experiential Learning</h3><p>Expand experiential, real-world learning that builds life skills and future readiness for all students, K-12. <a href="#group-3">Read the full proposal &darr;</a></p></div>
         <span class="badge chosen">84% support</span>
       </div>
       <div class="prow2">
         <span class="pn2">02</span>
-        <div><h3>Multiple Pathways, Pre-K Through 12</h3><p>Make multiple pathways available from Pre-K through 12th grade, exposing students to career options and hands-on experience. <a href="#" onclick="document.querySelectorAll('.proposal')[1].scrollIntoView({behavior:'smooth'});return false;">Read the full proposal &uarr;</a></p></div>
+        <div><h3>Multiple Pathways, Pre-K Through 12</h3><p>Make multiple pathways available from Pre-K through 12th grade, exposing students to career options and hands-on experience. <a href="#group-4">Read the full proposal &darr;</a></p></div>
         <span class="badge chosen">84% support</span>
       </div>
     </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section" id="all-proposals">
+    <span class="kicker gold">All nine proposals</span>
+    <div class="section-head"><h2>The nine proposals, in the delegates' own words</h2></div>
+    <p class="lede" style="margin-top:0.8rem;">Nine delegate groups each developed one recommended priority for Maine's legislature and next governor. Every proposal is below — the problem it names, why it's urgent, its likely cause, the risks delegates flagged, and the vision behind it — along with how it fared in both rounds of voting.</p>
+
+    <div class="howvote">
+      <h4>How the voting worked</h4>
+      <div class="vsteps">
+        <div class="vstep">
+          <div class="vstep-h"><span class="vstep-n">1</span><span class="vstep-t">First round · dot voting</span></div>
+          <p>Each delegate weighed all nine recommendations and marked every one as:</p>
+          <ul class="vlist">
+            <li><strong>Top priority</strong> — up to four of their strongest choices</li>
+            <li><strong>Acceptable</strong> — any number they could live with</li>
+            <li><strong>Unacceptable</strong> — any number they opposed, each with a written reason</li>
+          </ul>
+        </div>
+        <div class="vstep vstep--advance">
+          <div class="vstep-h"><span class="vstep-n">&rarr;</span><span class="vstep-t">Which advanced</span></div>
+          <p>Five recommendations moved on to the second round: those named a <strong>top priority by the most delegates</strong>, as long as <strong>10% or fewer</strong> of delegates marked them unacceptable.</p>
+        </div>
+        <div class="vstep">
+          <div class="vstep-h"><span class="vstep-n">2</span><span class="vstep-t">Second round · hand vote</span></div>
+          <p>The five finalists were put to a show of hands. Passing required a <strong>two-thirds supermajority</strong>. Two cleared that bar — each with <strong>84% support</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUP 1 -->
+    <article class="proposal" id="group-1">
+      <div class="ptop">
+        <span class="pnum">01</span>
+        <span class="badge round2">Second round · 53%</span>
+      </div>
+      <h3>Individualized Pathways to Learning</h3>
+      <p class="summary">Strengthen efforts to meet the individual needs of every Maine student by expanding access to individualized learning pathways — including both regular and alternative educational options.</p>
+      <div class="grid">
+        <div class="item"><h4>The problem</h4><p>Inequality in educational opportunities and outcomes across the state.</p></div>
+        <div class="item"><h4>Why it's urgent</h4><p>Urgent, given the declines in student engagement and performance.</p></div>
+        <div class="item"><h4>Potential cause</h4><p>A lack of recognition of the diverse needs across individuals and geographic regions.</p></div>
+        <div class="item"><h4>Risks to watch</h4><p>A single statewide approach may overlook or diminish the unique identities and strengths of Maine's diverse communities.</p></div>
+      </div>
+      <div class="succeed"><h4>Our Vision</h4><p>Improved statewide access to the resources that support individualized learning pathways.</p></div>
+      <div class="vote">
+        <div class="vlabel">First-round prioritization</div>
+        <div class="tallies">
+          <div class="tstat"><span class="tn">10</span><span class="tk">Top priority</span></div>
+          <div class="tstat"><span class="tn">37</span><span class="tk">Would accept</span></div>
+          <div class="tstat"><span class="tn">2</span><span class="tk">Cannot support</span></div>
+          <div class="tstat support r2"><span class="tn">53%</span><span class="tk">Second-round support</span></div>
+        </div>
+        <div class="outcome"><span class="ochip r2">Second round</span><span class="otext">Reached the second round, then fell short — 31 of 58 delegates in favor, below the two-thirds supermajority required.</span></div>
+      </div>
+    </article>
+
+    <!-- GROUP 2 -->
+    <article class="proposal" id="group-2">
+      <div class="ptop">
+        <span class="pnum">02</span>
+        <span class="badge firstround">First round</span>
+      </div>
+      <h3>Increase Education Funding</h3>
+      <p class="summary">Increase education funding so schools have the resources to thrive — early childhood education, work and life readiness, staff satisfaction and retention, facilities, curriculum, and student nutrition. Delegates proposed funding strategies meant to minimize the impact on most Mainers: adjusting the funding formula, dedicating an additional penny of income tax to education, closing corporate tax loopholes, and increasing taxes on out-of-state second homes.</p>
+      <div class="grid">
+        <div class="item"><h4>The problem</h4><p>Discrepancies in the school funding formula and an over-reliance on property tax.</p></div>
+        <div class="item"><h4>Why it's urgent</h4><p>Very urgent, because funding influences all areas of education.</p></div>
+        <div class="item"><h4>Potential cause</h4><p>An inequitable funding system, limited trust in that system, and insufficient school resources.</p></div>
+        <div class="item"><h4>Risks to watch</h4><p>No clear new solution beyond spending more; funding has already risen recently; Mainers face heavy taxes; more money may not improve outcomes; some schools may be overfunded; and greater state funding could reduce local autonomy.</p></div>
+      </div>
+      <div class="succeed"><h4>Our Vision</h4><p>Diversified funding sources, better learning environments, and more teachers and staff — strengthening communities and long-term economic growth.</p></div>
+      <div class="vote">
+        <div class="vlabel">First-round prioritization</div>
+        <div class="tallies">
+          <div class="tstat"><span class="tn">31</span><span class="tk">Top priority</span></div>
+          <div class="tstat"><span class="tn">15</span><span class="tk">Would accept</span></div>
+          <div class="tstat"><span class="tn">8</span><span class="tk">Cannot support</span></div>
+        </div>
+        <div class="outcome"><span class="ochip r1">First round</span><span class="otext">Named a top priority by more delegates than any other proposal, but more than 10% marked it unacceptable, so it did not reach the second round.</span></div>
+      </div>
+    </article>
+
+    <!-- GROUP 3 -->
+    <article class="proposal" id="group-3">
+      <div class="ptop">
+        <span class="pnum">03</span>
+        <span class="badge chosen">Advanced · 84% support</span>
+      </div>
+      <h3>Expand Experiential Learning</h3>
+      <p class="summary">Expand developmentally appropriate PreK–12 experiential learning that connects academic work to real-world experience — through professional development for educators, curriculum support, and community partnerships.</p>
+      <div class="grid">
+        <div class="item"><h4>The problem</h4><p>Many students lack meaningful real-world learning, leaving them disengaged, with limited exposure to future pathways and gaps in essential workforce skills.</p></div>
+        <div class="item"><h4>Why it's urgent</h4><p>Very urgent. Experiential learning prepares students for college, careers, and community, and supports Maine's long-term economic and community health.</p></div>
+        <div class="item"><h4>Potential cause</h4><p>A disconnect between schools and communities, paired with limited investment and ineffective implementation.</p></div>
+        <div class="item"><h4>Risks to watch</h4><p>None were flagged by delegates.</p></div>
+      </div>
+      <div class="succeed"><h4>Our Vision</h4><p>Well-rounded, adaptable, future-ready Mainers with the skills and confidence to contribute to thriving local economies and communities.</p></div>
+      <div class="vote">
+        <div class="vlabel">First-round prioritization</div>
+        <div class="tallies">
+          <div class="tstat"><span class="tn">23</span><span class="tk">Top priority</span></div>
+          <div class="tstat"><span class="tn">22</span><span class="tk">Would accept</span></div>
+          <div class="tstat"><span class="tn">3</span><span class="tk">Cannot support</span></div>
+          <div class="tstat support adv"><span class="tn">84%</span><span class="tk">Second-round support</span></div>
+        </div>
+        <div class="outcome"><span class="ochip adv">Advanced</span><span class="otext">Passed the second-round hand vote — 49 of 58 delegates in favor, clearing the two-thirds supermajority.</span></div>
+      </div>
+    </article>
+
+    <!-- GROUP 4 -->
+    <article class="proposal" id="group-4">
+      <div class="ptop">
+        <span class="pnum">04</span>
+        <span class="badge chosen">Advanced · 84% support</span>
+      </div>
+      <h3>Real Life Skills and Opportunities</h3>
+      <p class="summary">Create multiple pathways for PK-12 students to explore career options and gain meaningful experiences that build life skills and reinforce core learning standards, using a tiered grade-band approach.</p>
+      <div class="grid">
+        <div class="item"><h4>The problem</h4><p>Students are inadequately prepared to make informed choices based on their interests, identity, strengths, and goals — often lacking the coping skills and self-direction to navigate future decisions.</p></div>
+        <div class="item"><h4>Why it's urgent</h4><p>Urgent, as the pace of change keeps increasing and Maine's growing retiree population needs a skilled replacement workforce.</p></div>
+        <div class="item"><h4>Potential cause</h4><p>Families may lack the time or resources to teach essential life skills, and alternative pathways such as CTE and JMG are limited.</p></div>
+        <div class="item"><h4>Risks to watch</h4><p>Schools may lack the time and capacity; career concepts in Pre-K may not be developmentally appropriate; some argue foundational academics should come first; and many life skills form through family and community.</p></div>
+      </div>
+      <div class="succeed"><h4>Our Vision</h4><p>Generations of Mainers connected to their communities and prepared to contribute to economic revival, stronger local economies, and opportunity for future generations.</p></div>
+      <div class="vote">
+        <div class="vlabel">First-round prioritization</div>
+        <div class="tallies">
+          <div class="tstat"><span class="tn">19</span><span class="tk">Top priority</span></div>
+          <div class="tstat"><span class="tn">30</span><span class="tk">Would accept</span></div>
+          <div class="tstat"><span class="tn">4</span><span class="tk">Cannot support</span></div>
+          <div class="tstat support adv"><span class="tn">84%</span><span class="tk">Second-round support</span></div>
+        </div>
+        <div class="outcome"><span class="ochip adv">Advanced</span><span class="otext">Passed the second-round hand vote — 49 of 58 delegates in favor, clearing the two-thirds supermajority.</span></div>
+      </div>
+    </article>
+
+    <!-- GROUP 5 -->
+    <article class="proposal" id="group-5">
+      <div class="ptop">
+        <span class="pnum">05</span>
+        <span class="badge round2">Second round · 64%</span>
+      </div>
+      <h3>Listen to Those Closest to the Classroom</h3>
+      <p class="summary">Take a more collaborative, inclusive approach to decision-making that involves students, families, educators, and community members — and gives them real, welcoming opportunities to be heard. Strategies include more citizens' assemblies, student representatives on school boards, stronger advisory committees, greater engagement from local legislators, and school boards sharing decision-making with their communities.</p>
+      <div class="grid">
+        <div class="item"><h4>The problem</h4><p>Unresponsive systems and limited trust in decision-makers, with little student involvement, inequitable representation, and minimal community engagement.</p></div>
+        <div class="item"><h4>Why it's urgent</h4><p>Urgent — it is a critical first step toward solving other problems.</p></div>
+        <div class="item full"><h4>Risks to watch</h4><p>Lacks a clear solution beyond additional funding; unclear how it would adapt for PK-8 students; uncertain how increasingly polarized communities would collaborate; questionable whether it is a state-level policy; and similar structures may already exist.</p></div>
+      </div>
+      <div class="succeed"><h4>Our Vision</h4><p>Education systems that better reflect the needs of society by amplifying diverse voices and driving meaningful policy change within schools.</p></div>
+      <div class="vote">
+        <div class="vlabel">First-round prioritization</div>
+        <div class="tallies">
+          <div class="tstat"><span class="tn">24</span><span class="tk">Top priority</span></div>
+          <div class="tstat"><span class="tn">25</span><span class="tk">Would accept</span></div>
+          <div class="tstat"><span class="tn">4</span><span class="tk">Cannot support</span></div>
+          <div class="tstat support r2"><span class="tn">64%</span><span class="tk">Second-round support</span></div>
+        </div>
+        <div class="outcome"><span class="ochip r2">Second round</span><span class="otext">Reached the second round and came closest of all — 37 of 58 delegates in favor, just two votes short of the two-thirds supermajority.</span></div>
+      </div>
+    </article>
+
+    <!-- GROUP 6 -->
+    <article class="proposal" id="group-6">
+      <div class="ptop">
+        <span class="pnum">06</span>
+        <span class="badge firstround">First round</span>
+      </div>
+      <h3>PK-8 Curriculum and Standards</h3>
+      <p class="summary">Direct more resources and interventions to PK-8 students to close gaps before high school — including state-developed PK-8 benchmarks and, potentially, a state-recommended curriculum and resources to help districts ensure every student meets those expectations before ninth grade.</p>
+      <div class="grid">
+        <div class="item"><h4>The problem</h4><p>Disparities in foundational skills among ninth-grade students coming from different schools.</p></div>
+        <div class="item"><h4>Why it's urgent</h4><p>Highly urgent — delaying action only widens the existing gap in foundational skills and outcomes.</p></div>
+        <div class="item"><h4>Potential cause</h4><p>Insufficient statewide coordination and implementation of processes.</p></div>
+        <div class="item"><h4>Risks to watch</h4><p>Much is already addressed by existing mandates and intervention systems; it may expand frameworks without changing policy or funding; it may not account for engagement, individualized pathways, or students with disabilities; and resources could be concentrated on small groups rather than all students.</p></div>
+      </div>
+      <div class="succeed"><h4>Our Vision</h4><p>All students enter high school with the foundational skills for success, while their communities' differences are still respected and celebrated.</p></div>
+      <div class="vote">
+        <div class="vlabel">First-round prioritization</div>
+        <div class="tallies">
+          <div class="tstat"><span class="tn">7</span><span class="tk">Top priority</span></div>
+          <div class="tstat"><span class="tn">36</span><span class="tk">Would accept</span></div>
+          <div class="tstat"><span class="tn">11</span><span class="tk">Cannot support</span></div>
+        </div>
+        <div class="outcome"><span class="ochip r1">First round</span><span class="otext">Too few delegates named it a top priority, and more than 10% marked it unacceptable, so it did not reach the second round.</span></div>
+      </div>
+    </article>
+
+    <!-- GROUP 7 -->
+    <article class="proposal" id="group-7">
+      <div class="ptop">
+        <span class="pnum">07</span>
+        <span class="badge round2">Second round · 59%</span>
+      </div>
+      <h3>Life Skills Graduation Requirement</h3>
+      <p class="summary">Establish a statewide life-skills graduation requirement, so every Maine high school gives students the chance to develop practical skills for adulthood. To fulfill it, students would earn credits in at least two of four essential topics: financial literacy, adult basics, career development, and human development.</p>
+      <div class="grid">
+        <div class="item full"><h4>The problem</h4><p>Many students graduate high school without enough skills and knowledge to manage adult responsibilities, creating challenges as they move into college, careers, and independent living.</p></div>
+        <div class="item full"><h4>Risks to watch</h4><p>Schools may not be the best place to teach every life skill — many are learned through family, community, and work; some skills need only brief instruction, not a full class; the requirement could reduce time for core academics and local flexibility; existing programs such as driver education and CTE may already cover much of this; and it may place additional responsibility on schools.</p></div>
+      </div>
+      <div class="succeed"><h4>Our Vision</h4><p>All Maine students graduate better prepared to manage responsibilities, make informed decisions, and contribute — with more equitable opportunity regardless of background.</p></div>
+      <div class="vote">
+        <div class="vlabel">First-round prioritization</div>
+        <div class="tallies">
+          <div class="tstat"><span class="tn">23</span><span class="tk">Top priority</span></div>
+          <div class="tstat"><span class="tn">21</span><span class="tk">Would accept</span></div>
+          <div class="tstat"><span class="tn">5</span><span class="tk">Cannot support</span></div>
+          <div class="tstat support r2"><span class="tn">59%</span><span class="tk">Second-round support</span></div>
+        </div>
+        <div class="outcome"><span class="ochip r2">Second round</span><span class="otext">Reached the second round, then fell short — 34 of 58 delegates in favor, below the two-thirds supermajority required.</span></div>
+      </div>
+    </article>
+
+    <!-- GROUP 8 -->
+    <article class="proposal" id="group-8">
+      <div class="ptop">
+        <span class="pnum">08</span>
+        <span class="badge firstround">First round</span>
+      </div>
+      <h3>Early Childhood Education (Birth to 5 Years)</h3>
+      <p class="summary">Invest in strengthening Maine's early-childhood education workforce — home providers and educators alike — through subsidized compensation, expanded professional training, and increased recognition.</p>
+      <div class="grid">
+        <div class="item"><h4>The problem</h4><p>Maine lacks a stable, highly skilled early-childhood workforce, limiting children's access to consistent, high-quality early learning — so some enter school without the foundational skills to succeed.</p></div>
+        <div class="item"><h4>Why it's urgent</h4><p>Urgent, because early childhood development has long-term impacts on educational outcomes and future success.</p></div>
+        <div class="item"><h4>Potential cause</h4><p>Workforce shortages and low, inconsistent wages hurt recruitment and retention — leaving developmental needs unmet and contributing to Maine's high rates of IEP placement.</p></div>
+        <div class="item"><h4>Risks to watch</h4><p>Some argue early learning should remain primarily with families; community resources already exist; the investment may not be the best use of limited funds; agency roles (DHHS vs. DOE) need clarifying; and it may compete with older students' immediate academic needs.</p></div>
+      </div>
+      <div class="succeed"><h4>Our Vision</h4><p>A stronger, more sustainable workforce that improves educator retention, strengthens children's development, and reduces the need for intensive support later on.</p></div>
+      <div class="vote">
+        <div class="vlabel">First-round prioritization</div>
+        <div class="tallies">
+          <div class="tstat"><span class="tn">23</span><span class="tk">Top priority</span></div>
+          <div class="tstat"><span class="tn">27</span><span class="tk">Would accept</span></div>
+          <div class="tstat"><span class="tn">6</span><span class="tk">Cannot support</span></div>
+        </div>
+        <div class="outcome"><span class="ochip r1">First round</span><span class="otext">Despite strong prioritization, more than 10% of delegates marked it unacceptable, so it did not reach the second round.</span></div>
+      </div>
+    </article>
+
+    <!-- GROUP 9 -->
+    <article class="proposal" id="group-9">
+      <div class="ptop">
+        <span class="pnum">09</span>
+        <span class="badge firstround">First round</span>
+      </div>
+      <h3>Access to Evidence-Based, Student-Centered Curriculum</h3>
+      <p class="summary">In alignment with the current review of Maine's learning results, have the Maine Department of Education provide funding, training, and implementation support to help districts adopt evidence-based, student-centered curricula grounded in the science of learning — raising access to high-quality materials statewide.</p>
+      <div class="grid">
+        <div class="item"><h4>The problem</h4><p>Inconsistent student access to high-quality, evidence-based curriculum across districts creates unequal opportunity based on geography — and districts face higher costs and limited purchasing power on their own.</p></div>
+        <div class="item"><h4>Why it's urgent</h4><p>Highly urgent, given Maine's current challenges with student engagement and low academic performance.</p></div>
+        <div class="item"><h4>Potential cause</h4><p>Variability in district resources, limited funding, and inconsistent implementation across Maine schools.</p></div>
+        <div class="item"><h4>Risks to watch</h4><p>Could reduce local autonomy; may not meet every student's needs; would not necessarily help districts that already have strong curricula; could add projects without addressing training, funding, and teacher support; and may not improve achievement without broader change.</p></div>
+      </div>
+      <div class="succeed"><h4>Our Vision</h4><p>Improved student engagement, better academic outcomes, and instruction more closely aligned with Maine's learning standards across districts.</p></div>
+      <div class="vote">
+        <div class="vlabel">First-round prioritization</div>
+        <div class="tallies">
+          <div class="tstat"><span class="tn">13</span><span class="tk">Top priority</span></div>
+          <div class="tstat"><span class="tn">25</span><span class="tk">Would accept</span></div>
+          <div class="tstat"><span class="tn">15</span><span class="tk">Cannot support</span></div>
+        </div>
+        <div class="outcome"><span class="ochip r1">First round</span><span class="otext">More than 10% of delegates marked it unacceptable, so it did not reach the second round.</span></div>
+      </div>
+    </article>
   </section>
 
   <hr class="divider">
@@ -561,10 +794,11 @@ h1, h2, h3 { font-stretch: 95%; }
     <div class="feature" style="margin-top:1.2rem;">
       <div class="prose">
         <p>The priorities on this page are not yet final. During the stakeholder feedback phase, MEPRI Steering Committee organizations, statewide partners, and volunteers who were not selected as delegates review the draft proposals and offer comment.</p>
-        <p>Delegates then reconvene virtually to cast a final vote. A supermajority approves the final slate of priorities, and any minority positions are documented alongside it.</p>
+        <p>Delegates then reconvene virtually to be briefed, deliberate, and cast final votes. A supermajority of at least two-thirds of the delegates approves the final slate of priorities, and any minority positions are documented.</p>
       </div>
       <div class="prose">
-        <p>After the final vote, the bipartisan Legislative Strategy Team — Reps. Holly Sargent, Kim Haggan, Sheila Lyman, and Dan Sayre — carries the approved priorities into strategy work with MEPRI this fall, alongside additional senators, representatives, and experts, ahead of the 133rd Regular Session.</p>
+        <p>After the final vote, the bipartisan Legislative Strategy Team — led by Reps. Holly Sargent, Kim Haggan, Sheila Lyman, and Dan Sayre — carries the approved priorities into strategy work with MEPRI, including additional senators, representatives, and experts, ahead of the 133rd Regular Session.</p>
+        <p>Maine's gubernatorial candidates — Rick Bennett, Bobby Charles, and Hannah Pingree — have been invited to participate in the Maine Citizens' Assembly on Education Priorities Gubernatorial Candidates Forum in late September at USM. Candidates will be able to respond directly to delegates about the approved priorities, present their own education platform, share quotes from the Maine Stories Portal that represent what they have heard from constituents, and take questions from delegates and the audience. This event is open to the public and will be live streamed.</p>
         <p style="margin-top:0.4rem;">
           <a class="btn ghost" href="what-is-a-citizens-assembly.html">How the Assembly works &rarr;</a>
           <a class="btn ghost" href="schedule.html" style="margin-left:0.5rem;">See the schedule &rarr;</a>
@@ -575,13 +809,19 @@ h1, h2, h3 { font-stretch: 95%; }
 
   <hr class="divider">
 
-  <section class="section">
-    <span class="kicker red">In the news</span>
-    <div class="section-head"><h2>Coverage of the Assembly</h2></div>
-    <div class="press" style="margin-top:1.2rem;">
-      <a href="https://www.wabi.tv/2026/06/18/maine-citizens-assembly-education-polices-bangor-presents-k-12-proposals-lawmakers/" target="_blank" rel="noopener">WABI TV5 — Assembly presents K-12 proposals to lawmakers</a>
-      <a href="https://www.foxbangor.com/news/first-citizens-assembly-brings-attention-to-public-education-in-maine/article_a3e9e246-5839-4955-84b2-7ce8bdc88e6c.html" target="_blank" rel="noopener">Fox Bangor — First Citizens' Assembly brings attention to public education</a>
-      <a href="https://www.wabi.tv/2026/06/17/maine-educators-policymakers-gather-citizens-assembly-shape-education-policies/" target="_blank" rel="noopener">WABI TV5 — Educators and policymakers gather to shape policy</a>
+  <section class="section" id="feedback">
+    <span class="kicker gold">For stakeholders</span>
+    <div class="section-head"><h2>Share your feedback</h2></div>
+    <div class="feature" style="margin-top:1.2rem; align-items:start;">
+      <div>
+        <div class="video-embed">
+          <iframe src="https://drive.google.com/file/d/1If6LiDQ9SFX5c-N9wW7bg0BYb6SprXBH/preview" allow="autoplay; fullscreen" allowfullscreen title="The delegates' invitation to stakeholders"></iframe>
+        </div>
+      </div>
+      <div class="prose">
+        <p>The nine proposals are now in the stakeholder feedback phase. We invite MEPRI Steering Committee organizations, statewide partners, and everyone with a stake in Maine's schools to review the delegates' priorities and tell us what you think — before delegates reconvene for their final vote.</p>
+        <p>Watch the delegates' invitation, then send your comments to <a href="mailto:usm.cepare@maine.edu">usm.cepare@maine.edu</a>. Your feedback goes to the delegates as they weigh the final slate of priorities.</p>
+      </div>
     </div>
   </section>
 </main>
