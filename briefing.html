@@ -357,16 +357,61 @@ table.brief thead tr.grp th { background:var(--navy); }
 table.brief thead tr.grp th.g-yes { background:#2E7D46; }
 table.brief thead tr.grp th.g-no { background:var(--red); }
 table.brief thead tr.sub th { background:var(--navy-2); font-weight:600; }
-table.brief thead tr.sub th span { display:block; font-weight:400; font-size:0.66rem; color:#c9c9dc; text-transform:none; letter-spacing:0; margin-top:0.15rem; }
+table.brief thead tr.sub th span { display:block; font-weight:600; font-size:0.66rem; color:#c9c9dc; text-transform:none; letter-spacing:0; margin-top:0.15rem; }
+table.brief thead tr.sub th.d-green span { color:#8FD6A8; }
+table.brief thead tr.sub th.d-blue span { color:var(--blue); }
+table.brief thead tr.sub th.d-red span { color:#F79892; }
 table.brief tbody th[scope="row"] { text-align:left; font-weight:700; color:var(--navy); background:var(--paper-2); max-width:20ch; }
 table.brief tbody tr:nth-child(even) td { background:#faf8f2; }
 table.brief tbody td b { font-size:1.02rem; color:var(--navy); }
 table.brief tbody td .frac { display:block; font-size:0.72rem; color:var(--ink-2); margin-top:0.1rem; }
 table.brief td.d-green { color:#2E7D46; font-weight:700; }
-table.brief td.d-blue { color:#2b6ca3; font-weight:700; }
+table.brief td.d-blue { color:var(--blue); font-weight:800; }
 table.brief td.d-red { color:var(--red); font-weight:700; }
 table.brief td .na { color:var(--line-2); }
 table.brief th:last-child, table.brief td:last-child { border-right:none; }
+
+/* ===== Policy brief (analysis template, restyled to site) ===== */
+.pa-brief { border:2px solid var(--ink); background:var(--card); padding:1.9rem 2rem 1.8rem; margin-top:1.8rem; }
+.pa-head { border-bottom:2px solid var(--line-2); padding-bottom:1.1rem; }
+.pa-eyebrow { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--red); margin:0 0 0.7rem; }
+.pa-eyebrow span { color:var(--ink-2); }
+.pa-title { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-stretch:condensed; font-size:clamp(1.4rem,3vw,1.95rem); line-height:1.05; letter-spacing:-0.01em; text-transform:uppercase; color:var(--navy); margin:0; }
+.pa-block { margin-top:1.6rem; }
+.pa-label { display:flex; align-items:center; gap:0.8rem; margin:0 0 0.6rem; font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--red); }
+.pa-label::after { content:""; flex:1; height:1px; background:var(--line-2); }
+.pa-block > p { font-family:Georgia,'Times New Roman',serif; font-size:1rem; line-height:1.62; color:var(--ink-2); margin:0 0 0.7em; }
+.pa-block > p:last-child { margin-bottom:0; }
+.pa-profile-title { font-family:Georgia,'Times New Roman',serif; font-weight:700; font-size:1.25rem; line-height:1.25; color:var(--navy); margin:0 0 0.5rem; }
+.pa-profile-note { font-family:Georgia,'Times New Roman',serif; font-size:1rem; color:var(--ink-2); max-width:64ch; margin:0 0 1.5rem; line-height:1.6; }
+.pa-scales { background:var(--paper-2); border:1px solid var(--line-2); border-radius:3px; padding:1.4rem 1.5rem 1.5rem; margin-top:0.5rem; max-width:482px; box-shadow:inset 0 1px 3px rgba(20,21,43,0.05); }
+  .pa-scales .pa-continuum:first-of-type { margin-top:0; }
+  .pa-continuum { margin-top:1.4rem; }
+.pa-cname { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-size:0.98rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--navy); margin:0 0 0.55rem; }
+.pa-poles { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; margin:0 0 0.45rem; max-width:430px; }
+.pa-poles span { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-size:0.9rem; font-weight:700; line-height:1.2; color:var(--ink); }
+.pa-poles span:last-child { text-align:right; }
+.pa-track { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; max-width:430px; }
+.pa-seg { height:26px; background:var(--card); border:1px solid var(--line-2); border-radius:2px; }
+.pa-continuum[data-position="1"] .pa-seg:nth-child(1),
+.pa-continuum[data-position="2"] .pa-seg:nth-child(2),
+.pa-continuum[data-position="3"] .pa-seg:nth-child(3),
+.pa-continuum[data-position="4"] .pa-seg:nth-child(4),
+.pa-continuum[data-position="5"] .pa-seg:nth-child(5) { background:var(--navy); border-color:var(--navy); }
+.pa-continuum[data-position="1"] .pa-seg:nth-child(1) .sr-only::after{ content:"Marked: 1 of 5"; }
+.pa-continuum[data-position="2"] .pa-seg:nth-child(2) .sr-only::after{ content:"Marked: 2 of 5"; }
+.pa-continuum[data-position="3"] .pa-seg:nth-child(3) .sr-only::after{ content:"Marked: 3 of 5"; }
+.pa-continuum[data-position="4"] .pa-seg:nth-child(4) .sr-only::after{ content:"Marked: 4 of 5"; }
+.pa-continuum[data-position="5"] .pa-seg:nth-child(5) .sr-only::after{ content:"Marked: 5 of 5"; }
+.pa-scale-note { margin:1.4rem 0 0; padding-top:0.85rem; border-top:1px solid var(--line-2); font-family:Georgia,'Times New Roman',serif; font-style:italic; font-size:0.85rem; color:var(--ink-2); }
+.pa-profile-row { display:flex; gap:2.2rem; align-items:flex-start; margin-top:0.5rem; }
+  .pa-profile-row .pa-scales { margin-top:0; flex:none; }
+  .pa-profile-row .pa-considerations { flex:1; min-width:0; margin-top:0; }
+  @media (max-width:680px){ .pa-profile-row { flex-direction:column; } .pa-profile-row .pa-scales { max-width:none; } }
+  .pa-pair { display:grid; grid-template-columns:1fr 1fr; gap:2.2rem; margin-top:1.6rem; }
+.pa-pair .pa-block { margin-top:0; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+@media (max-width:680px){ .pa-pair { grid-template-columns:1fr; } .pa-track { gap:5px; } .pa-seg { height:22px; } }
 </style>
 </head>
 <body>
@@ -628,7 +673,90 @@ table.brief th:last-child, table.brief td:last-child { border-right:none; }
   <section class="section">
     <span class="kicker gold">The recommendations</span>
     <div class="section-head"><h2>Policy briefs</h2></div>
-    <p class="brief-intro">The briefing pages for each recommendation, grouped by the problem it addresses, will appear here.</p>
+    <p class="brief-intro">A brief for each recommendation follows, grouped under the nine problem areas. The example below shows the format — real briefs will be added as their content is finalized.</p>
+    <article class="pa-brief">
+      <header class="pa-head">
+        <p class="pa-eyebrow">Policy analysis &nbsp;·&nbsp; <span>Example — layout preview</span></p>
+        <h3 class="pa-title">Sample policy brief</h3>
+      </header>
+      <section class="pa-block">
+        <h4 class="pa-label">Problem</h4>
+        <p>The problem this recommendation addresses will appear here — two to three sentences describing the challenge and why it matters.</p>
+      </section>
+      <section class="pa-block">
+        <h4 class="pa-label">Profile</h4>
+        <p class="pa-profile-title">A short heading for the option being profiled</p>
+        <p class="pa-profile-note">A description of the policy option — up to four sentences. The scales below describe what kind of option it is; neither end of any scale is the better end.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+        <div class="pa-continuum" data-position="3">
+          <p class="pa-cname">Reach</p>
+          <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+          <div class="pa-track">
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          </div>
+        </div>
+        <div class="pa-continuum" data-position="2">
+          <p class="pa-cname">Resource load</p>
+          <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+          <div class="pa-track">
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          </div>
+        </div>
+        <div class="pa-continuum" data-position="4">
+          <p class="pa-cname">Political will</p>
+          <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+          <div class="pa-track">
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          </div>
+        </div>
+        <div class="pa-continuum" data-position="4">
+          <p class="pa-cname">Impact</p>
+          <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+          <div class="pa-track">
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          </div>
+        </div>
+        <div class="pa-continuum" data-position="2">
+          <p class="pa-cname">Mechanism</p>
+          <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+          <div class="pa-track">
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          <span class="pa-seg"><span class="sr-only"></span></span>
+          </div>
+        </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-block pa-considerations">
+            <h4 class="pa-label">Considerations</h4>
+            <p>Trade-offs, dependencies, and open questions — four to five sentences.</p>
+          </div>
+        </div>
+      </section>
+      <section class="pa-block">
+        <h4 class="pa-label">Stakeholder input</h4>
+        <p>What stakeholders said about this option — two to three sentences.</p>
+      </section>
+    </article>
   </section>
 </main>
 
