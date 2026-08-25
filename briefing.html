@@ -420,6 +420,36 @@ table.brief th:last-child, table.brief td:last-child { border-right:none; }
 .interp-list li { position:relative; padding-left:1.6rem; margin-bottom:1.4rem; font-family:Georgia,'Times New Roman',serif; font-size:1.06rem; line-height:1.72; color:var(--ink); }
 .interp-list li:last-child { margin-bottom:0; }
 .interp-list li::before { content:""; position:absolute; left:0; top:0.62em; width:9px; height:9px; background:var(--gold); border-radius:50%; }
+.pa-lead { font-family:Georgia,'Times New Roman',serif; font-size:1.12rem; line-height:1.55; color:var(--ink-2); margin:0.8rem 0 0; max-width:74ch; }
+.pa-option { margin-top:2rem; padding-top:1.8rem; border-top:2px solid var(--line-2); }
+.pa-option-head { margin-bottom:0.2rem; }
+.pa-option-num { display:inline-block; background:var(--navy); color:#fff; font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-stretch:condensed; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.3rem 0.7rem; }
+.pa-option-title { font-family:Georgia,'Times New Roman',serif; font-weight:700; font-size:1.3rem; line-height:1.25; color:var(--navy); margin:0.6rem 0 0; }
+.pa-option-desc { font-family:Georgia,'Times New Roman',serif; font-size:1rem; line-height:1.62; color:var(--ink-2); margin:0.7rem 0 0; max-width:78ch; }
+.pa-side { flex:1; min-width:0; display:flex; flex-direction:column; gap:1.4rem; }
+.pa-side .pa-block { margin-top:0; }
+.pa-stake { margin-top:1.6rem; }
+.pa-na { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-stretch:condensed; font-weight:700; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-2); margin:0.5rem 0 0; }
+.pa-scale-note.pa-pending { color:var(--red); font-style:italic; }
+
+/* ===== Coming soon ===== */
+.coming-soon { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-stretch:condensed; font-weight:800; letter-spacing:0.02em; color:var(--red); font-size:1.35rem; margin:1.4rem 0 0; }
+
+/* ===== Definitions ===== */
+.defn-group { margin-top:1.8rem; }
+.defn-group h3 { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-stretch:condensed; font-weight:800; letter-spacing:0.01em; color:var(--navy); font-size:1.3rem; margin:0 0 0.4rem; padding-bottom:0.5rem; border-bottom:2px solid var(--line-2); }
+.defn-list { margin:1rem 0 0; max-width:82ch; }
+.defn-list > div { padding:0 0 1.1rem; margin-bottom:1.1rem; border-bottom:1px solid var(--line); }
+.defn-list > div:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.defn-list dt { font-family:Georgia,'Times New Roman',serif; font-weight:700; font-size:1.08rem; color:var(--ink); }
+.defn-list dd { margin:0.25rem 0 0; font-family:Georgia,'Times New Roman',serif; font-size:1.04rem; line-height:1.68; color:var(--ink-2); }
+.defn-list dd a.fn { color:var(--blue); text-decoration:none; font-weight:700; font-size:0.72em; vertical-align:super; line-height:0; padding:0 0.1em; }
+.defn-list dd a.fn:hover { text-decoration:underline; }
+.footnotes { margin:2rem 0 0; padding-top:1.2rem; border-top:1px solid var(--line-2); max-width:82ch; }
+.footnotes ol { margin:0; padding-left:1.4rem; }
+.footnotes li { font-family:Georgia,'Times New Roman',serif; font-size:0.92rem; line-height:1.6; color:var(--ink-2); margin-bottom:0.5rem; word-break:break-word; }
+.footnotes li a { color:var(--blue); text-decoration:none; }
+.footnotes li a:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
@@ -459,7 +489,7 @@ table.brief th:last-child, table.brief td:last-child { border-right:none; }
   <div class="wrap">
     <span class="kicker ">For delegates</span>
     <h1>Day Three Briefing Packet</h1>
-    <p>Day Two prioritization results and a reformulation of the original nine recommendations into eight topic areas with associated problem statements, analysis, and potential policy options.</p>
+    <p>Day Two prioritization results and a reformulation of the original nine recommendations into five topic areas with associated problem statements, analysis, and potential policy options.</p>
   </div>
 </section>
 <main>
@@ -694,93 +724,931 @@ table.brief th:last-child, table.brief td:last-child { border-right:none; }
   <hr class="divider">
 
   <section class="section">
+    <span class="kicker">Reference</span>
+    <div class="section-head"><h2>Definitions and Useful Information</h2></div>
+    <p class="brief-intro">A short glossary of terms used throughout this packet. The general definitions clarify concepts that recur across the recommendations; the analysis-specific definitions explain the five scales used to profile each policy option in the briefs below.</p>
+
+    <div class="defn-group">
+      <h3>General useful information and definitions</h3>
+      <dl class="defn-list">
+        <div>
+          <dt>Life Ready</dt>
+          <dd>The core skill set needed for adult life is truly interdisciplinary and the core skill set has impact across multiple life domains. We define &ldquo;life ready&rdquo; as more than the sum of these parts: fundamental academic skills + durable human skills + self-knowledge and futures planning skills + careers knowledge + adulting skills. With these skills in place, young people can confidently step into the adult world ready to choose a path and traverse it successfully.</dd>
+        </div>
+        <div>
+          <dt>Experiential Education</dt>
+          <dd>&ldquo;Experiential education is a teaching philosophy that informs many methodologies in which educators purposefully engage with learners in direct experience and focused reflection in order to increase knowledge, develop skills, clarify values, and develop people&rsquo;s capacity to contribute to their communities.&rdquo;<a class="fn" href="#fn1" id="fnref1">1</a></dd>
+        </div>
+        <div>
+          <dt>Local Control</dt>
+          <dd>Locally elected citizens make school district policy and govern public schools, acting in compliance with state statutes.<a class="fn" href="#fn2" id="fnref2">2</a></dd>
+        </div>
+        <div>
+          <dt>Accountability</dt>
+          <dd>The MDOE implements a system of measuring school performance against specific indicators that align with federal requirements and providing three levels of support to schools in response. That is state accountability.<a class="fn" href="#fn3" id="fnref3">3</a> The current MDOE is also implementing a new initiative called Measure What Matters, which assesses schools against a broader set of criteria that more fully reflect what Maine people value. This is entirely separate from the federally-mandated accountability plans. Local accountability is the idea that local communities can design their own metrics against which they can assess school or student performance and then update their district&rsquo;s educational plan in response in order to support student and school progress. The Measure What Matters framework can be adopted by local districts voluntarily.<a class="fn" href="#fn4" id="fnref4">4</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="defn-group">
+      <h3>Analysis-specific definitions</h3>
+      <dl class="defn-list">
+        <div>
+          <dt>Reach</dt>
+          <dd>The breadth of impact of the policy across groups.</dd>
+        </div>
+        <div>
+          <dt>Implementation</dt>
+          <dd>The amount of work of bringing the policy into reality on the ground.</dd>
+        </div>
+        <div>
+          <dt>Political Will</dt>
+          <dd>The level of commitment from politicians needed for policy success.</dd>
+        </div>
+        <div>
+          <dt>Impact</dt>
+          <dd>The pace, depth, and character of change the policy is striving to achieve. Incremental is slow and accumulative. Transformative is faster and more fundamental.</dd>
+        </div>
+        <div>
+          <dt>Mechanism</dt>
+          <dd>Whether the policy uses incentives (carrots) or requirements/mandates (sticks) to achieve its goals.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="footnotes">
+      <ol>
+        <li id="fn1"><a href="https://www.aee.org/what-is-experiential-education" target="_blank" rel="noopener">https://www.aee.org/what-is-experiential-education</a></li>
+        <li id="fn2"><a href="https://www.mainelegislature.org/legis/statutes/20-a/title20-Asec2.html" target="_blank" rel="noopener">https://www.mainelegislature.org/legis/statutes/20-a/title20-Asec2.html</a></li>
+        <li id="fn3"><a href="https://www.maine.gov/doe/Testing_Accountability/model/indicators" target="_blank" rel="noopener">https://www.maine.gov/doe/Testing_Accountability/model/indicators</a></li>
+        <li id="fn4"><a href="https://www.maine.gov/doe/measurewhatmatters" target="_blank" rel="noopener">https://www.maine.gov/doe/measurewhatmatters</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section">
     <span class="kicker gold">The recommendations</span>
-    <div class="section-head"><h2>Policy briefs</h2></div>
-    <p class="brief-intro">Eight topic areas were identified within the nine recommendations from Day Two. Each topic is addressed in a brief summary analysis below. Topics have between one and three policy options described. The options were chosen to address each stated problem in ways determined to be broadly popular and also likely to be effective based on delegate and stakeholder feedback. Note that the first section includes topics sourced from the seven recommendations that did not pass with 2/3 support on Day Two, which did not receive robust treatment. The second section includes a more detailed examination of topics sourced from the two top recommendations, which each earned 84% support in the second round of voting on Day Two.</p>
+    <div class="section-head"><h2>Policy Briefs - Part One</h2></div>
+    <p class="brief-intro">Delegates' recommended topic areas that did not gain two-thirds support are included in Part One. Each topic is addressed in a brief summary analysis below. Some topics have multiple options; options were chosen to address each stated problem in ways determined to be broadly popular and also likely to be effective based on prior knowledge and feedback. (Note that these topics did not receive as robust a treatment as those topics that gained more than two-thirds support on Day Two. More detailed work will follow for any topic that is prioritized by two-thirds or more of delegates on Day Three.)</p>
     <article class="pa-brief">
       <header class="pa-head">
-        <p class="pa-eyebrow">Policy analysis &nbsp;·&nbsp; <span>Example — layout preview</span></p>
-        <h3 class="pa-title">Sample policy brief</h3>
+        <p class="pa-eyebrow">Topic area &nbsp;·&nbsp; <span>More Voice in Schools</span></p>
+        <h3 class="pa-title">Voice in Education Policy Making</h3>
+        <p class="pa-lead">Design and implement accessible and impactful ways for students, teachers, parents, and community members to understand and influence local and state-level education policy making.</p>
       </header>
       <section class="pa-block">
         <h4 class="pa-label">Problem</h4>
-        <p>The problem this recommendation addresses will appear here — two to three sentences describing the challenge and why it matters.</p>
+        <p>The education system and schools themselves are too often not responsive enough to student, teacher, and community needs. Responsiveness is understood not to be a lack of interest by leaders in meeting needs, but an absence of effective mechanisms for seeking the appropriate engagement of the full community. The problem can lead to disconnected and disaffected students, siloed teachers, frustrated parents, and community members who vote no on school budgets—a recipe for low levels of support for public schools. For example, many agree that school board meetings do not necessarily provide adequate opportunities for community, student, and parent education on school governance nor opportunities for their voice to influence policy.</p>
       </section>
-      <section class="pa-block">
-        <h4 class="pa-label">Profile</h4>
-        <p class="pa-profile-title">A short heading for the option being profiled</p>
-        <p class="pa-profile-note">A description of the policy option — up to four sentences. The scales below describe what kind of option it is; neither end of any scale is the better end.</p>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 1</span>
+          <h4 class="pa-option-title">State Legislation to Support a Biannual Citizens’ Assembly on Education</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would create a state statute to enable a citizens’ assembly on education every two years, roughly following the phases of this assembly but on a quicker timeline. The first year would include broad listening through small-group conversations across Maine to reflect on the state of the system and set the agenda for the upcoming assembly. An in-person assembly would be held the second year, organized by an entity independent of the Maine Department of Education. Evaluations and continuous improvement plans would ensure citizen, legislator, and stakeholder organization feedback shapes each subsequent assembly.</p>
         <div class="pa-profile-row">
           <div class="pa-scales">
-        <div class="pa-continuum" data-position="3">
-          <p class="pa-cname">Reach</p>
-          <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
-          <div class="pa-track">
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
           </div>
-        </div>
-        <div class="pa-continuum" data-position="2">
-          <p class="pa-cname">Resource load</p>
-          <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
-          <div class="pa-track">
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
           </div>
-        </div>
-        <div class="pa-continuum" data-position="4">
-          <p class="pa-cname">Political will</p>
-          <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
-          <div class="pa-track">
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
+          <div class="pa-continuum" data-position="4">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
           </div>
-        </div>
-        <div class="pa-continuum" data-position="4">
-          <p class="pa-cname">Impact</p>
-          <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
-          <div class="pa-track">
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
+          <div class="pa-continuum" data-position="4">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
           </div>
-        </div>
-        <div class="pa-continuum" data-position="2">
-          <p class="pa-cname">Mechanism</p>
-          <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
-          <div class="pa-track">
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
-          <span class="pa-seg"><span class="sr-only"></span></span>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
           </div>
-        </div>
             <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
           </div>
-          <div class="pa-block pa-considerations">
-            <h4 class="pa-label">Considerations</h4>
-            <p>Trade-offs, dependencies, and open questions — four to five sentences.</p>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>Future assemblies could be directed by legislation to have their own steering committee comprising specific stakeholder groups, to be organized by specific entities other than USM/CEPARE, or to provide specific types of recommendations on a timeline conducive to legislative action. Future assemblies would be effective to the extent that learnings from the evaluation are implemented, a broadly representative subset of the public is supported to participate, and elected leadership commits to listening and working with the results in an effective bipartisan manner over time.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>Variable, and modest in the larger education budget. The staff costs for an organization such as CEPARE to plan and convene an event are relatively modest, and efficiencies would accrue with repetition. The costs for citizen participation depend on the duration, location, and number of participants. The budget for this hybrid in-person assembly, its external evaluation, and reporting to the legislature is $240,000. Virtual convenings are vastly less expensive. Estimated cost for the broad listening in year one would be $75,000. Philanthropy could be invited to participate to contribute specifically to building Maine digital infrastructure for bringing Maine citizens’ voices to decision makers in a variety of ways which expand the impact of citizen assemblies.</p></div>
           </div>
         </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Stakeholder input via surveys regarding this assembly and anecdotal feedback from stakeholder organizations and legislators indicates likely support for this option.</p></div>
       </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 2</span>
+          <h4 class="pa-option-title">Model Policies for Increasing Local Voice in School Board Decisions</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would use state statute to direct MDOE, in collaboration with the Maine School Board Association (MSBA), to design and share model policies and strategies for local districts to encourage meaningful student, teacher, parent, and community engagement in decision making through effective approaches and tools that bring a diversity of voices to moderated discussions.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="4">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>There is precedent for using this mechanism to encourage local districts to take action of some sort. The resources needed are minimal, however, the policy would impact MDOE and MSSA so gaining their support for such legislation would be essential. These need to be convened by a neutral party on neutral ground, not by school board for school board. Professional moderation is likely necessary.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>The cost of developing a model policy is modest; it could be led by MDOE professionals (at the cost of their salaried time) or an outside consultant. The cost of implementing the recommended practices at the local level would depend on many factors, including the strategies selected and the possible need for additional district staff to lead the work.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Stakeholders did not give direct feedback on this option. Maine ED 2050 data, however, shows clearly that teachers and students do not feel well heard, and that many community members feel similarly. Maine Education Association, Maine Principals Association, and Maine School Management Association (which includes the Maine School Boards Association and the Maine Superintendents Association) participated in this assembly, indicating general support for more voice in education.</p></div>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 3</span>
+          <h4 class="pa-option-title">Community Accessibility for District Education Plans</h4>
+        </div>
+        <p class="pa-option-desc">Direct MDOE, in collaboration with MSMA, to publish a public repository of all district comprehensive education plans. Plans should be searchable by statutorily-required element (e.g. curriculum alignment with learning results, multi-tiered system of support, provision of family outreach and engagement) so that citizens can compare their local policies to other districts.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations and cost implications</h4><p>The MDOE already has the comprehensive plans for each district as required for basic school approval, and their website could host a repository on either the data warehouse or the Public School Approval area. They have existing IT support for the data warehouse. The technology needed to make the documents searchable by element is not complex because most districts use a template provided by MSMA. There would be a modest one-time investment of existing staff time to create the repository. Annual updates would fit within existing staff capacity.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Stakeholders were not specifically asked about this item. It was clear in some conversations that even informed stakeholders were not aware of all of the elements that are included in the comprehensive plans, and therefore should be readily accessible to view and understand. As public documents, this should not be politically controversial.</p></div>
+      </section>
+    </article>
+    <article class="pa-brief">
+      <header class="pa-head">
+        <p class="pa-eyebrow">Topic area &nbsp;·&nbsp; <span>Invest in Early Childhood Workforce</span></p>
+        <h3 class="pa-title">Early Childhood Workforce</h3>
+        <p class="pa-lead">A stronger, more consistent workforce will result in better early childhood care and education, resulting in better-prepared school children and fewer learning and behavior challenges.</p>
+      </header>
       <section class="pa-block">
-        <h4 class="pa-label">Stakeholder input</h4>
-        <p>What stakeholders said about this option — two to three sentences.</p>
+        <h4 class="pa-label">Problem</h4>
+        <p>Early childhood care and education has persistent and impactful workforce gaps. While the state currently funds salary supplements on a tiered basis, worker shortages remain, particularly in some geographic areas.</p>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 1</span>
+          <h4 class="pa-option-title">Increased Funding for Salary Supplements for Early Childhood Care and Education Providers</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would further invest in the workforce by providing increased salary supplements for certified educators and licensed home care providers in certain underserved areas. If a worker is eligible for supplements under the current program and works in a geographic area identified by DHHS as having a shortage of quality child care they would qualify for an increased monthly amount.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="4">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>Salary supplements have been in place since 2023. A recent evaluation report shows they are achieving early positive impacts on worker retention and satisfaction, though some areas still report shortages (a recruitment issue). Health care was also identified by 90% of survey respondents as a big unmet need for this workforce.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>The total cost of providing additional salary supplements would depend on the amount of the increase as well as the specific criteria used by DHHS to identify worker shortage areas. The current program costs about $30M per year and supports over 7,000 workers with stipends ranging from $240 to $540 per month depending on qualifications.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>We heard that teachers themselves also need early childhood care. A more stable early childhood workforce is “public good” and could substantially support a stronger PK-12 workforce overall.</p></div>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 2</span>
+          <h4 class="pa-option-title">Regional Shared Learning Opportunities for Parents, Caregivers, and Educators</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would invest in all adults who provide learning opportunities for young children, serving parents alongside paid professionals. Learning opportunities would be provided regionally to ensure local relevance and efficient use of resources. Each regional hub would serve to connect adult learners to existing partners including DHHS, Child Development Services, local school departments, and non-profits.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="4">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="4">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>While we don’t traditionally consider those who perform labor at home to be part of the workforce, parents working as full-time care and early educators at home are providing the same benefits to society as professionals when they are well-informed and connected to appropriate resources. Parents who take advantage of these learning opportunities may also choose to open home care centers and thereby serve other children and families. Experience gained in the home setting is excellent training for future roles in the paid workforce; as we have sought to boost educational technicians into classroom teacher positions, we can do the same for parents.</p><p>Bridging CDS, DHHS, and education is a significant effort with the potential for meaningful impact. The current divides create barriers for parents and caregivers and ultimately negatively impact children. In particular, there is a need for sustained efforts to identify students with special education needs as early as possible, which requires cross-system partnership.</p><p>Additionally, the regional hub concept is gaining interest across the state as a response to a variety of increasing needs that are difficult to meet at the local level.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>A recent legislative attempt with many similar features (LD 1859, An Act to Improve Access to Child Care and Early Childhood Education by Establishing Regional Resource Hubs) estimated costs of creating four regional hubs at $750,000 per year, plus the cost of one coordinator position at DHHS. The four hubs that would have been established would have fostered “coordination, collaboration and planning related to early childhood programs and family support programs in order to provide resources to parents, educators, employers and community members.”</p><p>The bill was initially passed by legislators but ultimately failed because it was not selected by the Appropriations Committee for funding.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Stakeholders were not specifically asked about this idea. The idea of regional service hubs has been well-received in other contexts as an efficient and low-barrier strategy for facilitating coordination and knowledge-sharing.</p></div>
+      </section>
+    </article>
+    <article class="pa-brief">
+      <header class="pa-head">
+        <p class="pa-eyebrow">Topic area &nbsp;·&nbsp; <span>Increase Funding</span></p>
+        <h3 class="pa-title">State Funding of Education</h3>
+        <p class="pa-lead">Ensure state and local funding combine to cover provision of the essentials of a high quality Maine education for all students no matter where they live.</p>
+      </header>
+      <section class="pa-block">
+        <h4 class="pa-label">Problem</h4>
+        <p>Fairness is important to Maine people but not yet adequately reflected in how we fund Maine schools. Too many districts do not have sufficient resources to meet individual students’ educational needs and aspirations. Geography and local property wealth, in particular, are limiting factors, reducing or expanding important opportunities for students to learn, grow, and contribute.</p>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 1</span>
+          <h4 class="pa-option-title">Targeted Additional Funding and Oversight Mechanisms</h4>
+        </div>
+        <p class="pa-option-desc">This policy option is a mechanism for directing to specific districts additional targeted funding for specific evidence-based or promising items or services. Districts could choose to provide the identified item or service and receive funding. For example, the state could provide funding to districts with higher levels of community poverty who provide yearlong high-quality afterschool programming and “late bus” transportation to all students, both of which have evidence of success in this setting. Funds and participation would be tracked separately for reporting and oversight to ensure effective and efficient use of funds.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="4">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>MEPRI has been tasked by the Education and Cultural Affairs Committee to assess the EPS formula for adequacy in covering the essentials of a Maine Education and to recommend changes as necessary by January 2027. The resulting report could be useful in assessing whether EPS needs broader changes or if a targeted funding approach is best.</p><p>Because EPS does not include accountability for how or where state funds directed to districts are spent, an additional layer of oversight is added in this option to meet fiscal responsibility and fairness concerns. Oversight for how some state funds are spent locally can be a cost effectiveness mechanism, especially when the desired outcome is greater fairness; more money does not necessarily equal better outcomes, but there are specific approaches and services that have been shown to provide a strong return on investment when provided to under-resourced students and communities.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>Variable. Total cost depends on the intensity of services targeted for funding, level of state funding, and the number of districts / students to be served. Oversight measures should be tied as much as possible to other existing reporting mechanisms in order to reduce added costs at the local and state levels. Districts that have the most need for support often lack administrative capacity to manage applications, data collection and reporting; they may require additional support to access and use the targeted funds.</p><p>MEPRI recently studied a proposal to increase funding provided in the EPS model for economically disadvantaged students, which would have required an additional $19M in state funding. The formula currently allocates about $136M to support programs and services for economically disadvantaged students, but most of the funding is not targeted.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>While many would be against the idea of across-the-board increases for education funding, there is support for focused spending initiatives that would be particularly beneficial for disadvantaged youth.</p></div>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 2</span>
+          <h4 class="pa-option-title">Exploration of Sustainable Taxation Methods for Funding Essential Education Needs</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would convene a cross-committee group of legislators to examine the two issues together: what is essential in a Maine education and what are sustainable ways to fund those essentials? The challenge of funding education and school-based services for children is shared by the legislative committees for education and health and human services as well as taxation, and should be examined collaboratively from all three perspectives.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="0">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+            <p class="pa-na">Not applicable for this option</p>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>While the convening itself would be a light lift, it won’t be transformative unless it results in action based on areas of common ground. Action itself might require more effort and political will, but meaningful policy change toward sustainable education funding could be truly transformative.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>No cost, if convened while the legislature is in session. The legislature has staff and infrastructure to schedule a joint meeting within resources, if leadership agrees with the need for the meeting.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Stakeholders were not specifically asked about this policy. The ongoing Task Force for Real Estate Property Tax Relief has included the importance of education funding as a driver of local taxes. There would seem to be legislator interest in a shared conversation.</p></div>
+      </section>
+    </article>
+    <article class="pa-brief">
+      <header class="pa-head">
+        <p class="pa-eyebrow">Topic area &nbsp;·&nbsp; <span>PK-8 Benchmarks + Curriculum</span></p>
+        <h3 class="pa-title">PK-8 Academic Preparation for High School</h3>
+        <p class="pa-lead">Ensure all elementary and middle level students have access to high-quality learning experiences and robust academic supports to maximize the chances of arriving at high school meeting grade-level academic expectations.</p>
+      </header>
+      <section class="pa-block">
+        <h4 class="pa-label">Problem</h4>
+        <p>Too many students arriving unprepared for the rigors of high school work.</p>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 1</span>
+          <h4 class="pa-option-title">Access to Low-Cost High-Quality Curricula for K-4 Reading and Math</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would invest MDOE staff time and expertise to pre-screen available curricula to recommend for schools to adopt. As a further step, MDOE could pursue state-level contracting for curricula through a competitive bidding process (similar to its technology procurement system), thus lowering the per-pupil costs.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>Administrative turnover often leads to curricula and program changes as administrators seek to make their mark in a new district. However, when a new plan is rolled out every three to four years, this can impede progress. Having vetted low-cost, effective curricula use broadly around the state could disincentivize administrators from making quick changes. The criteria for recommended curricula could include it being at least in part experiential.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>This policy leverages existing MDOE resources at a low additional cost. MDOE already provides guidance on criteria for high-quality curricula, and has the infrastructure for conducting group procurement. Districts needing support to implement a new literacy curriculum have access to existing MDOE grants.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Teachers generally shared that the best curricula is neither proficiency-based nor reliant on strict pacing guides. Access to curricula that are vetted for quality and alignment with Maine Learning Results would be very helpful resources.</p></div>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 2</span>
+          <h4 class="pa-option-title">Targeted Funding for Staff to Provide Learning Interventions</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would provide state funding specifically for additional staff tasked with providing evidence-based academic interventions to students not meeting benchmarks within their grade year. The funding would be allocated to each district from the state share of education costs based on the proportion of their attending students that are performing in the bottom tier on state assessments.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="4">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>Schools are required to have MTSS systems in place as a basic expectation for school approval, and the highest (usually third) tier of interventions requires specialized training. Tier 3 specialists are an ongoing need, not a one-time investment; it is estimated that 1% to 5% of students may need this level of support. However, small districts may not need a full-time interventionist; regional staffing models may be more efficient in some regions.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>The EPS funding model currently provides some general support for general education technicians who provide some types of additional support to students.</p><p>EPS does not have a dedicated component for instructional interventionists who provide advanced supports. Specialist teaching staff would be added through a dedicated funding allocation. The estimated need is about 1 academic interventionist per 500 students, with a Tier 3 (highest level of support) specialist working with 3 students at a time (45-60 minute sessions). Total state cost estimate is about $30M; districts that already employ such specialists would realize a cost savings.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Stakeholders were not specifically asked about this proposal. In prior MEPRI studies, practitioners have pointed to a lack of funding for academic and behavioral specialists as an area of inadequacy in the EPS funding model.</p></div>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 3</span>
+          <h4 class="pa-option-title">Regional Support for Effective Implementation of MTSS</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would provide funding for an implementation coach for each superintendent region to help all districts to assess the quality of their MTSS systems, and to make improvements as needed to ensure the systems are implemented and working as intended. This would, over time, create more consistency and raise the quality of supports in districts that are currently lacking. Well-implemented MTSS systems are demonstrated to reduce the need for costly special education services, resulting in cost savings over time.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>MTSS has a large return on investment when done well. Implementation of this policy could be transformative.</p><p>The system requires alignment beginning with the classroom teachers’ practices, who require coaching to implement the model. The time and attention needed are beyond the capacity and expertise of a building principal and require coaching, especially during initial start-up while norms and procedures are established.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>All schools are already expected to have Multi-Tiered Systems of Support (MTSS) in place to provide support to students who are not meeting academic (or behavioral) expectations. In theory, this is not a new cost. However, data collected by MDOE shows that implementation of MTSS varies widely. MDOE has some existing staff and already offers free professional development. However, there is no additional staff capacity to work with districts on assessing their needs and implementing the program. The addition of 9 staff to work more closely with struggling districts would cost roughly $1.5M per year. The available research shows that MTSS reduces special education costs – currently over $500M per year – and also improves student outcomes. This means the initial investment would be expected to lead to longer-term net savings.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Recent MEPRI studies have demonstrated strong support from practitioners for additional support in implementing MTSS with fidelity to the model.</p></div>
+      </section>
+    </article>
+    <article class="pa-brief">
+      <header class="pa-head">
+        <p class="pa-eyebrow">Topic area &nbsp;·&nbsp; <span>PK-8 Benchmarks + Curriculum</span></p>
+        <h3 class="pa-title">Accountability for Maine Learning Results</h3>
+        <p class="pa-lead">Ensure that all students are provided with opportunities to achieve the expectations outlined in the statewide standards.</p>
+      </header>
+      <section class="pa-block">
+        <h4 class="pa-label">Problem</h4>
+        <p>Maine’s Learning Results and Guiding Principles establish the expectations that students should meet as part of a comprehensive public education. Schools do not have complete control over the academic performance of individual students; students themselves must put in the work. But schools are responsible for providing the breadth and depth of learning experiences that will enable students to achieve the standards. Reports from students and teachers indicate that this is not happening for all students. The Learning Results are currently being updated and hopefully streamlined, and these updates should make it more feasible for schools to offer a full range of programs and services. But better systems and more transparency is needed to verify that appropriate pathways are available to all students.</p>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 1</span>
+          <h4 class="pa-option-title">Periodic Review of Academic Programs and Student Services</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would require school districts to engage in periodic (e.g. every 5 years) peer review of their comprehensive education plans to obtain formative feedback from a team of practitioners who understand the local contexts and challenges. Any identified gaps in inputs that may be inhibiting students from achieving the Maine Learning Results would be identified and referred to MDOE’s Model for School Supports for remedy. This is distinct from the current school support model, which focuses only on schools with the most concerning student outcomes. An inputs-focused approach would ensure all schools are reviewed on a cyclical basis for the appropriateness of their curricula, staffing, and support programs and services.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="4">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>A revision of the Maine Learning Results is underway. A streamlining of the results could support a meaningful peer assessment centered on the essentials.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>Districts are already expected to prepare and annually review their comprehensive education plans. The costs and staff time needed to peer review plans for others would be additional. However, a paper review of programs and services is substantially less involved than an accreditation review. Such peer conversations could be piggybacked on other convenings, thus avoiding travel costs. There may be a need for additional MDOE staff position(s) to review and analyze peer recommendations for areas needing attention. The MDOE school support model may or may not also need to expand; additional staff would be needed if more districts are to receive MDOE support.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>In terms of review, we heard that it takes at least three years to implement a response to new standards, including a year of evaluation of new initiatives, and then the standards are up for review by MDOE, under the current system. A longer period of time under this option, such as every five years, gives time for teachers to develop, test, and iterate curriculum.</p><p>Some stakeholders advised that the MDOE could also provide this kind of review for districts, offering suggested targeted changes based on data already collected and a district’s comprehensive education plan.</p><p>Teachers generally feel that anchoring to the Maine Learning Results is a good idea. However, standards should be broad enough that teachers can be creative and innovative in meeting the learning needs of their students locally while adhering to what the state as a whole is prioritizing.</p></div>
       </section>
     </article>
   </section>
+  <hr class="divider">
+
+  <section class="section">
+    <span class="kicker gold">Top recommendations</span>
+    <div class="section-head"><h2>Policy Brief - Part Two</h2></div>
+    <p class="brief-intro">Below is a more detailed examination of topics sourced from the two top recommendations, which each earned 84% support in the second round of voting on Day Two.</p>
+    <p class="coming-soon">Coming soon!</p>
+  </section>
+
 </main>
 
 <footer class="site">
