@@ -426,6 +426,14 @@ table.brief th:last-child, table.brief td:last-child { border-right:none; }
 .pa-option-num { display:inline-block; background:var(--navy); color:#fff; font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-stretch:condensed; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.3rem 0.7rem; }
 .pa-option-title { font-family:Georgia,'Times New Roman',serif; font-weight:700; font-size:1.3rem; line-height:1.25; color:var(--navy); margin:0.6rem 0 0; }
 .pa-option-desc { font-family:Georgia,'Times New Roman',serif; font-size:1rem; line-height:1.62; color:var(--ink-2); margin:0.7rem 0 0; max-width:78ch; }
+.pa-desc-list { margin:0.7rem 0 0; padding-left:1.3rem; max-width:78ch; }
+.pa-desc-list li { font-family:Georgia,'Times New Roman',serif; font-size:1rem; line-height:1.6; color:var(--ink-2); margin-bottom:0.5rem; }
+.pa-desc-list li:last-child { margin-bottom:0; }
+.pa-fnref { color:var(--blue); text-decoration:none; font-weight:700; font-size:0.72em; vertical-align:super; line-height:0; padding:0 0.1em; }
+.pa-fn { font-family:Georgia,'Times New Roman',serif; font-size:0.9rem; line-height:1.55; color:var(--ink-2); margin:0.9rem 0 0; padding-top:0.7rem; border-top:1px solid var(--line); max-width:78ch; }
+.pa-fn sup { font-weight:700; margin-right:0.15em; }
+.pa-fn a { color:var(--blue); text-decoration:none; word-break:break-word; }
+.pa-fn a:hover { text-decoration:underline; }
 .pa-side { flex:1; min-width:0; display:flex; flex-direction:column; gap:1.4rem; }
 .pa-side .pa-block { margin-top:0; }
 .pa-stake { margin-top:1.6rem; }
@@ -434,6 +442,26 @@ table.brief th:last-child, table.brief td:last-child { border-right:none; }
 
 /* ===== Coming soon ===== */
 .coming-soon { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-stretch:condensed; font-weight:800; letter-spacing:0.02em; color:var(--red); font-size:1.35rem; margin:1.4rem 0 0; }
+
+/* ===== Part Two intro: Two Approaches ===== */
+.pt-approaches { margin-top:2rem; }
+.pt-h { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-stretch:condensed; font-weight:800; letter-spacing:0.01em; text-transform:uppercase; color:var(--navy); font-size:1.5rem; margin:0; }
+.pt-approach { margin-top:1.8rem; padding:1.6rem 1.8rem 1.7rem; background:var(--paper-2); border:1px solid var(--line-2); border-left:4px solid var(--gold); }
+.pt-approach p { font-family:Georgia,'Times New Roman',serif; font-size:1.06rem; line-height:1.72; color:var(--ink-2); margin:0.8rem 0 0; max-width:82ch; }
+.pt-approach p:first-of-type { margin-top:0.7rem; }
+.pt-emph { color:var(--navy) !important; font-weight:700; font-style:italic; }
+.pt-list { list-style:none; margin:1.2rem 0 0; padding:0; max-width:82ch; }
+.pt-list li { position:relative; padding-left:1.6rem; margin-bottom:0.8rem; font-family:Georgia,'Times New Roman',serif; font-size:1.04rem; line-height:1.62; color:var(--ink); }
+.pt-list li:last-child { margin-bottom:0; }
+.pt-list li::before { content:""; position:absolute; left:0; top:0.6em; width:9px; height:9px; background:var(--gold); border-radius:50%; }
+.pt-topics li { font-weight:700; color:var(--navy); }
+.pt-sep { margin:2.6rem 0 0; }
+.pt-stake-list { list-style:none; margin:0; padding:0; max-width:70ch; }
+.pt-stake-list li { font-family:Georgia,'Times New Roman',serif; font-size:1.04rem; line-height:1.5; color:var(--ink); padding:0.55rem 0; border-bottom:1px solid var(--line-2); }
+.pt-stake-list li:first-child { padding-top:0; }
+.pt-stake-list li:last-child { border-bottom:none; }
+.pt-stake-list strong { color:var(--navy); }
+.pt-stake-list + p { margin-top:1.4rem; }
 
 /* ===== Definitions ===== */
 .defn-group { margin-top:1.8rem; }
@@ -716,7 +744,7 @@ table.brief th:last-child, table.brief td:last-child { border-right:none; }
       <li>The largest number of delegates (31) prioritized increased funding. 84% of those who placed dots approved of increased funding. This is notable because the recommendation did not move to the second round of voting due to opposition from 14% of delegates, preventing it from being prioritized for deeper analysis over the summer. However, the concerns associated with red dots were about where funding was directed and accountability for the use of funds, both issues that can be addressed with stricter oversight at the state or local levels.</li>
       <li>Something happened with the “Individualized Pathways” recommendation from dot prioritizing to hand voting. While it seemed acceptable to nearly 100% of delegates in the first round, it only reached 53% support in the second round. It was indeed the second lowest ranked for “first priority” in the first round, but it also had the fewest red dots and the highest level of overall acceptance at 96%. Were people concerned that it may have been prioritized over other more important things, reflecting a problem with the voting process itself? Or when hearing only the high-level description were people confused about its purpose and goals? This remains an open question.</li>
       <li>The lowest number of first place ratings was for “PK-8 Benchmarks and Curriculum,” with professional development and access to recommended curriculum, but it still received 80% of dot placers to say they could accept it. Opposition by red dot placers was not in principle but in practice, with a desire to ensure any priority item would benefit all students and concerns that this kind of support may already be in place. To note is the general desire in Maine for students to be achieving at higher levels on NAEP and in general in reading and math. This proposal was crafted to respond to that desire, so why was it so unpopular?</li>
-      <li>The priority with the lowest level of acceptance in phase one of prioritization, “Access to High-Quality Curriculum and Materials,” still gained 72% overall acceptance. Opposition, again, was largely not in principle but more in practice, with few noting that it may not benefit all students, and more focused on the potential need for additional policies to accompany it to have real impact and the potential extra work it may cause teachers unless additional support was included. Some delegates did have a concern about this option reducing local control, however, the proposal did not indicate any reduction in local control. It proposed MDOE would provide access and support. Specifically, no accountability measures were included. Was this a case of mistaken understanding, or was something left unspoken?</li>
+      <li>The priority with the lowest level of acceptance in phase one of prioritization, “Access to High-Quality Curriculum and Materials,” still gained 72% overall acceptance. Opposition, again, was largely not in principle but more in practice, with few noting that it may not benefit all students, and more focused on the potential need for additional policies to accompany it to have real impact and the potential extra word it may cause teachers unless additional support was included. Some delegates did have a concern about this option reducing local control, however, the proposal did not indicate any reduction in local control. It proposed MDOE would provide access and support. Specifically, no accountability measures were included. Was this a case of mistaken understanding, or was something left unspoken?</li>
       <li>Overall, there was a relatively high level of support for each of the nine proposals with concerns tending toward equitability (will the proposal impact all students or just some or be necessary in all districts or just some) and a desire not to reduce “local control.”</li>
     </ul>
   </section>
@@ -1646,7 +1674,526 @@ table.brief th:last-child, table.brief td:last-child { border-right:none; }
     <span class="kicker gold">Top recommendations</span>
     <div class="section-head"><h2>Policy Brief - Part Two</h2></div>
     <p class="brief-intro">Below is a more detailed examination of topics sourced from the two top recommendations, which each earned 84% support in the second round of voting on Day Two.</p>
-    <p class="coming-soon">Coming soon!</p>
+    <div class="pt-approaches">
+      <h3 class="pt-h">Two Approaches</h3>
+      <div class="pt-approach">
+        <h4 class="pa-label">Strategic Approach</h4>
+        <p>A multi-pronged, statewide, 10-year comprehensive strategy to advance Maine’s education system toward preparing students for successful, engaged adult lives of purpose. Such a strategy would center student engagement by prioritizing relevant, experiential learning. Elements could include developing a shared understanding of what it means to be prepared for life and a reflection of this in a streamlined Maine Learning Results; vertical alignment of agencies, committees, districts, and universities; deeper cross-sector partnerships; robust state and locally-designed accountability; and transparent, accessible channels for stakeholder voice in evolving policies and practices. States such as Rhode Island, Utah, North Dakota, Maryland, and Connecticut have in the past ten years created education visions and plans to direct, organize, and track progress. Maine could have a vision for true life-readiness that includes a foundation of experiential learning.</p>
+        <p class="pt-emph">Led by our new governor, this approach could be transformative.</p>
+        <ul class="pt-list">
+          <li>Create an initiative under the Governor’s Office of Policy Innovation and the Future for education transformation to coordinate with MDOE, DHHS, DOL and other appropriate stakeholders.</li>
+          <li>Develop an overall plan for vertical alignment of agencies, committees, and districts and cross-sector partnerships over 18 months to 2 years.</li>
+          <li>Propose a budget tied to current funding sources, with funding for the transition itself coming from new, named sources, if necessary.</li>
+        </ul>
+      </div>
+      <div class="pt-approach">
+        <h4 class="pa-label">Topic-focused Strategies</h4>
+        <p>For Part 2, we have provided policy options for the major topics identified by the delegates as a priority: career options understanding, life skills attainment, and experiential education as an educational approach. We created a fourth topic that essentially brings together the previous three in one additional policy option.</p>
+        <ul class="pt-list pt-topics">
+          <li>Career Aspirations and Options</li>
+          <li>Life-Readiness Skills</li>
+          <li>Experiential Learning</li>
+          <li>Regional Beacon Schools</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="divider thin pt-sep">
+    <div class="pt-approaches">
+      <h3 class="pt-h">Stakeholder Feedback</h3>
+      <div class="pt-approach">
+        <ul class="pt-stake-list">
+          <li><strong>Maine State Board of Education:</strong> Interviews and Meeting</li>
+          <li><strong>Maine School Board Association:</strong> Survey</li>
+          <li><strong>Maine Superintendents Association:</strong> Interviews</li>
+          <li><strong>Maine Curriculum Leaders:</strong> Survey</li>
+          <li><strong>Maine Education Association:</strong> Interviews</li>
+        </ul>
+        <p>There were general themes across all of our stakeholders, but none coalesced by group. Rather, the themes wove through and across all groups, with the exception of feedback we received only from classroom teachers. That feedback was not in opposition to the larger body of feedback; it was additive. Feedback from stakeholders is shared by policy option below.</p>
+      </div>
+    </div>
+    <article class="pa-brief">
+      <header class="pa-head">
+        <p class="pa-eyebrow">Topic area &nbsp;·&nbsp; <span>Life skills and Experiential learning</span></p>
+        <h3 class="pa-title">Career Aspirations and Options</h3>
+        <p class="pa-lead">Students need earlier exposure to post-secondary options for continued education, service, and careers in order to develop personal aspirations and make appropriate educational choices and plans in high school. When gradual and age-appropriate exposure, exploration, and experiences to life outside the school campus are incorporated into the PK-12 trajectory, school can feel more relevant and be more engaging for students of all ages.</p>
+      </header>
+      <section class="pa-block">
+        <h4 class="pa-label">Problem</h4>
+        <p>Youth often learn too late about the breadth of post-secondary opportunities available to them, potentially limiting their aspirations prematurely and causing them to make inappropriate course and program choices in high school.</p>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 1</span>
+          <h4 class="pa-option-title">Expand the ASPIRE Initiative Statewide</h4>
+        </div>
+        <p class="pa-option-desc">The Aspire Initiative is a partnership among a local school district, JMG, and the MELMAC Education Foundation to support all students from early learning through high school graduation and into post-secondary experiences in ways that prepare them to successfully join the workforce. The successful partnerships demonstrate the impact of the ASPIRE model in embedding appropriate career-focused learning along the PK-12 continuum.</p>
+        <p class="pa-option-desc">JMG, through the initiative, adds “capacity to help provide learning opportunities that focus on career exposure, exploration, and experience, and the development of future-ready skills. To do this:</p>
+        <ul class="pa-desc-list"><li>Each school and teacher has the latitude to develop activities that work best for their students, staff, and families.</li><li>We learn from students and teachers about existing opportunities and how we can enhance those to help incorporate authentic career education into existing curriculum.</li><li>We provide additional human, financial, and community resources to design extended learning opportunities meaningful to teachers, their students, and our communities.</li><li>We share JMG, MELMAC, and other Aspire initiatives’ best practices to create learning communities to elevate all.</li><li>We collaborate and celebrate the amazing work to amplify and expand opportunities to more students, teachers, and community partners.”<a class="pa-fnref" href="#aspire-fn1" id="aspire-fnref1">1</a></li></ul>
+        <p class="pa-fn" id="aspire-fn1"><sup>1</sup><a href="https://jmg.org/aspire-initiative" target="_blank" rel="noopener">https://jmg.org/aspire-initiative</a></p>
+        <p class="pa-option-desc">Many more schools already have a piece of the puzzle with existing JMG programs. With additional funding, these sites could augment their offerings with additional elements of the full ASPIRE model, and schools without current JMG programs could begin with those foundational pieces.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="4">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>When relevance to life is limited to later high school years, much of a student’s education can feel dry and even unimportant, contributing to absenteeism and low engagement. However, care must be taken not to focus on narrow career tracking, especially before high school. The emphasis is on broadening students’ perspectives and understanding of their options and the tradeoffs associated with different pathways. The Aspire model focuses on developmentally-appropriate exposure (elementary level) and exploration (middle level) before progressing to career experiences such as mentorships or internships in high school.</p><p>Schools receiving investment can actively share the model with other schools if they have “train the trainer” staff.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>Maine currently provides about $4M to JMG to provide support to 13,000 students in 150 programs across the state. MELMAC has supplemented these programs with 5-year awards of over $1M to each of four school districts to transform their systems for career education. Additional districts could be funded at a similar cost (about $250k per district per year).</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>According to district leaders involved in an Aspire initiative, in order for this investment to be successful, a district needs to have certain assets already in place. Districts that are ready and able to implement can serve as first adopters, testing and refining the model to improve it for those who follow.</p><p>District leaders in ASPIRE schools also report that both students and teachers are engaged through the program, as teachers are enabled to think more expansively about how their courses connect to life and work, and students experience learning outside the classroom.</p></div>
+      </section>
+    </article>
+    <article class="pa-brief">
+      <header class="pa-head">
+        <p class="pa-eyebrow">Topic area &nbsp;·&nbsp; <span>Life skills</span></p>
+        <h3 class="pa-title">Life-Readiness for Maine’s Young Adults</h3>
+        <p class="pa-lead">Ensure all Maine young adults have the skills necessary for adult life. Life skills are defined here in this policy as the full set of life-readiness skills students need: self-knowledge and futures planning skills, careers knowledge, civic literacy, and adulting skills. This includes technical skills (e.g. vehicle and home maintenance and nutrition and cooking), civic literacy, durable human skills useful in personal and professional lives (e.g. collaboration, communication, self-knowledge, executive functioning), career options understanding, and foundational academic knowledge.</p>
+      </header>
+      <section class="pa-block">
+        <h4 class="pa-label">Problem</h4>
+        <p>Maine’s young people are too often underprepared for the requirements of adult life. According to data from Maine ED 2050, news reporting, and anecdotal information, students themselves along with their parents, community members, and employers share concern that young adults are not ready for appropriate self-sufficiency, interdependency, or decision-making necessary for successful adult life. While some families and the schools their children attend do, together, provide most of what young adults may need, too many do not, due to a decreased focus on these topics in schools, hecticness of modern home life, intergenerational poverty, and/or a lack of this type of knowledge in older generations.</p>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 1</span>
+          <h4 class="pa-option-title">Update the Definition of “Career and Life Ready” in the Maine Learning Results</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would identify the full range of life-ready skills that are needed for self-sufficiency after high school, perhaps beginning with the definition provided above, with the exception of academic knowledge which is already in the Maine Learning Results. By including these skills in the list of things that students are expected to know and be able to do, the Learning Results will communicate the role that schools play in connecting students to rich learning opportunities that may not otherwise be available. (Note that some items may be already found in the Guiding Principles.)</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>There is general agreement that streamlining the Maine Learning Results is necessary, therefore adding standards may be counterproductive. However, if the MLR can redefine Career and Life Ready to include topic areas (e.g. home economics, civic literacy, vehicle ownership and maintenance) rather than the discrete skills they comprise, that leaves room for local and regional organizations to develop rich, responsive programming community members are eager to teach. Too many “specs” would likely prevent non-professionals from bringing their skills and knowledge to young people.</p><p>To note is that this option alone does not provide any accountability for providing life skills opportunities, even if they are added to the Maine Learning Results. One option for tracking would be to explore a JMG-style badging system, which confers badges to students as they acquire specific skills within a framework.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>The cost of expanding the Career and Life Ready standards is minimal.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Stakeholders – including parents, students, and employers – have expressed alarm at the lack of preparedness they see in some recent graduates. While some students have robust exposure to life-skill building through home, work or community involvement (e.g. scouting, Junior Achievement, etc.), others do not. Some stakeholders were reluctant to ask schools to take this on, and worried that a “curriculum” would be remedial or redundant for some students and work against the experiential nature of building life-readiness.</p></div>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 2</span>
+          <h4 class="pa-option-title">Out-of-School Time Extended Learning Opportunities (ELOs) for Life-Readiness</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would build on Maine’s extensive investment in Extended Learning Opportunities (ELOs) as a valid credit-bearing learning pathway by funding 12-month ELO coordinators in local districts and Regional ELO Coordinators at CTEs and encouraging cross-district engagement with communities and area employers. All districts would be eligible no matter their size. The local ELO coordinator would connect organizations and individuals to middle and high school students for extended learning opportunities in life-readiness skills and experiential learning connecting academics to life.</p>
+        <p class="pa-option-desc">ELOs most often occur during the regular school year, but can also occur afterschool or during breaks or summer vacation. 12-month coordinator positions would ensure that afterschool and summer opportunities would be leveraged for students. Local districts approve credit for opportunities aligned with MLR life-readiness skills. District ELO coordinators would be supported by Regional ELO Coordinators employed at each CTE to ensure students benefit from opportunities across district lines. Funding for regional coordinators would come through the current CTE funding model.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>Whether CTEs are the best place for the Regional ELO Coordinators is an open question and needs stakeholder feedback. Regional Service Centers are another model that may also work well.</p><p>In theory, school districts that share a CTE are already expected to have coordinated school schedules. However, at times this has been problematic. In order to have a true regional ELO program that crosses district boundaries, superintendents will likely need to be engaged on supporting logistics.</p><p>Schools in this option would not be discouraged from providing opportunities for students to build expanded life-readiness skills, in addition to foundational academics, especially the durable human skills. This option simply supports additional pathways for students to gain these important skills all year long.</p><p>By promoting the learning of life-readiness skills in out-of-school time experiences, the question of teacher certification is circumvented.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>Maine has provided about $7M in grants since 2022 to school districts to employ district-level ELO coordinators in 13 of 16 counties and 38 programs. This grant funding should be continued, and could even be included in the EPS model for an ongoing investment, to scale the program geographically and across grade levels as well as to include out-of-school time.</p><p>The CTE funding model also has an existing provision for each Center to hire a full-time student services coordinator; these positions are typically unfilled. This funding will need to be increased to ensure the staff members have capacity to add ELO coordination to their workload.</p><p>This option would also likely need to add funding for JMG to train and convene the Regional ELO Coordinators and expand its virtual programming, both of which would build on their current assets (and not take them in new directions).</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Students in the Maine ED 2050 project made it clear: they need and want life-readiness skills, for themselves and their peers. They cite challenges with transportation and connections as barriers to gaining these skills outside of school, in addition to family lives too busy to teach them. Similarly, many parents in Maine ED 2050 saw school as the appropriate place, given their busy two-career family. Community members who fondly recall having “home ec” and “shop” classes see those as an essential part of a middle or high school education, especially for those students who are not learning these skills outside of school. This tension is resolved by placing a community-facing ELO Coordinator inside the school, where the students are, to facilitate a broader set of community interactions than may have been otherwise available for students.</p><p>Stakeholders by and large believe life skills are best taught in real-world settings, through experiential learning opportunities. Teachers, as noted above, have full plates already, and generally consider many of the life-readiness skills to be outside their purview.</p></div>
+      </section>
+    </article>
+    <article class="pa-brief">
+      <header class="pa-head">
+        <p class="pa-eyebrow">Topic area &nbsp;·&nbsp; <span>Experiential learning</span></p>
+        <h3 class="pa-title">Experiential Learning</h3>
+        <p class="pa-lead">Expand developmentally-appropriate PK–12 experiential learning opportunities that connect academic learning to real-world experiences through professional development, curriculum, and community partnerships. Experiential learning is not a fad. It is an evidence-based approach to deeper learning that is widely used around the globe in PK-12, CTE, and adult learning. Major research outlets and national funders in education — Carnegie, for example — have been working hard to promote the experiential learning model as the next phase in the evolution of education and schooling. Simply put, people learn best when they are actively engaged in the learning process, whether they are contributing to a reflective discussion, collaborating on a solution to a community problem, or exploring chemistry in the lab.</p>
+      </header>
+      <section class="pa-block">
+        <h4 class="pa-label">Problem</h4>
+        <p>Maine students are less engaged than they or their educators and parents would like. Low motivation toward learning was found in Maine ED 2050 to be one of the key obstacles to school success and personal thriving. When students are not engaged, they are less likely to come to school and less likely to come to class when they are at school. School has changed little in the past 100 years, in many ways, yet the world has changed a good deal. “Sit and get” learning approaches are not aligned with current brain science or educational best practices, nor do they excite and inspire students.</p>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 1</span>
+          <h4 class="pa-option-title">Teacher Experiential Learning</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would ensure teachers had experiential learning opportunities themselves, specifically in teaching using an experiential learning philosophy, as part of their initial teacher preparation. Teacher education programs would need to show how their students are trained in EL as part of their cyclical program approval reviews. Beginning teachers that do not complete a traditional preparation program with student teaching would need to demonstrate competency in EL as part of their district’s recommendation for progression from conditional to professional certification.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="2">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>Beginning teachers require practice and ongoing support to develop their craft; early-career teachers make substantial improvements in their first three years on the job. Experiential teaching may not develop right away among all the priorities being juggled. Continuing in-district support is needed.</p><p>This requirement may help keep some early-career teachers in the workforce as it aligns with teaching practices that many would prefer, but find hard to implement once on the job.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>Existing teacher education programs often expose students to a variety of methods for engaging students in experiential, inquiry-based, project-based learning. These methods can be incorporated into existing courses as part of ongoing curriculum improvement. A more significant cost implication is the need for school districts that employ alternative-certification teachers – which is nearly all school districts – to have internal capacity to mentor their early-career staff in a full array of engaging teaching methods. Some schools currently lack adequate staff capacity and training for robust mentoring and will need to dedicate more attention to their induction programs.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Most stakeholders believe that beginning teachers need more practice with engaging teaching methods like EL as part of their initial preparation (among other foundational teaching skills). However, focusing only on traditional educator preparation pathways misses a large group of new teachers that pursue alternative pathways such as emergency certification and do not complete a guided student teaching experience. Both routes need to be considered to ensure that teachers universally receive this preparation. We did hear from the State Board of Education, which oversees teacher preparation requirements, that Rule Chapter 114 is planned for revisions in the near future.</p></div>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 2</span>
+          <h4 class="pa-option-title">Teacher and Administrator Recertification Requirements</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would require that all teachers, including early-career as well as experienced educators, engage in a district-provided experiential education learning opportunity themselves (as learners) at least once in the next five years. As part of the professional learning they would be asked to reflect on the implications for their own teaching practice, and (re)design curricula to incorporate more experiential learning opportunities embedded in academic content. Completion of this experience would be required for recertification.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="1">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>Adult learners also need time to engage in learning content in a hands-on way and have dedicated time to reflect on their practice. Unless teachers are exposed to high-quality experiential learning, it is hard to expect they will bring it into their own classrooms. Many schools are not employing these methods and so it cannot be assumed teachers are necessarily learning from their peers.</p><p>Such experiences do not necessarily need to be provided by the employing district – they could be offered by a university, a professional organization, or other non-profit – but it is reasonable to expect school districts to also walk the walk.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>This does not add any new costs or additional contracted time. The required experience will count toward current recertification requirements, and not add to the total number of CEUs needed every 5 years.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Stakeholders noted that teachers themselves do not consistently receive the type of learning opportunities that are touted for their students. We did hear from the State Board of Education, which oversees teacher preparation requirements, that Rule Chapter 114 is planned for revisions in the near future.</p></div>
+      </section>
+    </article>
+    <article class="pa-brief">
+      <header class="pa-head">
+        <p class="pa-eyebrow">Topic area &nbsp;·&nbsp; <span>Combination</span></p>
+        <h3 class="pa-title">Regional Beacon Schools</h3>
+        <p class="pa-lead">Build a system of exemplary grades 9-16 regional experiential high schools that connect learning to life, college, and careers and that inspire students, teachers, and communities.</p>
+      </header>
+      <section class="pa-block">
+        <h4 class="pa-label">Problem</h4>
+        <p>Maine has an inequitable distribution of both high-performing academically-oriented high schools and access to robust career- and life-connected learning. Equally, too many Maine students feel disengaged from their education. One of the chief concerns surfaced in Maine ED 2050 research and also the second day of the citizens’ assembly was student disengagement. This is also evidenced in generally robust attendance in CTE programs within a system with a high level of chronic absenteeism.</p>
+      </section>
+      <section class="pa-option">
+        <div class="pa-option-head">
+          <span class="pa-option-num">Option 1</span>
+          <h4 class="pa-option-title">Experiential Learning Lab High Schools</h4>
+        </div>
+        <p class="pa-option-desc">This policy option would expand the Integrated, Consolidated 9-16 Educational Facilities Program Funding opportunity, which is in the second phase in the current application cycle. The expansion would not only direct funds to more schools, it would streamline the application process by directing the MDOE to partner with MSSA, the UMaine system, and any relevant outside organizations in creating a statewide assessment of assets and needs to inform a strategic approach to situating Beacon Schools.</p>
+        <p class="pa-option-desc">This team would create a strategic plan for promoting and supporting the transformation of Maine’s high schools into experiential, career- and college-connected laboratories for learning. Experiential learning would be the foundational approach. The current program requires a partnership with a UMaine campus; this model deepens partnership with the UMaine system to create a pre-service teacher learning lab in each high school, ensuring regionally-relevant opportunities for pre-service educators to gain meaningful, real-world experiences and experienced educators to advance their practice.</p>
+        <p class="pa-option-desc">These lab schools would also be designed as Beacon Schools, regional professional learning centers for preservice and certified administrators and teachers, igniting interest in and building capacity for experiential, real-world, career-connected learning in all schools.</p>
+        <div class="pa-profile-row">
+          <div class="pa-scales">
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Reach</p>
+            <div class="pa-poles"><span>Targeted</span><span>Universal</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Implementation</p>
+            <div class="pa-poles"><span>Light lift</span><span>Heavy lift</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Political will</p>
+            <div class="pa-poles"><span>Minimal</span><span>Substantial</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="5">
+            <p class="pa-cname">Impact</p>
+            <div class="pa-poles"><span>Incremental</span><span>Transformative</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+          <div class="pa-continuum" data-position="3">
+            <p class="pa-cname">Mechanism</p>
+            <div class="pa-poles"><span>Carrot</span><span>Stick</span></div>
+            <div class="pa-track">
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            <span class="pa-seg"><span class="sr-only"></span></span>
+            </div>
+          </div>
+            <p class="pa-scale-note">The filled box shows where this option sits. Neither end is the better end.</p>
+          </div>
+          <div class="pa-side">
+            <div class="pa-block"><h4 class="pa-label">Considerations</h4><p>The XQ Institute is a valuable resource that could be leveraged in this program. Nearby, Rhode Island has partnered with the XQ Institute to reimagine its high schools for real-world, experiential learning as a part of a multi-year strategic approach.</p><p>This option is rated not quite a full “carrot” because districts wanting new buildings in areas that are ripe for this model may feel they need to consolidate if they want construction funding.</p><p>While there is indeed a lot of excitement from districts placed all over the state, not every district that might want to be a Beacon School has the assets needed or the necessary geographic placement. This option acknowledges those facts and moves forward with a plan that can indeed promote progress in all schools, even those not directly funded within this program. Asset mapping is a key aspect of the application process and criteria need to be clearly outlined so that districts don’t waste time applying for something they are not well positioned for. One approach would be to convene MSMA state leaders with MDOE to review asset maps, needs assessments, and geographic realities and create a shared understanding of where Beacon Schools could be built over a twenty-year period, perhaps supported by research staff. This would remove the burden from individual districts to enter multi-year application processes only not to be selected.</p></div>
+            <div class="pa-block"><h4 class="pa-label">Cost implications</h4><p>This program already exists, and has for almost a decade, without money yet being spent. While additional funding would surely be needed at some point, a strategic approach would seek to include replacing buildings already at the end of their lifespan, thereby addressing the crisis of school construction as well.</p><p>Investment in Beacon Schools can be understood to be an investment in a region, increasing teacher development opportunities, drawing new teachers, and providing a better prepared workforce and more community-connected citizens.</p><p>The cost of constructing an entirely new high school is high. The recently-completed Sanford High School, which has many features of a Beacon School, cost $103M in 2018. It may be possible to convert an existing school (or a CTE Region) to a Beacon School at a lower cost.</p></div>
+          </div>
+        </div>
+        <div class="pa-block pa-stake"><h4 class="pa-label">Stakeholder input</h4><p>Maine School Board Association and Maine Curriculum Leaders members shared very similar views overall.</p><p><strong>Concerns:</strong> Total cost, remote schools being left out, transportation issues, historic inability of districts to “get along,” deprioritization of the “dire school construction crisis,” a sense that it is unnecessary to transform in this way, and that it removes pressure from all schools to transform toward experiential learning.</p><p><strong>Positives:</strong> Stronger regional network of opportunities for students, more career-connected experiential learning, more efficient use of resources for the desired outcomes, deeper community engagement with schools, stronger connection to community for students, potential to interest businesses in contributing to budgets, potential to improve chronic absenteeism, could scale well, could expand access to CTE-like experiences, proactively addresses declining populations, builds on existing excitement for 9-16 high school options, and builds on the successful model of CTE — which, like CTE, could provide a “learner-focused curriculum in a well-structured setting.”</p><p>Superintendents shared enthusiasm for growth of the ASPIRE model while incorporating the “Beacon School” concept. Concerns centered on the readiness of each school to participate. Fairness in selection of schools was also mentioned, with the advice to make site selection non-negotiable in order to avoid the historic adversity the consolidated 9-16 program has faced due to cross-district disagreements about siting.</p></div>
+      </section>
+    </article>
   </section>
 
 </main>
