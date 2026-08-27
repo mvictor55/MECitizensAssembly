@@ -115,6 +115,18 @@ nav.menu a {
 nav.menu a:hover { color: var(--gold); }
 nav.menu a[aria-current="page"] { color: var(--navy); background: var(--gold); }
 .menu-toggle { display: none; }
+nav.menu li.has-dd { position: relative; display: flex; }
+nav.menu details.nav-dd { position: relative; }
+nav.menu details.nav-dd > summary { list-style: none; cursor: pointer; color: var(--paper); font-weight: 500; font-size: 1.02rem; font-family: 'Helvetica Neue','Segoe UI',system-ui,-apple-system,'Roboto',Arial,sans-serif; letter-spacing: 0.01em; padding: 0.45rem 0.8rem; border-radius: 2px; border-bottom: 2px solid transparent; display: inline-flex; align-items: center; gap: 0.35em; }
+nav.menu details.nav-dd > summary::-webkit-details-marker { display: none; }
+nav.menu details.nav-dd > summary::after { content: "\25BE"; font-size: 0.7em; opacity: 0.85; transition: transform 0.15s ease; }
+nav.menu details.nav-dd[open] > summary::after { transform: rotate(180deg); }
+nav.menu details.nav-dd > summary:hover { color: var(--gold); }
+nav.menu details.nav-dd.active > summary { color: var(--navy); background: var(--gold); }
+nav.menu .dd-menu { list-style: none; margin: 0; padding: 0.3rem; position: absolute; top: calc(100% + 4px); left: 0; min-width: 190px; background: var(--navy); border: 1px solid var(--navy-2); border-top: 3px solid var(--gold); box-shadow: 0 10px 26px rgba(0,0,0,0.28); z-index: 60; display: flex; flex-direction: column; gap: 0.1rem; }
+nav.menu .dd-menu li { display: block; }
+nav.menu .dd-menu a { display: block; white-space: nowrap; padding: 0.5rem 0.85rem; border-bottom: none; border-radius: 2px; }
+nav.menu .dd-menu a[aria-current="page"] { color: var(--navy); background: var(--gold); }
 
 /* ============ BUTTONS ============ */
 .btn {
@@ -326,6 +338,12 @@ footer.site .colophon a { text-decoration: underline; }
   nav.menu.open { display: block; }
   nav.menu ul { flex-direction: column; align-items: stretch; gap: 0; padding: 0.4rem 1.5rem 1rem; }
   nav.menu a { padding: 0.7rem 0; border-bottom: 1px solid var(--navy-2); border-radius: 0; }
+  nav.menu li.has-dd { display: block; }
+  nav.menu details.nav-dd { position: static; }
+  nav.menu details.nav-dd > summary { padding: 0.7rem 0; border-bottom: 1px solid var(--navy-2); }
+  nav.menu details.nav-dd.active > summary { color: var(--navy); background: var(--gold); padding-left: 0.5rem; }
+  nav.menu .dd-menu { position: static; box-shadow: none; border: none; background: transparent; padding: 0 0 0 1rem; min-width: 0; }
+  nav.menu .dd-menu a { padding: 0.6rem 0; border-bottom: 1px solid var(--navy-2); border-radius: 0; }
   .menu-toggle { display: inline-flex; background: var(--gold); color: var(--navy); border: none; font-family: 'Helvetica Neue', 'Arial Narrow', 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif; font-weight: 700; padding: 0.5rem 0.9rem; cursor: pointer; }
   .masthead .wrap { position: relative; flex-wrap: wrap; }
 }
@@ -376,7 +394,13 @@ h1, h2, h3 { font-stretch: 95%; }
         <li><a href="why.html">The delegates</a></li>
         <li><a href="what-is-a-citizens-assembly.html">The model</a></li>
         <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="briefing.html">Briefing</a></li>
+        <li class="has-dd"><details class="nav-dd">
+          <summary>Briefing</summary>
+          <ul class="dd-menu">
+            <li><a href="briefing.html">Briefing Packet</a></li>
+            <li><a href="qa.html">Q&amp;A</a></li>
+          </ul>
+        </details></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="partners.html" aria-current="page">Partners</a></li>
         <li><a href="results.html">Results</a></li>
