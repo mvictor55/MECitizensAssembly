@@ -298,6 +298,13 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .sess:nth-child(2) .d { color: var(--blue); }
 .sess:nth-child(3) .d { color: var(--red); }
 .sess .t { font-size: 0.9rem; color: #c7c7d6; margin-top: 0.3rem; }
+.watch-inner { max-width: var(--max); margin: 0 auto; }
+.watch .kicker { margin-bottom: 0.6rem; }
+.watch h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); margin: 0; }
+.watch > .watch-inner > p { max-width: 70ch; margin: 0.7rem 0 0; }
+.video-embed { position:relative; width:100%; aspect-ratio:16 / 9; background:#000; border:2px solid var(--navy-2); overflow:hidden; margin:1.6rem 0; }
+.video-embed iframe, .video-embed video { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.video-placeholder { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:1rem; color:var(--paper); font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:0.04em; text-transform:uppercase; }
 
 /* ============ FOOTER ============ */
 footer.site { background: var(--navy); color: var(--paper); border-top: 5px solid var(--gold); margin-top: 3rem; }
@@ -413,6 +420,29 @@ h1, h2, h3 { font-stretch: 95%; }
     <span class="kicker red">For delegates</span>
     <h1>Schedule</h1>
     <p>The Assembly was held in person in Bangor, Maine, on June 17–18, 2026, preceded by two virtual orientation sessions. A final day of virtual deliberations and voting will happen on August 28.</p>
+  </div>
+</section>
+
+<section class="watch" id="watch-live">
+  <div class="watch-inner">
+    <span class="kicker gold">Live · Friday, August 28</span>
+    <h2>Watch the final day live</h2>
+    <p>The Assembly's final day of deliberation and voting streams live on YouTube. No registration or sign-up is needed to watch — the player below goes live when the day begins. The small-group deliberations (9:45am–12:15pm) are held privately and are not livestreamed.</p>
+    <!-- ============================================================
+         LIVESTREAM EMBED — replace the <div class="video-placeholder"> line
+         below with the YouTube embed iframe, e.g.:
+         <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Maine Citizens' Assembly livestream" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+         ============================================================ -->
+    <div class="video-embed">
+      <div class="video-placeholder">YouTube livestream &mdash; link to be added</div>
+    </div>
+    <div class="sessions">
+      <div class="sess"><p class="d">8:00am</p><p class="t">Welcome &amp; remarks · MEPRI Briefing and Q&amp;A</p></div>
+      <div class="sess"><p class="d">9:45am</p><p class="t">Small-group deliberations — not livestreamed</p></div>
+      <div class="sess"><p class="d">12:15pm</p><p class="t">Ratification of the priority list · Closing</p></div>
+    </div>
+    <!-- SIGN UP FOR UPDATES — replace href="#" with the sign-up form URL -->
+    <a class="btn on-navy" href="#">Sign up for updates</a>
   </div>
 </section>
 <style>

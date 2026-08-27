@@ -302,6 +302,11 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .watch { background: var(--navy); color: var(--paper); padding: 2.4rem; border-top: 5px solid var(--red); }
 .watch h2 { color: #fff; }
 .watch p { color: #d9d9e6; }
+.watch-inner { max-width: var(--max); margin: 0 auto; }
+.watch .kicker { margin-bottom: 0.6rem; }
+.watch h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); margin: 0; }
+.watch > .watch-inner > p { max-width: 68ch; margin: 0.7rem 0 0; }
+.watch-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.4rem; }
 .sessions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--navy-2); margin: 1.5rem 0; }
 .sess { padding: 1.2rem; border-right: 1px solid var(--navy-2); }
 .sess:last-child { border-right: none; }
@@ -390,9 +395,9 @@ h1, h2, h3 { font-stretch: 95%; }
 <div class="ticker">
   <div class="wrap">
     <span class="dot"></span>
-    <span>The Assembly convened in Bangor — June 17–18, 2026. See the results.</span>
-    <a href="results.html">View the outcomes &rarr;</a>
-    <a class="right" href="schedule.html">See the schedule &rarr;</a>
+    <span>Watch live Friday, August 28 — the Assembly's final day of deliberation &amp; voting streams on YouTube.</span>
+    <a href="schedule.html#watch-live">Watch live &rarr;</a>
+    <a class="right" href="results.html">June outcomes &rarr;</a>
   </div>
 </div>
 
@@ -466,6 +471,19 @@ h1, h2, h3 { font-stretch: 95%; }
 </div>
 
 <main>
+  <section class="watch" id="watch-live">
+    <div class="watch-inner">
+      <span class="kicker gold">Live · Friday, August 28</span>
+      <h2>Watch the final day live</h2>
+      <p>On August 28, delegates reconvene virtually to deliberate on the policy options and cast their final vote. Watch it live on YouTube — no registration needed.</p>
+      <div class="watch-actions">
+        <a class="btn on-navy" href="schedule.html#watch-live">Watch live &rarr;</a>
+        <!-- SIGN UP FOR UPDATES — replace href="#" with the sign-up form URL -->
+        <a class="btn ghost on-navy" href="#">Sign up for updates</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <span class="kicker red">What happens next</span>
     <div class="section-head"><h2>Draft priorities have been set. The policy analysis and stakeholder feedback phase is next.</h2></div>
