@@ -306,6 +306,8 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .video-embed { position:relative; width:100%; aspect-ratio:16 / 9; background:#000; border:2px solid var(--navy-2); overflow:hidden; margin:1.6rem 0; }
 .video-embed iframe, .video-embed video { position:absolute; inset:0; width:100%; height:100%; border:0; }
 .video-placeholder { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:1rem; color:var(--paper); font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:0.04em; text-transform:uppercase; }
+.watch-fallback { font-size:0.95rem; margin:0.2rem 0 0; color:#c9c9dc; }
+.watch-fallback a { color:var(--gold); }
 
 /* ============ FOOTER ============ */
 footer.site { background: var(--navy); color: var(--paper); border-top: 5px solid var(--gold); margin-top: 3rem; }
@@ -324,6 +326,10 @@ footer.site .colophon a { text-decoration: underline; }
 .pagehead h1 { color: #fff; font-family: 'Helvetica Neue', 'Arial Narrow', 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif; font-weight: 900; font-size: clamp(2.1rem, 5vw, 3.6rem); text-transform: uppercase; letter-spacing: -0.01em; margin: 0.3rem 0 0; }
 .pagehead p { color: #c9c9dc; font-size: 1.12rem; max-width: 60ch; margin: 0.5rem 0 0; }
 .pagehead .kicker { background: var(--gold); color: var(--navy); }
+.pagehead .wrap { position: relative; }
+.pagehead .kicker { justify-self: start; }
+.ph-signup { position: absolute; top: 1.6rem; right: 1.5rem; margin: 0; }
+@media (max-width: 700px){ .ph-signup { position: static; display: inline-flex; margin-top: 1.1rem; } }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 900px) {
@@ -375,14 +381,24 @@ h1, h2, h3 { font-stretch: 95%; }
 .bio-item { margin:0 0 1.2rem; font-size:0.96rem; line-height:1.55; color:var(--ink-2); break-inside:avoid; -webkit-column-break-inside:avoid; }
 .bio-item strong { color:var(--navy); font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:700; }
 @media (max-width:760px){ .bios-grid { column-count:1; } }
+
+/* ===== Sign-up modal ===== */
+.signup-modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1.2rem; }
+.signup-modal[hidden] { display: none; }
+.signup-modal__backdrop { position: absolute; inset: 0; background: rgba(10,11,30,0.72); }
+.signup-modal__dialog { position: relative; z-index: 1; width: min(560px, 100%); height: min(80vh, 760px); background: #fff; border-radius: 8px; box-shadow: 0 24px 60px rgba(0,0,0,0.45); overflow: hidden; }
+.signup-modal__frame { width: 100%; height: 100%; border: 0; }
+.signup-modal__close { position: absolute; top: 8px; right: 10px; z-index: 2; width: 36px; height: 36px; padding: 0; border: none; border-radius: 50%; background: var(--navy); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.signup-modal__close:hover { background: var(--red); }
+@media (max-width: 600px){ .signup-modal { padding: 0.5rem; } .signup-modal__dialog { height: 90vh; } }
 </style>
 </head>
 <body>
 <div class="ticker">
   <div class="wrap">
     <span class="dot"></span>
-    <span>The Assembly convened in Bangor — June 17–18, 2026.</span>
-    <a href="results.html">View the outcomes &rarr;</a>
+    <span>The Assembly’s final day is complete — watch the recording of the delegates’ deliberations, voting, and ratification.</span>
+    <a href="schedule.html#watch-live">Watch the recording &rarr;</a>
     <a class="right" href="results.html">See the results &rarr;</a>
   </div>
 </div>
@@ -411,7 +427,13 @@ h1, h2, h3 { font-stretch: 95%; }
         </details></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="partners.html">Partners</a></li>
-        <li><a href="results.html">Results</a></li>
+        <li class="has-dd"><details class="nav-dd">
+          <summary>Results</summary>
+          <ul class="dd-menu">
+            <li><a href="results.html">Draft</a></li>
+            <li><a href="results-final.html">Final</a></li>
+          </ul>
+        </details></li>
       </ul>
     </nav>
   </div>
@@ -420,31 +442,24 @@ h1, h2, h3 { font-stretch: 95%; }
   <div class="wrap">
     <span class="kicker red">For delegates</span>
     <h1>Schedule</h1>
-    <p>The Assembly was held in person in Bangor, Maine, on June 17–18, 2026, preceded by two virtual orientation sessions. A final day of virtual deliberations and voting will happen on August 28.</p>
+    <p>The Assembly was held in person in Bangor, ME on June 17-18, 2026, preceded by two virtual orientation sessions. Day 3 of the Assembly was held on Zoom, where delegates deliberated, gave detailed feedback on policy options, and then ultimately ratified a slate of two primary priorities along with several recommendations.</p>
+    <a class="btn on-navy ph-signup" href="#" data-signup-open>Sign up for updates</a>
   </div>
 </section>
 
 <section class="watch" id="watch-live">
   <div class="watch-inner">
-    <span class="kicker gold">Live · Friday, August 28</span>
-    <h2>Watch the final day live</h2>
-    <p>The Assembly's final day of deliberation and voting streams live on YouTube. No registration or sign-up is needed to watch — the player below goes live when the day begins. (Small-group deliberations will not be livestreamed.)</p>
-    <!-- ============================================================
-         LIVESTREAM EMBED — replace the <div class="video-placeholder"> line
-         below with the YouTube embed iframe, e.g.:
-         <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Maine Citizens' Assembly livestream" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
-         ============================================================ -->
+    <span class="kicker gold">Recording · August 28, 2026</span>
+    <h2>Watch the final day</h2>
+    <p>Watch the final day of deliberations, voting, and ratifying below.</p>
     <div class="video-embed">
-      <div class="video-placeholder">YouTube livestream &mdash; link to be added</div>
+      <iframe src="https://www.youtube.com/embed/4_3Z2selEk0?rel=0"
+              title="Maine Citizens' Assembly recording"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
     </div>
-    <div class="sessions">
-      <div class="sess"><p class="d">8:00am</p><p class="t">Welcome &amp; remarks · MEPRI Briefing and Q&amp;A</p></div>
-      <div class="sess"><p class="d">9:45am</p><p class="t">Small-group and plenary deliberations · Voting</p></div>
-      <div class="sess"><p class="d">12:15pm</p><p class="t">Ratification</p></div>
-      <div class="sess"><p class="d">1:20pm</p><p class="t">Closing</p></div>
-    </div>
-    <!-- SIGN UP FOR UPDATES — replace href="#" with the sign-up form URL -->
-    <a class="btn on-navy" href="#">Sign up for updates</a>
+    <p class="watch-fallback">Trouble with the player? <a href="https://youtube.com/live/4_3Z2selEk0" target="_blank" rel="noopener">Open the recording directly &rarr;</a></p>
   </div>
 </section>
 <style>
@@ -585,7 +600,7 @@ h1, h2, h3 { font-stretch: 95%; }
 <main>
   <section class="section">
     <div class="prose" style="max-width:75ch;">
-      <p>The Maine Citizens' Assembly on Education Priorities brought delegates together for two intensive days in Bangor — a day of learning followed by a day of deliberation. On August 28, in a virtual half-day session, delegates will decide on a final slate of priorities.</p>
+      <p>The Maine Citizens' Assembly on Education Priorities brought delegates together for two intensive days in Bangor — a day of learning followed by a day of deliberation. On August 28, in a virtual half-day session, delegates decided on a final slate of two top priorities. The work continues as legislators, the Expert Advisory Committee, MEPRI, and CEPARE come together to consider the delegates' priorities as a part of strategic action to improve Maine's PK-12 system of education.</p>
     </div>
 
     <span class="kicker" style="margin-top:1.6rem;">The arc of the Assembly</span>
@@ -875,7 +890,6 @@ h1, h2, h3 { font-stretch: 95%; }
       </details>
     </div>
 
-    <p style="font-size:0.92rem; color:var(--ink-2); margin-top:1.6rem;">Times for the two Bangor days reflect the agendas as run; the August 28 agenda is planned and may adjust slightly on the day.</p>
   </section>
   <hr class="divider">
 
@@ -988,6 +1002,38 @@ function openTargetDetails() {
 window.addEventListener('DOMContentLoaded', openTargetDetails);
 window.addEventListener('hashchange', openTargetDetails);
 
+</script>
+
+<div id="signup-modal" class="signup-modal" hidden>
+  <div class="signup-modal__backdrop" data-signup-close></div>
+  <div class="signup-modal__dialog" role="dialog" aria-modal="true" aria-label="Sign up for updates">
+    <button class="signup-modal__close" type="button" aria-label="Close sign-up form" data-signup-close>&times;</button>
+    <iframe class="signup-modal__frame" title="Sign up for updates" data-src="https://9f0d60b0.sibforms.com/serve/MUIFANfnPBCqymOT7CcnRQx8lMwRpMkIP2RydI51-m7zEsB4W3FNqBi8Ydgj7wSX-pa5aAe6D0NlZpt1A6GCxRx4-VUN66PRlcG-toCajfh6feR20Ph4AF0KaCBMD_VQV5jFzEuv4cYlgEvi15QI5XbkkKNeMTsg0eeff2OqGypPM7rAh98qsGL5bc4zClPS9fXH_1VmkpB6Zw7UvA==" src="about:blank"></iframe>
+  </div>
+</div>
+<script>
+(function(){
+  var modal = document.getElementById('signup-modal');
+  if(!modal) return;
+  var frame = modal.querySelector('.signup-modal__frame');
+  var lastFocus = null;
+  function openModal(e){
+    if(e && e.preventDefault) e.preventDefault();
+    lastFocus = (e && e.currentTarget) || document.activeElement;
+    if(frame && frame.getAttribute('src') !== frame.getAttribute('data-src')){ frame.setAttribute('src', frame.getAttribute('data-src')); }
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    var c = modal.querySelector('.signup-modal__close'); if(c) c.focus();
+  }
+  function closeModal(){
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll('[data-signup-open]').forEach(function(b){ b.addEventListener('click', openModal); });
+  modal.querySelectorAll('[data-signup-close]').forEach(function(b){ b.addEventListener('click', closeModal); });
+  document.addEventListener('keydown', function(e){ if((e.key === 'Escape' || e.key === 'Esc') && !modal.hidden){ closeModal(); } });
+})();
 </script>
 </body>
 </html>

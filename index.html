@@ -389,15 +389,25 @@ h1, h2, h3 { font-stretch: 95%; }
 .report-card:hover .rc-arrow { transform:translateX(3px); }
 @media (max-width:900px){ .reports-grid { grid-template-columns:1fr 1fr; } }
 @media (max-width:520px){ .reports-grid { grid-template-columns:1fr; } }
+
+/* ===== Sign-up modal ===== */
+.signup-modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1.2rem; }
+.signup-modal[hidden] { display: none; }
+.signup-modal__backdrop { position: absolute; inset: 0; background: rgba(10,11,30,0.72); }
+.signup-modal__dialog { position: relative; z-index: 1; width: min(560px, 100%); height: min(80vh, 760px); background: #fff; border-radius: 8px; box-shadow: 0 24px 60px rgba(0,0,0,0.45); overflow: hidden; }
+.signup-modal__frame { width: 100%; height: 100%; border: 0; }
+.signup-modal__close { position: absolute; top: 8px; right: 10px; z-index: 2; width: 36px; height: 36px; padding: 0; border: none; border-radius: 50%; background: var(--navy); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.signup-modal__close:hover { background: var(--red); }
+@media (max-width: 600px){ .signup-modal { padding: 0.5rem; } .signup-modal__dialog { height: 90vh; } }
 </style>
 </head>
 <body>
 <div class="ticker">
   <div class="wrap">
     <span class="dot"></span>
-    <span>Watch live Friday, August 28 &mdash; the Assembly's final day of deliberation &amp; voting.</span>
-    <a href="watch.html#watch-live">Watch live &rarr;</a>
-    <a class="right" href="results.html">June outcomes &rarr;</a>
+    <span>The Assembly’s final day is complete — watch the recording of the delegates’ deliberations, voting, and ratification.</span>
+    <a href="schedule.html#watch-live">Watch the recording &rarr;</a>
+    <a class="right" href="results.html">See the results &rarr;</a>
   </div>
 </div>
 
@@ -415,7 +425,7 @@ h1, h2, h3 { font-stretch: 95%; }
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="why.html">The delegates</a></li>
         <li><a href="what-is-a-citizens-assembly.html">The model</a></li>
-        <li><a href="watch.html">Watch</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
         <li class="has-dd"><details class="nav-dd">
           <summary>Briefing</summary>
           <ul class="dd-menu">
@@ -425,7 +435,13 @@ h1, h2, h3 { font-stretch: 95%; }
         </details></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="partners.html">Partners</a></li>
-        <li><a href="results.html">Results</a></li>
+        <li class="has-dd"><details class="nav-dd">
+          <summary>Results</summary>
+          <ul class="dd-menu">
+            <li><a href="results.html">Draft</a></li>
+            <li><a href="results-final.html">Final</a></li>
+          </ul>
+        </details></li>
       </ul>
     </nav>
   </div>
@@ -434,13 +450,13 @@ h1, h2, h3 { font-stretch: 95%; }
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="kicker rise">A Statewide Citizens' Assembly · Days 1 & 2 concluded</span>
+      <span class="kicker rise">A Statewide Citizens' Assembly · Concluded August 2026</span>
       <h1 class="rise d1">Maine is<br><span class="em">Listening</span></h1>
       <p class="standfirst rise d2" style="max-width:52ch; margin-bottom:1rem;"><span class="q">"What actions should our next governor and our legislature prioritize to improve PK-12 education in Maine?"</span></p>
-      <p class="rise d3" style="max-width:52ch; color:var(--ink-2);">On June 17–18, 2026, 64 delegates to the Maine Citizens' Assembly on Education Priorities met in Bangor to answer this question. Selected by lottery to represent the diversity of our state, they deliberated together and produced a slate of priorities. The next step is MEPRI research to draft feasible policy options for stakeholder feedback. Statewide organizations and others weigh in before delegates cast their final vote.</p>
+      <p class="rise d3" style="max-width:52ch; color:var(--ink-2);">On June 17–18, 2026, 64 delegates to the Maine Citizens' Assembly on Education Priorities met in Bangor to answer this question. Selected by lottery to represent the diversity of our state, they deliberated together and produced a slate of priorities. After a summer of MEPRI research and stakeholder feedback, delegates reconvened virtually on August 28 and ratified a final slate of two primary priorities, along with several recommendations.</p>
       <div class="cta-row rise d3">
         <a class="btn" href="results.html">See the results</a>
-        <a class="btn ghost" href="watch.html">View the schedule</a>
+        <a class="btn ghost" href="schedule.html">View the schedule</a>
       </div>
     </div>
     <aside class="hero-side rise d3">
@@ -473,28 +489,27 @@ h1, h2, h3 { font-stretch: 95%; }
 <main>
   <section class="watch" id="watch-live">
     <div class="watch-inner">
-      <span class="kicker gold">Live · Friday, August 28</span>
-      <h2>Watch the final day live</h2>
-      <p>On August 28, delegates reconvene virtually to deliberate on the policy options and cast their final vote. Watch it live — no registration needed.</p>
+      <span class="kicker gold">Recording · August 28, 2026</span>
+      <h2>Watch the final day</h2>
+      <p>On August 28, delegates reconvened virtually to deliberate on the policy options, give feedback, and ratify their final slate of priorities. Watch the recording below.</p>
       <div class="watch-actions">
-        <a class="btn on-navy" href="watch.html#watch-live">Watch live &rarr;</a>
-        <!-- SIGN UP FOR UPDATES — replace href="#" with the sign-up form URL -->
-        <a class="btn ghost on-navy" href="#">Sign up for updates</a>
+        <a class="btn on-navy" href="schedule.html#watch-live">Watch the recording &rarr;</a>
+        <a class="btn ghost on-navy" href="#" data-signup-open>Sign up for updates</a>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <span class="kicker red">What happens next</span>
-    <div class="section-head"><h2>Draft priorities have been set. The policy analysis and stakeholder feedback phase is next.</h2></div>
+    <span class="kicker red">The outcome</span>
+    <div class="section-head"><h2>Delegates have ratified their final priorities. The work now moves toward the legislature.</h2></div>
     <div class="feature" style="margin-top:1.2rem;">
       <div class="prose">
         <p>On June 17–18, delegates developed their own proposals for improving PK-12 education in Maine, then voted on which to carry forward. They advanced two priorities, both centered on hands-on, real-world learning — each with 84% support. You can read them in full on the results page.</p>
-        <p>These are draft priorities. In the feedback phase now underway, MEPRI is doing research to produce feasible policy options for achieving the delegates' intent, leaning on our Expert Advisory Commmittee. Then the members of MEPRI Steering Committee organizations and several additional stakeholder organizations, plus volunteers who were not selected as delegates, will review the draft policy options and offer comment. MEPRI will synthesize the feedback using AI tools and share it and the policy options with delegates.</p>
-        <p>Delegates will then reconvene virtually on August 28 to consider the policy options and cast a final vote to approve a ranked slate of priorities. A supermajority of 2/3 is required for a priority to be accepted.</p>
+        <p>Over the summer, MEPRI researched feasible policy options for achieving the delegates' intent, with support from our Expert Advisory Committee. MEPRI Steering Committee organizations, several additional stakeholder organizations, and volunteers who were not selected as delegates reviewed the draft policy options and offered comment, which MEPRI synthesized using AI tools and shared with delegates.</p>
+        <p>On August 28, delegates reconvened virtually, deliberated on the policy options, and ratified a final slate of two primary priorities along with several recommendations — each priority meeting the required two-thirds supermajority.</p>
       </div>
       <div class="prose">
-        <p>After the final vote, the bipartisan Legislative Strategy Team will carry the approved priorities into strategy work with MEPRI this fall — alongside additional senators, representatives, and experts — ahead of the 133rd Regular Session.</p>
+        <p>The bipartisan Legislative Strategy Team is now carrying the ratified priorities into strategy work with MEPRI this fall — alongside additional senators, representatives, and experts — ahead of the 133rd Regular Session.</p>
         <p style="margin-top:0.4rem;">
           <a class="btn" href="results.html">See the two priorities &rarr;</a>
         </p>
@@ -511,7 +526,7 @@ h1, h2, h3 { font-stretch: 95%; }
         <h2>Maine came together. Now the work continues.</h2>
         <blockquote class="lst-quote">
           <p>"The problems we face in education can't be solved with quick fixes or politics as usual. We needed Maine citizens to come together to wrestle with the issues and identify where our highest priorities for action should be, to shape education policies that will impact the future of our state.</p>
-          <p>Over two days in Bangor, the Assembly did just that. Our delegates listened, deliberated, and identified a slate of priorities. Now we move into the stakeholder feedback phase — and then on to getting it done, together."</p>
+          <p>Over three days — two in Bangor and a final day on Zoom — the Assembly did just that. Our delegates listened, deliberated, gave feedback on policy options, and ratified a final slate of priorities. Now we move on to getting it done, together."</p>
         </blockquote>
       </div>
       <div>
@@ -557,9 +572,9 @@ h1, h2, h3 { font-stretch: 95%; }
       <div class="prow"><span class="pn">2</span><div><h3>Select</h3><p>64 delegates were selected by lottery to represent the diversity of Maine.</p></div></div>
       <div class="prow"><span class="pn">3</span><div><h3>Learn</h3><p>Delegates reviewed materials provided by MEPRI and stakeholder organizations and listened to a range of education experts.</p></div></div>
       <div class="prow"><span class="pn">4</span><div><h3>Deliberate</h3><p>On June 17–18 in Bangor, delegates engaged in structured, in-person deliberation to identify the priorities.</p></div></div>
-      <div class="prow"><span class="pn">5</span><div><h3>Feedback <span style="font-family:'Helvetica Neue','Arial Narrow',sans-serif;font-size:0.7rem;letter-spacing:0.1em;background:var(--red);color:#fff;padding:0.15rem 0.5rem;vertical-align:middle;">NOW</span></h3><p>MEPRI research produces feasible draft policy options to achieve delegates' intent. Steering Committee organizations and volunteers not selected as delegates provide feedback, which MEPRI synthesizes and shares with delegates.</p></div></div>
-      <div class="prow"><span class="pn">6</span><div><h3>Approve</h3><p>Delegates vote virtually. A 2/3 supermajority approves a final slate of priorities. Minority positions are documented.</p></div></div>
-      <div class="prow"><span class="pn">7</span><div><h3>Impact</h3><p>The Legislative Strategy Team carries the approved priorities into strategy work with MEPRI in Fall 2026 — with additional senators, representatives, and experts — before the 133rd Regular Session.</p></div></div>
+      <div class="prow"><span class="pn">5</span><div><h3>Feedback</h3><p>MEPRI research produced feasible draft policy options to achieve delegates' intent. Steering Committee organizations and volunteers not selected as delegates provided feedback, which MEPRI synthesized and shared with delegates.</p></div></div>
+      <div class="prow"><span class="pn">6</span><div><h3>Approve</h3><p>On August 28, delegates voted virtually. A two-thirds supermajority ratified a final slate of two primary priorities and several recommendations. Minority positions are documented.</p></div></div>
+      <div class="prow"><span class="pn">7</span><div><h3>Impact <span style="font-family:'Helvetica Neue','Arial Narrow',sans-serif;font-size:0.7rem;letter-spacing:0.1em;background:var(--red);color:#fff;padding:0.15rem 0.5rem;vertical-align:middle;">NOW</span></h3><p>The Legislative Strategy Team carries the ratified priorities into strategy work with MEPRI in Fall 2026 — with additional senators, representatives, and experts — before the 133rd Regular Session.</p></div></div>
     </div>
   </section>
 
@@ -627,7 +642,7 @@ h1, h2, h3 { font-stretch: 95%; }
       <ul>
         <li><a href="why.html">The delegates</a></li>
         <li><a href="what-is-a-citizens-assembly.html">The model</a></li>
-        <li><a href="watch.html">Watch</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
         <li><a href="briefing.html">Briefing</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="partners.html">Project partners</a></li>
@@ -660,6 +675,38 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+</script>
+
+<div id="signup-modal" class="signup-modal" hidden>
+  <div class="signup-modal__backdrop" data-signup-close></div>
+  <div class="signup-modal__dialog" role="dialog" aria-modal="true" aria-label="Sign up for updates">
+    <button class="signup-modal__close" type="button" aria-label="Close sign-up form" data-signup-close>&times;</button>
+    <iframe class="signup-modal__frame" title="Sign up for updates" data-src="https://9f0d60b0.sibforms.com/serve/MUIFANfnPBCqymOT7CcnRQx8lMwRpMkIP2RydI51-m7zEsB4W3FNqBi8Ydgj7wSX-pa5aAe6D0NlZpt1A6GCxRx4-VUN66PRlcG-toCajfh6feR20Ph4AF0KaCBMD_VQV5jFzEuv4cYlgEvi15QI5XbkkKNeMTsg0eeff2OqGypPM7rAh98qsGL5bc4zClPS9fXH_1VmkpB6Zw7UvA==" src="about:blank"></iframe>
+  </div>
+</div>
+<script>
+(function(){
+  var modal = document.getElementById('signup-modal');
+  if(!modal) return;
+  var frame = modal.querySelector('.signup-modal__frame');
+  var lastFocus = null;
+  function openModal(e){
+    if(e && e.preventDefault) e.preventDefault();
+    lastFocus = (e && e.currentTarget) || document.activeElement;
+    if(frame && frame.getAttribute('src') !== frame.getAttribute('data-src')){ frame.setAttribute('src', frame.getAttribute('data-src')); }
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    var c = modal.querySelector('.signup-modal__close'); if(c) c.focus();
+  }
+  function closeModal(){
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll('[data-signup-open]').forEach(function(b){ b.addEventListener('click', openModal); });
+  modal.querySelectorAll('[data-signup-close]').forEach(function(b){ b.addEventListener('click', closeModal); });
+  document.addEventListener('keydown', function(e){ if((e.key === 'Escape' || e.key === 'Esc') && !modal.hidden){ closeModal(); } });
+})();
 </script>
 </body>
 </html>
