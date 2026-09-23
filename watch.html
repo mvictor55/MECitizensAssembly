@@ -310,42 +310,17 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .watch-fallback a { color:var(--gold); }
 
 /* ============ WATCH PAGE: player + session sidebar ============ */
-.watch-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 1.6rem; margin-top: 1.6rem; align-items: start; }
+.watch-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 1.6rem; margin-top: 1.6rem; align-items: start; }
 .watch-grid .video-embed { margin: 0; }
 .watch-grid .watch-fallback { margin-top: 0.7rem; }
-.np { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 0.7rem; font-family: 'Helvetica Neue', 'Arial Narrow', 'Segoe UI', system-ui, sans-serif; }
-.np-status { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; background: var(--blue); color: var(--navy); padding: 0.22rem 0.55rem; border-radius: 2px; }
-.np-status.is-live { background: var(--red); color: #fff; }
-.np-status.is-live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: np-pulse 1.4s ease-in-out infinite; }
-.np-status.is-soon { background: var(--gold); color: var(--navy); }
-.np-status.is-done { background: transparent; color: #c7c7d6; box-shadow: inset 0 0 0 1px #6b6d99; }
-@keyframes np-pulse { 50% { opacity: 0.25; } }
-.np-title { font-weight: 700; font-stretch: condensed; color: #fff; font-size: 1.02rem; }
-
 .watch-side { border: 1px solid var(--navy-2); background: rgba(255,255,255,0.03); }
 .ws-head { font-family: 'Helvetica Neue', 'Arial Narrow', 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-stretch: condensed; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); padding: 0.8rem 1rem; border-bottom: 1px solid var(--navy-2); }
-.ws-head-sub { color: #9a9bc0; border-top: 1px solid var(--navy-2); }
 .ws-list { list-style: none; margin: 0; padding: 0; }
-.ws-item {
-  display: grid; grid-template-columns: 1fr auto; grid-template-areas: "date status" "name name" "time time";
-  column-gap: 0.6rem; row-gap: 0.1rem; align-items: center;
-  width: 100%; margin: 0; text-align: left; cursor: pointer;
-  background: transparent; color: var(--paper); font: inherit;
-  border: 0; border-bottom: 1px solid var(--navy-2); border-left: 4px solid transparent;
-  padding: 0.85rem 1rem 0.85rem 0.9rem;
-}
-.ws-list li:last-child .ws-item { border-bottom: 0; }
-.ws-item:hover { background: var(--navy-2); }
-.ws-item:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
-.ws-item[aria-pressed="true"] { background: var(--navy-2); border-left-color: var(--gold); }
-.ws-date { grid-area: date; font-family: 'Helvetica Neue', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); }
-.ws-name { grid-area: name; font-family: 'Helvetica Neue', 'Arial Narrow', sans-serif; font-weight: 800; font-stretch: condensed; text-transform: uppercase; letter-spacing: 0.01em; font-size: 1.15rem; line-height: 1.1; color: #fff; }
-.ws-time { grid-area: time; font-size: 0.85rem; color: #c7c7d6; line-height: 1.35; }
-.ws-status { grid-area: status; justify-self: end; font-family: 'Helvetica Neue', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #c7c7d6; box-shadow: inset 0 0 0 1px #6b6d99; padding: 0.15rem 0.45rem; border-radius: 2px; white-space: nowrap; }
-.ws-status.is-live { background: var(--red); color: #fff; box-shadow: none; }
-.ws-status.is-soon { background: var(--gold); color: var(--navy); box-shadow: none; }
-.ws-status.is-done { color: #9a9bc0; }
-.ws-past .ws-name { font-size: 1rem; }
+.ws-list li { padding: 0.85rem 1rem; border-bottom: 1px solid var(--navy-2); }
+.ws-list li:last-child { border-bottom: 0; }
+.ws-date { display: block; font-family: 'Helvetica Neue', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); }
+.ws-name { display: block; font-family: 'Helvetica Neue', 'Arial Narrow', sans-serif; font-weight: 800; font-stretch: condensed; text-transform: uppercase; letter-spacing: 0.01em; font-size: 1.15rem; line-height: 1.15; color: #fff; margin-top: 0.1rem; }
+.ws-time { display: block; font-size: 0.85rem; color: #c7c7d6; }
 
 @media (max-width: 900px) {
   .watch-grid { grid-template-columns: 1fr; }
@@ -500,67 +475,39 @@ h1, h2, h3 { font-stretch: 95%; }
 
     <div class="watch-grid">
       <div class="watch-main">
-        <div class="np" id="np" aria-live="polite">
-          <span class="np-status" id="np-status">Up next</span>
-          <span class="np-title" id="np-title">Rick Bennett · Thursday, September 24 · 5:30–6:15pm ET</span>
+        <div class="video-embed">
+          <!--
+            TO GO LIVE: delete the placeholder div below and paste in the session's embed,
+            replacing VIDEO_ID with the YouTube ID (the part after youtube.com/live/):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
+                    title="Maine Citizens' Assembly livestream"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+          -->
+          <div class="video-placeholder">Livestream begins Thursday, September 24 at 5:30pm ET</div>
         </div>
-        <div class="video-embed" id="player">
-          <div class="video-placeholder" id="player-placeholder">Livestream begins Thursday, September 24 at 5:30pm ET</div>
-        </div>
-        <p class="watch-fallback" id="player-fallback">Trouble with the player? <a id="player-direct" href="https://www.youtube.com/@MECitizensAssembly2026" target="_blank" rel="noopener">Watch on YouTube &rarr;</a></p>
+        <p class="watch-fallback">Trouble with the player? <a href="https://www.youtube.com/@MECitizensAssembly2026" target="_blank" rel="noopener">Watch on YouTube &rarr;</a></p>
       </div>
 
-      <aside class="watch-side" aria-label="Livestream sessions">
+      <aside class="watch-side" aria-label="Livestream schedule">
         <div class="ws-head">Candidate sessions</div>
-        <!--
-          TO GO LIVE: paste each session's YouTube video ID into data-video
-          (the part after youtube.com/live/ or watch?v=). Times are Eastern.
-          Sessions with no ID show a "begins at…" card in the player.
-        -->
-        <ol class="ws-list">
-          <li><button type="button" class="ws-item" data-key="bennett"
-                data-title="Rick Bennett · Thursday, September 24 · 5:30–6:15pm ET"
-                data-start="2026-09-24T17:30:00-04:00" data-end="2026-09-24T18:15:00-04:00"
-                data-when="Thursday, September 24 at 5:30pm ET"
-                data-video="">
+        <ul class="ws-list">
+          <li>
             <span class="ws-date">Thu · Sept 24</span>
             <span class="ws-name">Rick Bennett</span>
             <span class="ws-time">5:30–6:15pm ET</span>
-            <span class="ws-status">Upcoming</span>
-          </button></li>
-          <li><button type="button" class="ws-item" data-key="pingree"
-                data-title="Hannah Pingree · Tuesday, September 29 · 5:30–6:15pm ET"
-                data-start="2026-09-29T17:30:00-04:00" data-end="2026-09-29T18:15:00-04:00"
-                data-when="Tuesday, September 29 at 5:30pm ET"
-                data-video="">
+          </li>
+          <li>
             <span class="ws-date">Tue · Sept 29</span>
             <span class="ws-name">Hannah Pingree</span>
             <span class="ws-time">5:30–6:15pm ET</span>
-            <span class="ws-status">Upcoming</span>
-          </button></li>
-          <li><button type="button" class="ws-item" data-key="charles"
-                data-title="Bobby Charles · Tuesday, October 6 · 5:30–6:15pm ET"
-                data-start="2026-10-06T17:30:00-04:00" data-end="2026-10-06T18:15:00-04:00"
-                data-when="Tuesday, October 6 at 5:30pm ET"
-                data-video="">
+          </li>
+          <li>
             <span class="ws-date">Tue · Oct 6</span>
             <span class="ws-name">Bobby Charles</span>
             <span class="ws-time">5:30–6:15pm ET</span>
-            <span class="ws-status">Upcoming</span>
-          </button></li>
-        </ol>
-
-        <div class="ws-head ws-head-sub">Earlier recordings</div>
-        <ul class="ws-list">
-          <li><button type="button" class="ws-item ws-past" data-key="day3-recording"
-                data-title="Assembly Day 3 · Friday, August 28"
-                data-start="2026-08-28T08:00:00-04:00" data-end="2026-08-28T13:30:00-04:00"
-                data-when="Friday, August 28"
-                data-video="4_3Z2selEk0">
-            <span class="ws-date">Fri · Aug 28</span>
-            <span class="ws-name">Assembly Day 3</span>
-            <span class="ws-time">Deliberation, voting &amp; ratification</span>
-          </button></li>
+          </li>
         </ul>
       </aside>
     </div>
@@ -958,7 +905,7 @@ h1, h2, h3 { font-stretch: 95%; }
           <span class="dc-toggle"><span class="show">Agenda</span><span class="hide">Collapse</span></span>
         </summary>
         <div class="day-body">
-          <p class="mca-sched-note">The Assembly's final day was held virtually. Delegates received a briefing on the policy options, deliberated in small groups, and cast their final votes to ratify a ranked slate of priorities. <a href="#day3-recording" style="color:var(--gold);">Watch the Day 3 recording &uarr;</a></p>
+          <p class="mca-sched-note">The Assembly's final day was held virtually. Delegates received a briefing on the policy options, deliberated in small groups, and cast their final votes to ratify a ranked slate of priorities. <a href="https://youtube.com/live/4_3Z2selEk0" target="_blank" rel="noopener" style="color:var(--gold);">Watch the Day 3 recording &rarr;</a></p>
           <div class="mca-row">
             <div class="mca-time">8:00</div>
             <div>
@@ -1106,108 +1053,6 @@ function openTargetDetails() {
 window.addEventListener('DOMContentLoaded', openTargetDetails);
 window.addEventListener('hashchange', openTargetDetails);
 
-// ===== Watch page: livestream player + session sidebar =====
-(function(){
-  var items = Array.prototype.slice.call(document.querySelectorAll('.ws-item'));
-  if (!items.length) return;
-  var forum = items.filter(function(it){ return !it.classList.contains('ws-past'); });
-  var player = document.getElementById('player');
-  var npStatus = document.getElementById('np-status');
-  var npTitle = document.getElementById('np-title');
-  var direct = document.getElementById('player-direct');
-  var CHANNEL = 'https://www.youtube.com/@MECitizensAssembly2026';
-  var MIN = 60 * 1000;
-  var current = null, currentVideo = null;
-
-  function state(it){
-    var now = Date.now();
-    var s = Date.parse(it.getAttribute('data-start'));
-    var e = Date.parse(it.getAttribute('data-end'));
-    if (now < s - 30 * MIN) return 'upcoming';
-    if (now < s) return 'soon';
-    if (now < e + 15 * MIN) return 'live';
-    return 'done';
-  }
-  function vid(it){ return (it.getAttribute('data-video') || '').trim(); }
-
-  var LIST = { upcoming: 'Upcoming', soon: 'Starting soon', live: 'Live now' };
-  var NP   = { upcoming: 'Upcoming', soon: 'Starting soon', live: 'Live now' };
-
-  function setPill(el, st, label){
-    el.classList.remove('is-live', 'is-soon', 'is-done');
-    if (st !== 'upcoming') el.classList.add('is-' + st);
-    el.textContent = label;
-  }
-
-  function refresh(){
-    forum.forEach(function(it){
-      var pill = it.querySelector('.ws-status');
-      if (!pill) return;
-      var st = state(it);
-      setPill(pill, st, st === 'done' ? (vid(it) ? 'Recording' : 'Ended') : LIST[st]);
-    });
-    if (current){
-      var st = current.classList.contains('ws-past') ? 'done' : state(current);
-      setPill(npStatus, st, st === 'done' ? 'Recording' : NP[st]);
-    }
-  }
-
-  function select(it){
-    items.forEach(function(x){ x.setAttribute('aria-pressed', x === it ? 'true' : 'false'); });
-    current = it;
-    npTitle.textContent = it.getAttribute('data-title');
-    var id = vid(it);
-    if (id !== currentVideo || !player.firstElementChild) {
-      player.innerHTML = '';
-      if (id) {
-        var f = document.createElement('iframe');
-        f.src = 'https://www.youtube.com/embed/' + encodeURIComponent(id) + '?rel=0';
-        f.title = it.getAttribute('data-title');
-        f.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-        f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-        f.setAttribute('allowfullscreen', '');
-        player.appendChild(f);
-      } else {
-        var p = document.createElement('div');
-        p.className = 'video-placeholder';
-        var st0 = state(it);
-        p.textContent = st0 === 'done' ? 'Recording coming soon'
-          : st0 === 'live' ? 'Live now — use the YouTube link below'
-          : 'Livestream begins ' + it.getAttribute('data-when');
-        player.appendChild(p);
-      }
-      currentVideo = id;
-    }
-    direct.href = id ? 'https://www.youtube.com/watch?v=' + encodeURIComponent(id) : CHANNEL;
-    direct.innerHTML = id ? 'Open this video on YouTube &rarr;' : 'Watch on YouTube &rarr;';
-    refresh();
-  }
-
-  function fromHash(){
-    var key = location.hash.slice(1);
-    if (!key) return null;
-    for (var i = 0; i < items.length; i++) if (items[i].getAttribute('data-key') === key) return items[i];
-    return null;
-  }
-
-  function pickDefault(){
-    var h = fromHash();
-    if (h) return h;
-    for (var i = 0; i < forum.length; i++) if (state(forum[i]) !== 'done') return forum[i];
-    return forum[forum.length - 1];
-  }
-
-  items.forEach(function(it){ it.addEventListener('click', function(){ select(it); }); });
-  window.addEventListener('hashchange', function(){
-    var h = fromHash();
-    if (h) { select(h); document.getElementById('watch-live').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  });
-
-  var first = pickDefault();
-  select(first);
-  if (fromHash()) document.getElementById('watch-live').scrollIntoView({ block: 'start' });
-  setInterval(refresh, 30 * 1000);
-})();
 
 </script>
 
