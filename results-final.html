@@ -530,6 +530,14 @@ h1, h2, h3 { font-stretch: 95%; }
   .prow2 { grid-template-columns:auto 1fr; }
   .prow2 .badge { grid-column:2; justify-self:start; }
 }
+
+/* ===== Recommendations list ===== */
+.reclist { border-top:2px solid var(--ink); margin-top:1.6rem; }
+.recrow { display:grid; grid-template-columns:auto 1fr; gap:1.4rem; align-items:baseline; padding:1.3rem 0; border-bottom:1px solid var(--line-2); }
+.recrow .rn { font-family:'Helvetica Neue','Arial Narrow',sans-serif; font-weight:800; font-stretch:condensed; font-size:1.9rem; line-height:0.9; color:var(--gold); }
+.recrow p { margin:0; font-size:1.08rem; line-height:1.55; color:var(--ink-2); max-width:80ch; }
+.recrow p strong { color:var(--ink); font-weight:700; }
+@media (max-width:640px){ .recrow { gap:1rem; } .recrow .rn { font-size:1.6rem; } }
 </style>
 
 <section class="pagehead">
@@ -553,8 +561,38 @@ h1, h2, h3 { font-stretch: 95%; }
       </div>
       <div class="prow2">
         <span class="pn2">02</span>
-        <div><h3>Life and Career-Readiness for Maine’s Youth <span style="font-weight:400;font-style:italic;color:var(--ink-2);">[Draft Language]</span></h3><p>Equip all young adults with the full set of skills and capacities needed for a successful and engaged adult life through age-appropriate experiential academic and career-focused learning in school and in community.</p></div>
+        <div><h3>Life and Career-Readiness for Maine’s Youth</h3><p>Equip all young adults with the full set of skills and capacities needed for a successful and engaged adult life through age-appropriate experiential academic and career-focused learning in school and in community.</p></div>
         <span class="badge chosen">Ratified</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section" id="recommendations">
+    <span class="kicker gold">The delegates&rsquo; recommendations</span>
+    <div class="section-head"><h2>Recommendations</h2></div>
+    <p class="lede" style="margin-top:0.8rem; max-width:80ch;">A supermajority of delegates agreed that these issues were important and approved of the direction of these policy options.</p>
+    <div class="reclist">
+      <div class="recrow">
+        <span class="rn">01</span>
+        <p><strong>Increase Citizen Voice in Education Policy Making</strong> through regular citizen engagement processes at the local and state levels and more transparency into districts&rsquo; education plans for meeting the Maine Learning Results.</p>
+      </div>
+      <div class="recrow">
+        <span class="rn">02</span>
+        <p><strong>Improve PK-8 Academic Preparation for High School</strong> through regional support for effective implementation of MTSS, targeted funding for necessary learning interventions, and access to low-cost high-quality curricula for K-4 reading and math.</p>
+      </div>
+      <div class="recrow">
+        <span class="rn">03</span>
+        <p><strong>Expand Experiential Learning to all students</strong> through exposure and hands-on opportunities for all preservice teachers and recertification requirements for in-service teachers and administrators.</p>
+      </div>
+      <div class="recrow">
+        <span class="rn">04</span>
+        <p><strong>Ensure Accountability for Maine Learning Results</strong> through a periodic (5-year) peer review of each district&rsquo;s comprehensive education plan, finding gaps and connecting to proactive and targeted MDOE support.</p>
+      </div>
+      <div class="recrow">
+        <span class="rn">05</span>
+        <p><strong>Strengthen the Early Childhood Workforce</strong> through expanded investments in salary supplements for early childhood care and education providers and regional shared learning opportunities for parents, caregivers, and educators.</p>
       </div>
     </div>
   </section>
