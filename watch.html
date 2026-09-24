@@ -313,6 +313,11 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .watch-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 1.6rem; margin-top: 1.6rem; align-items: start; }
 .watch-grid .video-embed { margin: 0; }
 .watch-grid .watch-fallback { margin-top: 0.7rem; }
+.ask-box { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.3rem 1rem; margin-top: 1rem; padding: 0.9rem 1.1rem; border: 2px solid var(--gold); text-decoration: none; background: rgba(233,191,70,0.08); }
+.ask-box:hover { background: var(--gold); }
+.ask-q { font-family: 'Helvetica Neue', 'Arial Narrow', sans-serif; font-weight: 800; font-stretch: condensed; text-transform: uppercase; letter-spacing: 0.01em; font-size: 1.1rem; color: #fff; }
+.ask-cta { font-family: 'Helvetica Neue', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--gold); }
+.ask-box:hover .ask-q, .ask-box:hover .ask-cta { color: var(--navy); }
 .watch-side { border: 1px solid var(--navy-2); background: rgba(255,255,255,0.03); }
 .ws-head { font-family: 'Helvetica Neue', 'Arial Narrow', 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-stretch: condensed; font-size: 1.05rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); padding: 0.8rem 1rem; border-bottom: 1px solid var(--navy-2); }
 .ws-list { list-style: none; margin: 0; padding: 0; }
@@ -491,6 +496,10 @@ h1, h2, h3 { font-stretch: 95%; }
                   allowfullscreen></iframe>
         </div>
         <p class="watch-fallback">Trouble with the player? <a href="https://youtube.com/live/4v_oIesH8rQ" target="_blank" rel="noopener">Watch on YouTube &rarr;</a></p>
+        <a class="ask-box" href="https://maineassembly.org/ask" target="_blank" rel="noopener">
+          <span class="ask-q">Have a question for the candidate?</span>
+          <span class="ask-cta">Submit it at maineassembly.org/ask &rarr;</span>
+        </a>
       </div>
 
       <aside class="watch-side" aria-label="Livestream schedule">
