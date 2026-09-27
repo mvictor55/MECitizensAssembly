@@ -307,6 +307,9 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .watch h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); margin: 0; }
 .watch > .watch-inner > p { max-width: 68ch; margin: 0.7rem 0 0; }
 .watch-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.4rem; }
+.watch-video { max-width: 480px; margin: 1.8rem 0 0; }
+.watch-video video { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; background: #161a46; border: 1px solid rgba(255,255,255,0.15); }
+.watch-video figcaption { color: #d9d9e6; font-size: 0.95rem; margin-top: 0.6rem; }
 .sessions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--navy-2); margin: 1.5rem 0; }
 .sess { padding: 1.2rem; border-right: 1px solid var(--navy-2); }
 .sess:last-child { border-right: none; }
@@ -496,6 +499,13 @@ h1, h2, h3 { font-stretch: 95%; }
         <a class="btn ghost on-navy" href="https://youtube.com/live/4_3Z2selEk0" target="_blank" rel="noopener">Day 3 recording</a>
         <a class="btn ghost on-navy" href="#" data-signup-open>Sign up for updates</a>
       </div>
+      <figure class="watch-video">
+        <video controls playsinline preload="metadata" poster="bennett-presentation-poster.jpg">
+          <source src="bennett-presentation.mp4" type="video/mp4">
+          Your browser doesn't support embedded video. <a href="bennett-presentation.mp4">Download the video</a>.
+        </video>
+        <figcaption>Sept 24: Delegates present the Assembly's priorities to candidate Rick Bennett.</figcaption>
+      </figure>
     </div>
   </section>
 
